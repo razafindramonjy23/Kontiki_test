@@ -28,9 +28,6 @@ function Navbar() {
           <Link to="/apropos">A propos de nous</Link>
           <Link to="/test">Test</Link>
           <Link to="/contact">Contactez-nous</Link>
-          <button onClick={toggleNavbar}>
-            <i class="fi fi-rr-menu-burger"></i>
-          </button>
         </div>
     </div>
   )
