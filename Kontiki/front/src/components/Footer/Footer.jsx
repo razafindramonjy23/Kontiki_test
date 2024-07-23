@@ -1,15 +1,18 @@
 import React from 'react'
-import './Footer.css'
+import './Footer.css';
+
+
 
 function Footer() {
     return (
         <div className="footer-basic">
             <footer>
                 <div className="social">
-                    <a href="#"><i className="icon ion-social-instagram"></i></a>
-                    <a href="#"><i className="icon ion-social-snapchat"></i></a>
-                    <a href="#"><i className="icon ion-social-twitter"></i></a>
-                    <a href="#"><i className="icon ion-social-facebook"></i></a>
+                    <a href="#"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/linkedin-circled--v1.png" alt="linkedin-circled--v1"/></a>
+                    <a href="#"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/60/228BE6/skype.png" alt="skype"/></a>
+                    <a href="#"><img width="50" height="50" src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new"/></a>
+                    <a href="#"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/facebook-new.png" alt="facebook-new"/></a>
+
                 </div>
                 <ul className="list-inline">
                     <li className="list-inline-item"><a href="#">Accueil</a></li>
