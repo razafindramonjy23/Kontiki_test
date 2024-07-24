@@ -1,9 +1,10 @@
 import React from 'react'
+import './Services.css'
 
 function Services() {
   return (
-    <div>
-      hello services
+    <div className='container'>
+      <h1>Services</h1>
     </div>
   )
 }

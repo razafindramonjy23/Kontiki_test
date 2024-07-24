@@ -1,0 +1,51 @@
+//*********couleurs**********//
+//**************************//
+
+//Principale
+
+
+//Utilitaires couleurs 
+$bg-formulaire: #ffffffcb;
+$bg-footer:#ffffff; 
+
+
+
+//Textes
+$footer-color-txt: #4b4c4d;
+
+
+
+
+//*********Placeholder**********//
+//*****************************//
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//*********Mixin**********//
+//*****************************//
+@mixin absolute-elt($top, $right, $bottom, $left, $x, $y){
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    transform: translate($x, $y);
+}
+
+
+
+
+//*********Nesting**********//
+//*****************************//
+nav {
+    background: #000;
+    ul{
+        li{
+            font-size: 40px;
+        }
+    }
+}

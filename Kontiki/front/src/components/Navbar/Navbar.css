@@ -4,6 +4,7 @@
     background-color: #fffeff;
     display: flex;
     flex-direction: row;
+    font-size: 18px;
 }
 
 .navbar .leftSide {

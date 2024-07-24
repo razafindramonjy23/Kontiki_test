@@ -1,0 +1,141 @@
+.contact {
+    width: 100%;
+    overflow: hidden;
+    color: #9ca7b6;
+
+}
+
+.contact .container{
+    height: 100vh;
+    min-height: 700px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.contact .container > div {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.left{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+
+    padding: 65px 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-heading h1{
+    background: none;
+    font-weight: 600;
+    color: black;
+    font-size: 3.5rem;
+    line-height: 0.9;
+    white-space: nowrap;
+}
+
+.contact-heading .texte{
+    background: none;
+    color: #9ca7b6;
+}
+
+.contact-heading .texte  a{
+    text-decoration: none;
+    color: rgb(32, 29, 29);
+}
+
+.contact-heading .texte  a:hover{
+    color: #9ca7b6;
+    text-decoration: underline;
+}
+
+
+.form-wrapper{
+    max-width: 32rem;
+}
+
+.contact-form{
+    display: grid;
+    margin-top: 2.55rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.input-wrap{
+    position: relative;
+}
+
+.input-wrap.w-100 {
+    grid-column: span 2;
+}
+
+.contact-input {
+    width: 100%;
+    background-color: grey; 
+    padding: 1.5rem 1.35rem calc(0.75rem - 2px) 1.35rem;
+    /* padding: 20px; */
+    border: none;
+    outline: none;
+    background: #f4f4f7;
+    font-family: inherit;
+    border-radius: 20px;
+    color: black; 
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 0px rgb(32, 130, 242), 92%, 54%, 0.169;
+    transition: 0.3s;
+}
+
+.contact-input:hover{
+    background-color: #dfdfe1db;
+}
+
+.input-wrap label{
+    position: absolute;
+    top: 50%;
+    left: calc(1.35rem + 2px);
+    transform: translateY(-50%);
+    color: #9ca7b6;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.input-wrap .icon{
+    position: absolute;
+    top: 50%;
+    right: calc(1.35rem + 2px);
+    transform: translateY(-50%);
+    color: #9ca7b6;
+    pointer-events: none;
+    font-size: 1.2rem;
+} 
+
+textarea.contact-input{
+    resize: none;
+    width: 100%;
+    min-height: 150px;
+}
+
+textarea.contact-input ~ label{
+    top: 1.2rem;
+    transform: translateY(-50%);
+}
+
+ .input-wrap.focus .contact-input{
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgb(10, 76, 142);
+} 
+
+ .input-wrap.not-empty label{
+    font-size: 0.66rem;
+    top: 0.75rem;
+    transform: translateY(0);
+}  
