@@ -25,8 +25,9 @@
 
 .footer-basic ul a:hover{
     opacity: 1;
-    font-size: 25px;
+    text-decoration: underline;
     transition: 0.5s;
+    font-size: 21px;
 }
 
 
@@ -51,6 +52,13 @@
 
 .footer-basic .social > a:hover {
     opacity:0.9;
+    border-radius: 150px;
+    background: #ffffff;
+    box-shadow:  9px 9px 18px #cfcfcf,
+                -9px -9px 18px #ffffff; 
+
+    transition: .5s;
+    font-size: 29px;
 }
 
 .footer-basic .copyright {
