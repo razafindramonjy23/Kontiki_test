@@ -19,7 +19,7 @@ function Accueil() {
         <Link to='contact' smooth={true} duration={500} ><button className='btn'>
           <span>Contactez-nous &nbsp;</span></button></Link>
       </div>
-      <img className='bg' src={bois} alt="" srcset="" />
+      {/* <img className='bg' src={bois} alt="" srcset="" /> */}
     </section>
   )
 }

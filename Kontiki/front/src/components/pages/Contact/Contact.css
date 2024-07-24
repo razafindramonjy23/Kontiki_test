@@ -2,7 +2,7 @@
     width: 100%;
     overflow: hidden;
     color: #9ca7b6;
-    background-color: #0369BC;
+    background: url(./img/bois.jpg);
 }
 
 .contact .container{
@@ -21,7 +21,7 @@ height: 100vh;
 .left{
     width: 100%;
     max-width: 80rem;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     padding: 65px 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -201,3 +201,4 @@ button:hover .wrapper{
 button:hover .iconSend{
     transform: rotate(-5deg);
 }
+

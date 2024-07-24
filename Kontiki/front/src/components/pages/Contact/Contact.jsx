@@ -1,5 +1,6 @@
 import React from 'react'
 import './Contact.css';
+import bois from './img/bois.jpg';
 
 function Contact() {
 
@@ -28,7 +29,7 @@ function Contact() {
               <div className="form-wrapper">
                 <div className="contact-heading">
                   <h1>Travaillons ensembles.</h1>
-                  <p className="texte">Ou Contactez-nous via : <a href="malto:emailKTK@gmail.com">emailKTK@gmail.com</a></p>
+                  <p className="texte">Ou Contactez-nous via : <a href="malto:recrutement@kontikiservice.com">recrutement@kontikiservice.com</a></p>
                 </div>
 
                 <form action="#" className="contact-form" method='post'>
@@ -69,11 +70,12 @@ function Contact() {
                   
                 </form>
               </div>
+              
             </div>
 
             <div className="right"></div>
-          </div>
 
+          </div>
         </section>
       </main>
     </div>
