@@ -16,7 +16,7 @@ $ff-primary: 'Poppins', sans-serif;
 $success: #0F51;
 
 
-//************BASE******izay ikambanan'ny rehetra********//
+//************BASE**************//
 *,
 *::before, 
 *::after{
@@ -44,8 +44,40 @@ $success: #0F51;
   width: 100%;
 }
 
-//************Composantes**************//
-//Principale
+$breakpoints: (
+	'xs':  'min-width: 360px',
+	'sm':  'min-width: 576px',
+	'md':   'min-width:  768px',
+	'lg':  'min-width:  992px',
+	'xl':   'min-width: 1200px',
+	'xxl':   'min-width: 1400px' 
+);
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: #{percentage(calc($i / 12))};
+  }
+}
+@each $breakpoint, $minWidth in $breakpoints {
+    @media screen and (#{$minWidth}) {
+      @for $i from 1 through 12 {
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 auto;
+          width: #{percentage(calc($i / 12))};
+        }
+      }
+    }
+    
+  }
+
+//************MES PAGES **************//
+
+/*/ ================ \
+       NavBar
+\ ================ /*/
+
+
 
 
 
