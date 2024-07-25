@@ -1,24 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Contact.css';
 import bois from './img/bois.jpg';
 
 function Contact() {
 
-  const inputs = document.querySelectorAll(".contact-input");
-
-  inputs.forEach((ipt) => {
-    ipt.addEventListener("focus", () =>{
-      ipt.parentNode.classList.add("focus");
-      ipt.parentNode.classList.add("not-empty");
-    });
-
-    ipt.addEventListener("blur", () =>{
-      if (ipt.value == ""){
-        ipt.parentNode.classList.remove("not-empty");
-      }
-      ipt.parentNode.classList.remove("focus");
-    });
-  });
+  const [name, setName] = useState('')
 
   return (
     <div>
@@ -33,8 +19,9 @@ function Contact() {
                 </div>
 
                 <form action="#" className="contact-form" method='post'>
-                  <div className="input-wrap">
-                    <input type="text" className="contact-input" required name='nom' autoComplete='on'/>
+                  
+                  <div className={`input-wrap ${name !== '' ? 'focus not-empty' : ''}`}>
+                    <input type="text" className="contact-input" required name='nom' autoComplete='on' value={name} onChange={(e) => setName(e.target.value)}/>
                     <label>Nom</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
                   </div>
@@ -73,8 +60,10 @@ function Contact() {
               
             </div>
 
-            <div className="right"></div>
+            <div className="right">
 
+            </div>
+            
           </div>
         </section>
       </main>
