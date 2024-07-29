@@ -8,30 +8,31 @@ function Presentation() {
   return (
     <div id='page' className='site'>
       <div className="container">
+
         <div className="form-box">
-          <ul className='progess-steps'>
-            <li className="tep-active">
-              <span>1</span>
-              <p>Information personnel <br /> 1 minutes pour repondre</p>
-            </li>
+          <div className="progress">
+            <ul className='progress-steps'>
+              <li className="step active">
+                <span>1</span>
+                <p>Information personnel <br /> 1 minutes pour repondre</p>
+              </li>
 
-            <li className="step">
-              <span>2</span>
-              <p>Savoir-Formation<br /> 1 minutes pour repondre</p>
-            </li>
+              <li className="step">
+                <span>2</span>
+                <p>Savoir-Formation<br /> 1 minutes pour repondre</p>
+              </li>
 
-            <li className="step">
-              <span>3</span>
-              <p>Savoir-Formation<br /> 1 minutes pour repondre</p>
-            </li>
-          </ul>
+              <li className="step">
+                <span>3</span>
+                <p>Ponctualité<br /> 1 minutes pour repondre</p>
+              </li>
+            </ul>
+          </div>
 
           <form action="">
             <div className="form1 form-step ">
-              <div className="bg-svg"></div>
+              <div className="bg-svg"><img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/user-male-circle.png" alt="user-male-circle" /></div>
               <h2>Information personnel</h2>
-              <p>Entrer votre information personnel correctement</p>
-
               <div>
                 <label>Nom</label>
                 <input type="text" placeholder='exemple: Rakoto' />
@@ -72,7 +73,7 @@ function Presentation() {
           </form>
 
           <form action="" className="form2">
-            <div className="bg-svg"></div>
+            <div className="bg-svg"><img width="96" height="96" src="https://img.icons8.com/color/96/reading.png" alt="reading" /></div>
             <h2>SAVOIR-FORMATION</h2>
 
             <div>
@@ -118,7 +119,7 @@ function Presentation() {
           </form>
 
           <form action="" className='form3'>
-            <div className="bg-svg"></div>
+            <div className="bg-svg"><img width="96" height="96" src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Punctuality-business-presentations-and-meetings-vectorslab-flat-vectorslab.png" alt="external-Punctuality-business-presentations-and-meetings-vectorslab-flat-vectorslab" /></div>
             <h2>PONCTUALITE: </h2>
 
             <div>
@@ -139,8 +140,8 @@ function Presentation() {
           </form>
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
-            <h2>TENACITE: </h2>
+            <div className="bg-svg"><img width="96" height="96" src="https://img.icons8.com/color/96/courage.png" alt="courage" /></div>
+            <h2>TENACITE</h2>
 
             <div>
               <label>
@@ -179,7 +180,7 @@ function Presentation() {
 
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
+            <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/arcade/64/onboarding.png" alt="onboarding" /></div>
             <h2>CAPACITE D'INTEGRATION: </h2>
 
             <div>
@@ -208,8 +209,8 @@ function Presentation() {
           </form>
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
-            <h2>SENS DU SERVICE : </h2>
+            <div className="bg-svg"><img width="96" height="96" src="https://img.icons8.com/fluency/96/service.png" alt="service" /></div>
+            <h2>SENS DU SERVICE</h2>
 
             <div>
               <label>
@@ -240,8 +241,8 @@ function Presentation() {
           </form>
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
-            <h2>AUTONOMIE : </h2>
+            <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-autonomy-gig-economy-flaticons-flat-flat-icons.png" alt="external-autonomy-gig-economy-flaticons-flat-flat-icons" /></div>
+            <h2>AUTONOMIE</h2>
 
             <div>
               <label>
@@ -250,19 +251,21 @@ function Presentation() {
               <br />
               <textarea name="" ></textarea>
             </div>
+
+            <div>
+              <label>
+                Le client vous demande un travail non prévu sur votre fiche de poste? Que faites-vous?
+              </label>
+              <br />
+              <textarea name="" ></textarea>
+            </div>
           </form>
 
-          <div>
-            <label>
-              Le client vous demande un travail non prévu sur votre fiche de poste? Que faites-vous?
-            </label>
-            <br />
-            <textarea name="" ></textarea>
-          </div>
+
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
-            <h2>ORGANISATION : </h2>
+            <div className="bg-svg"><img width="80" height="80" src="https://img.icons8.com/officel/80/making-notes.png" alt="making-notes"/></div>
+            <h2>ORGANISATION</h2>
 
             <div>
               <label>
@@ -275,8 +278,8 @@ function Presentation() {
 
 
           <form action="" className="form4">
-            <div className="bg-svg"></div>
-            <h2>SATISFACTION : </h2>
+            <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png" alt="external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3"/></div>
+            <h2>SATISFACTION</h2>
 
             <div>
               <label>
