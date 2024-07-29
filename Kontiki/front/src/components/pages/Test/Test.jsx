@@ -179,7 +179,7 @@ function Presentation() {
           </form>
 
 
-          <form action="" className="form4">
+          <form action="" className="form5">
             <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/arcade/64/onboarding.png" alt="onboarding" /></div>
             <h2>CAPACITE D'INTEGRATION: </h2>
 
@@ -208,7 +208,7 @@ function Presentation() {
             </div>
           </form>
 
-          <form action="" className="form4">
+          <form action="" className="form6">
             <div className="bg-svg"><img width="96" height="96" src="https://img.icons8.com/fluency/96/service.png" alt="service" /></div>
             <h2>SENS DU SERVICE</h2>
 
@@ -240,7 +240,7 @@ function Presentation() {
             </div>
           </form>
 
-          <form action="" className="form4">
+          <form action="" className="form7">
             <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-autonomy-gig-economy-flaticons-flat-flat-icons.png" alt="external-autonomy-gig-economy-flaticons-flat-flat-icons" /></div>
             <h2>AUTONOMIE</h2>
 
@@ -263,8 +263,8 @@ function Presentation() {
 
 
 
-          <form action="" className="form4">
-            <div className="bg-svg"><img width="80" height="80" src="https://img.icons8.com/officel/80/making-notes.png" alt="making-notes"/></div>
+          <form action="" className="form8">
+            <div className="bg-svg"><img width="80" height="80" src="https://img.icons8.com/officel/80/making-notes.png" alt="making-notes" /></div>
             <h2>ORGANISATION</h2>
 
             <div>
@@ -277,8 +277,8 @@ function Presentation() {
           </form>
 
 
-          <form action="" className="form4">
-            <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png" alt="external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3"/></div>
+          <form action="" className="form9">
+            <div className="bg-svg"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png" alt="external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3" /></div>
             <h2>SATISFACTION</h2>
 
             <div>
@@ -342,10 +342,7 @@ function Presentation() {
               <button type='button' className='btn-suivant'>Suivant</button>
             </div>
           </form>
-
         </div>
-
-
       </div>
     </div>
   )
