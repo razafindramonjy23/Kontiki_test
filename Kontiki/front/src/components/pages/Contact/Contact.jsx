@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import './Contact.css';
+// import './Contact.css';
 import bois from './img/bois.jpg';
+import '../../../App.scss';
 
 function Contact() {
 
-  const [name, setName] = useState('')
+  const [name, setName] = useState('');
+  const [prenom, setPrenom] = useState('');
+
 
   return (
     <div>
@@ -15,19 +18,20 @@ function Contact() {
               <div className="form-wrapper">
                 <div className="contact-heading">
                   <h1>Travaillons ensembles.</h1>
-                  <p className="texte">Ou Contactez-nous via : <a href="malto:recrutement@kontikiservice.com">recrutement@kontikiservice.com</a></p>
+                  <p className="texte">Ou Contactez-nous via : <a href="malto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
                 </div>
 
-                <form action="#" className="contact-form" method='post'>
-                  
+                <form className="contact-form">
+                  {/* mettre une boucle aux 3 forms et une pour textarea */}
                   <div className={`input-wrap ${name !== '' ? 'focus not-empty' : ''}`}>
-                    <input type="text" className="contact-input" required name='nom' autoComplete='on' value={name} onChange={(e) => setName(e.target.value)}/>
+
+                    <input type="text" className="contact-input" required name='nom' autoComplete='off' value={name} onChange={(e) => setName(e.target.value)}/>
                     <label>Nom</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
                   </div>
 
-                  <div className="input-wrap">
-                    <input type="text" className="contact-input" required name='prenom' autoComplete='off'/>
+                  <div className={`input-wrap ${prenom !== '' ? 'focus not-empty' : ''}`}>
+                    <input type="text" className="contact-input" required name='prenom' autoComplete='off' value={prenom} onChange={(e) => setPrenom(e.target.value)} />
                     <label>Prenom</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
                   </div>
@@ -59,7 +63,7 @@ function Contact() {
               </div>
               
             </div>
-
+              
             <div className="right">
 
             </div>

@@ -7,7 +7,7 @@ import A_propos from './components/pages/A_propos/A_propos.jsx';
 import Test from './components/pages/Test/Test.jsx';
 import Contact from './components/pages/Contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import './index.css';
+
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
         <Route path='/apropos' element={<A_propos/>}  />
       </Routes>
 
-      
       <Footer/>
     </>
   )
