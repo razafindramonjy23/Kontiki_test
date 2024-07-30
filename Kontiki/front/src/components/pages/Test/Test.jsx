@@ -110,7 +110,7 @@ const Presentation = () => {
     },
     {
       id: "form5",
-      title: "CAPACITE D'INTEGRATION",
+      title: "INTEGRATION",
       icon: "https://img.icons8.com/arcade/64/onboarding.png",
       fields: [
         { label: "Avec quels types de personnes aimez-vous le mieux travailler? Pour quel raisons?", type: "textarea" },
