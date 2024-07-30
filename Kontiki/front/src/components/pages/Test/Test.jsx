@@ -81,7 +81,7 @@ const Presentation = () => {
       title: "SAVOIR-FORMATION",
       icon: "https://img.icons8.com/color/96/reading.png",
       fields: [
-        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea" },
+        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea"},
         { label: "Avez-vous suivi des formations ou vous êtes vous renseignés sur le poste si oui, racontez nous", type: "textarea" },
         { label: "Quel est le dernier travai que vous avez occupé? Combien de temps? Et la raison pour laquelle vous avez quitté votre dernier emploi.", type: "textarea" },
         { label: "Etes-vous aujourd'hui satisfait de votre carrière?", type: "textarea" },
