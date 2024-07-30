@@ -37,17 +37,19 @@ const ProgressSteps = ({ steps, activeStep }) => (
 const Presentation = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const handleNext = () => {
+  const btnSuivant = () => {
     if (activeStep < steps.length - 1) {
       setActiveStep(activeStep + 1);
     }
   };
 
-  const handlePrevious = () => {
+  const btnPrecedent = () => {
     if (activeStep > 0) {
       setActiveStep(activeStep - 1);
     }
   };
+
+
 
   const steps = [
     {
@@ -168,8 +170,8 @@ const Presentation = () => {
             ))}
 
             <div className="btn-group">
-              <button type='button' className='btn-retour' onClick={handlePrevious} disabled={activeStep === 0}>Retour</button>
-              <button type='button' className='btn-suivant' onClick={handleNext} disabled={activeStep === steps.length - 1}>Suivant</button>
+              <button type='button' className='btn-retour' onClick={btnPrecedent} disabled={activeStep === 0}>Retour</button>
+              <button type='button' className='btn-suivant' onClick={btnSuivant} disabled={activeStep === steps.length - 1}>Suivant</button>
               <button type='button' className='btn-envoyer'>Envoyer</button>
             </div>
           </form>
