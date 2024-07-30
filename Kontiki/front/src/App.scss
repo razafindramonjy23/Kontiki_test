@@ -550,14 +550,15 @@ ul {
   height: 40px;
   margin-right: 1em;
   border-radius: 50%;
-  background-color: $jaune-btn;
+  background-color: $blue2;
+  border: 4px solid $jaune-btn;
   z-index: 1;
 }
 
 .progress ul.progress-steps li.active>span {
-  color: $light-color;
-  background-color: $blue3;
-  border: 4px solid $blue1;
+  color: $black;
+  background-color:$jaune-btn;
+  border: 4px solid $blue4;
   z-index: 1;
 }
 
