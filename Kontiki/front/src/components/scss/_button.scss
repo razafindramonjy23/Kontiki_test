@@ -58,3 +58,12 @@
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
+/*/ ================ \ 
+    BOUTTON TEST
+\ ================ /*/
+@mixin gpBtnTest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 2em;
+}
