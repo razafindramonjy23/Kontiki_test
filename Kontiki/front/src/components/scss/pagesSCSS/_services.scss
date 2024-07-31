@@ -10,18 +10,51 @@
     transform: translateY(-50%, -50%);
     width: 1000px;
     height: 600px;
-    background: $secondary;
+    background: $gold;
     @include iptBoxShadow;
 }
-// .service-card {
-//     // overflow: hidden;
-// }
-  
-// .card-title {
-//     /* Styles pour le titre */
-// }
-  
-// .card-description {
-//     /* Styles pour la description */
-// }
-  
+
+.containerService .slide .service-card{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px $black;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .service-card:nth-child(1), 
+.slide .service-card:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .service-card:nth-child(3){
+    left: 50%;
+}
+
+.slide .service-card:nth-child(4){
+    left: calc(50% + 220px);
+}
+
+.slide .service-card:nth-child(3){
+    left: calc(50% + 440px);
+}
+
+
+// eto ilay n = 0, 1, 2, 3, 4,
+.slide .service-card:nth-child(n + 6){
+    left: calc(50% + 440px);
+    opacity: 0;
+}
+
+ 

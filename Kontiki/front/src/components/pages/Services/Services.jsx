@@ -6,14 +6,12 @@ import bg3 from './img/3.jpg';
 
 function Card({ image, titre, description }) {
   return (
-    <div className="principaleService">
       <div className="service-card" style={{ backgroundImage: `url(${image})` }}>
         <div className="content">
         <h3 className="card-titre">{titre}</h3>
         <p className="card-description">{description}</p>
         <button>Voir plus</button>
       </div>
-    </div>
     </div>
 
   );
