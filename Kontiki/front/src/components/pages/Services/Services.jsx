@@ -1,34 +1,53 @@
-import React from 'react'
-import './Services.css'
+import React from 'react';
+import './Services.css';
+import bg1 from './img/1.jpg';
+import bg2 from './img/2.jpg';
+import bg3 from './img/3.jpg';
 
-function Services() {
+function Card({ image, titre, description }) {
   return (
-    <div className='container'>
-      <h1>Nos activités principales</h1>
-
-      <div className="leads">
-        <h1>Campagnes Emailing</h1>
-        <p>Collectez des prospects qualifiés et générez de nouveaux clients.</p>
+    <div className="principaleService">
+      <div className="service-card" style={{ backgroundImage: `url(${image})` }}>
+        <div className="content">
+        <h3 className="card-titre">{titre}</h3>
+        <p className="card-description">{description}</p>
+        <button>Voir plus</button>
       </div>
-
-      <div className="leads">
-        <h1>Qualification des prospects</h1>
-        <p>Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.</p>
-      </div>
-
-      <p>Faites-nous confiance</p>
-      <h2>DEVELOPPONS ENSEMBLE VOTRE AVENIR DIGITAL</h2>
-
-      <div className="forces">
-        <h1>NOS FORCES</h1>
-        <p>Equipe jeune, dynamique et compétente
-          Large éventail de métiers intéressants
-          Ambiance conviviale et professionnelle
-          En pleine croissance</p>
-      </div>
-
     </div>
-  )
+    </div>
+
+  );
 }
 
-export default Services
+function Services() {
+  const servicesData = [
+    {
+      image: bg1,
+      titre: "GENERATION DES LEADS",
+      description: "Collecter des prospects qualifiés et générez de nouveaux clients.",
+    },
+    {
+      image: bg2,
+      titre: "CAMPAGNES EMAILING",
+      description: "Gestion de campagnes emailing, depuis la création de KIT, landing page jusqu'à l'envoi et l'analyse des résultats.",
+    },
+    {
+      image: bg3,
+      titre: "QUALIFICATION DES PROSPECTS",
+      description: "Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.",
+    },
+    
+  ];
+
+  return (
+    <div className="containerService">
+      <div className="slide">
+        {servicesData.map((service, index) => (
+          <Card key={index} {...service} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Services;

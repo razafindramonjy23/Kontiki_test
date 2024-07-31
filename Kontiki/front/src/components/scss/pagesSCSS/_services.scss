@@ -1,0 +1,27 @@
+// .principaleService{
+//     margin: 0 auto;
+// }
+
+
+.containerService{
+    position: relative;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: $secondary;
+    @include iptBoxShadow;
+}
+// .service-card {
+//     // overflow: hidden;
+// }
+  
+// .card-title {
+//     /* Styles pour le titre */
+// }
+  
+// .card-description {
+//     /* Styles pour la description */
+// }
+  
