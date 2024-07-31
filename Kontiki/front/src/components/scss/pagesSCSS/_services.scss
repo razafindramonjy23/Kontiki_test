@@ -1,7 +1,7 @@
 // .principaleService{
 //     margin: 0 auto;
 // }
-
+@import '../_button.scss';
 
 .containerService{
     position: relative;
@@ -10,7 +10,7 @@
     transform: translateY(-50%, -50%);
     width: 1000px;
     height: 600px;
-    background: $gold;
+    background: $light-color;
     @include iptBoxShadow;
 }
 
@@ -48,13 +48,66 @@
 
 .slide .service-card:nth-child(3){
     left: calc(50% + 440px);
+
 }
 
-
-// eto ilay n = 0, 1, 2, 3, 4,
 .slide .service-card:nth-child(n + 6){
-    left: calc(50% + 440px);
-    opacity: 0;
+    left: calc(50% + 660px);
 }
 
- 
+
+.service-card .content{
+    position: absolute;
+    top: 50%;;
+    width: 300px;
+    text-align: left;
+    color: $light-color;
+    transform: translate(0, -50%);
+    display: none;
+}
+
+.slide .service-card:nth-child(2) .content{
+    display: block;
+}
+
+.content .card-titre {
+    padding-left: 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .card-description {
+    padding-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content button{
+    font-size: 15px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 1000px);
+        filter: blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.btns button{
+    text-align: center;
+    bottom: 20px;
+    @include btnBlanc;
+}
