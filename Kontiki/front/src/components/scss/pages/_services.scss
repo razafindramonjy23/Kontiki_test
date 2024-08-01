@@ -31,8 +31,7 @@
     left: 0;
     transform: translate(0, 0);
     border-radius: 20px;
-    width: 100%;
-    height: 100%;
+    @include LongLargPage;
 }
 
 .slide .service-card:nth-child(3){
@@ -73,14 +72,14 @@
     margin-top: 10px;
     margin-bottom: 20px;
     opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
 .content button{
+    cursor: pointer;
     padding: 10px 20px;
     margin-left: 30px;
     font-size: 15px;
-    cursor: pointer;
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
@@ -88,7 +87,7 @@
 @keyframes animate {
     from {
         opacity: 0;
-        transform: translate(0, 1000px);
+        transform: translate(0, 100px);
         filter: blur(33px);
     }
     to{
@@ -98,8 +97,19 @@
     }
 }
 
-.btns button{
+.btns {
+    width: 100%;
+    position: absolute;
     text-align: center;
     bottom: 20px;
     @include btnBlanc;
+}
+
+.btns button {
+    width: 40px;
+    height:30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: none;
 }

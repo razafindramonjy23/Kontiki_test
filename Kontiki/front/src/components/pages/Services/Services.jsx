@@ -13,10 +13,10 @@ function Card({ image, titre, description }) {
         <p className="card-description">{description}</p>
         <button>Voir plus</button>
       </div>
-      {/* <div className="btns">
+      <div className="btns">
         <button className="prev"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1"/></button>
         <button className="next"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1"/></button>
-      </div> */}
+      </div> 
     </div>
   );
 }
@@ -79,6 +79,7 @@ function Services() {
           <button className="prev" onClick={handlePrevClick}>
             <img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1" />
           </button>
+
           <button className="next" onClick={handleNextClick}>
             <img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1" />
           </button>
