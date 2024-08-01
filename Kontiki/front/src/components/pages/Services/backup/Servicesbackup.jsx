@@ -7,17 +7,19 @@ import bigdata from './img/bigdata.jpg';
 
 function Card({ image, titre, description }) {
   return (
-    <div className="service-card" style={{ backgroundImage: `url(${image})` }}>
-      <div className="content">
-        <h3 className="card-titre">{titre}</h3>
-        <p className="card-description">{description}</p>
-        <button>Voir plus</button>
+    <>
+      <div className="service-card" style={{ backgroundImage: `url(${image})` }}>
+        <div className="content">
+          <h3 className="card-titre">{titre}</h3>
+          <p className="card-description">{description}</p>
+          <button>Voir plus</button>
+        </div>
+        <div className="btns">
+          <button className="prev"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1" /></button>
+          <button className="next"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1" /></button>
+        </div>
       </div>
-      <div className="btns">
-        <button className="prev" ><img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1"/></button>
-        <button className="next"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1"/></button>
-      </div>
-    </div>
+    </>
   );
 }
 
@@ -40,7 +42,7 @@ function Services() {
     },
     {
       image: progress,
-      titre: "Img4",
+      titre: "DEVELOPPONS ENSEMBLE VOTRE AVENIR DIGITAL",
       description: "Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.",
     },
     {
@@ -85,6 +87,13 @@ function Services() {
         </div>
       </div>
 
+      <div className="NosForces">
+        <h1>Nos forces</h1>
+        <p>Equipe jeune, dynamique et compétente</p>
+        <p>Large éventail de métiers intéressants</p>
+        <p>Ambiance conviviale et professionnelle</p>  
+        <p>En pleine croissance</p>  
+      </div>
     </>
   );
 }
