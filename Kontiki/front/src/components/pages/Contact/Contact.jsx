@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import './Contact.css';
 import bois from './img/bois.jpg';
 import '../../../App.scss';
 
@@ -7,6 +6,8 @@ function Contact() {
 
   const [name, setName] = useState('');
   const [prenom, setPrenom] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
 
   return (
@@ -36,14 +37,14 @@ function Contact() {
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
                   </div>
 
-                  <div className="input-wrap w-100">
-                    <input type="email" className="contact-input" required name='Email' autoComplete='off'/>
+                  <div className={`input-wrap w-100 ${email !== '' ? 'focus not-empty' : ''}`}>
+                    <input type="email" className="contact-input" required name='email' autoComplete='off' value={email} onChange={(e) => setEmail(e.target.value)} />
                     <label>Email</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/circled-envelope.png" alt="circled-envelope"/>
                   </div>
 
-                  <div className="input-wrap textarea w-100">
-                    <textarea name="Message" autoComplete='off' id="" className='contact-input' required></textarea>
+                  <div className= {`input-wrap textarea w-100 ${message !== '' ? 'focus not-empty' : ''}`} >
+                    <textarea name="Message" autoComplete='off' id="" className='contact-input' required value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                     <label>Message</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/chat-message.png" alt="chat-message"/>
                   </div>

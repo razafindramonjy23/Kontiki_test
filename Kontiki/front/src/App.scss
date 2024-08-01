@@ -1,28 +1,30 @@
-//**********************************//
+
 //        IMPORTATIONS 
 //**********************************//
-@import "./components//scss/_couleurs.scss";
-@import "./components/scss/_bases.scss";
-@import "./components/scss/_mixin.scss";
-@import "./components//scss//_button.scss";
+@import "./components//scss/bases/_couleurs";
+@import "./components/scss/bases/_bases";
+@import "./components/scss/abstracts/mixin";
 
-//**********************************//
+@import "./components/scss/utilities/button";
+
+
 //  IMPORTATIONS FOOTER - NAVBAR
 //**********************************//
-@import "./components/scss/_navbar.scss";
-@import "./components/scss/_footer.scss";
+@import "./components/scss/layout/navbar";
+@import "./components/scss/layout/_footer";
 
-//**********************************//
+
 //  FORMULAIRE
 //**********************************//
-@import "./components/scss/formulaires.scss";
+@import "./components/scss/utilities/formulaires";
 
-//**********************************//
+
 //      PAGES
 //**********************************//
-@import "./components/scss/pagesSCSS/_accueil.scss";
-@import "./components/scss/pagesSCSS/_contact.scss";
-@import "./components/scss/pagesSCSS/_services.scss";
+@import "./components/scss/pages/_accueil";
+@import "./components/scss/pages/_contact";
+@import "./components/scss/pages/_services";
+@import "./components/scss/pages/test";
 
 
 
@@ -73,232 +75,4 @@ $breakpoints: (
 // }
 
 
-
-//**********************************//
-//            MES PAGES             //
-//**********************************//
-
-/*/ ================ \
-       ACCUEIL
-\ ================ /*/
-
-#intro {
-  position: relative;
-  @include flex-center;
-  height: 100vh;
-  @include WithImg;
-  background: url("./components/pages/Accueil/img/bois.jpg");
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  @include LongLargPage;
-  object-fit: cover;
-  opacity: 0.5;
-}
-
-.introContent {
-  text-align: center;
-  z-index: 1;
-  color: black;
-  padding: 20px;
-}
-
-.kontiki {
-  font-size: 8rem;
-  font-weight: bold;
-}
-
-.introTexte {
-  font-size: 2.5rem;
-}
-
-.introMarketing {
-  font-size: 3.5rem;
-  font-weight: bold;
-  border: 0;
-  border-radius: 10px;
-  background: $light-color;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.introPara {
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
-
-.btn {
-  @include HomeBtn;
-  @include iptBoxShadow;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-.btn::after {
-  content: "";
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(225deg, #043e65 0%, #208feb 50%, #d3f10f 100%);
-  position: absolute;
-  top: -95px;
-  left: -100px;
-  z-index: -1;
-  transition: all .5s;
-}
-
-.btn:hover::after {
-  transform: rotate(250deg);
-}
-
-.btn:hover {
-  transform: translate(0, -6px);
-  box-shadow: 5px -5px 15px 0 rgb(242, 248, 64), -5px 5px 15px 0 rgb(39, 129, 255);
-}
-
-
-
-//**********************************************************//
-/*/ ================ \
-       TEST
-\ ================ /*/
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.form-box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5rem;
-  border: 2px solid $border-color;
-  border-radius: 30px 30px 15px 15px;
-  background-color: $blue3;
-}
-
-ul {
-  @include DefaultUl;
-}
-
-.form-box .progress {
-  flex: 1 0 35%;
-  position: relative;
-  padding: 3em;
-}
-
-.progress ul.progress-steps {
-  //display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: row;
-  gap: 2em;
-}
-
-.progress ul.progress-steps li {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 2em;
-}
-
-.progress ul.progress-steps li>span {
-  position: relative;
-  @include flex-center;
-  width: 40px;
-  height: 40px;
-  margin-right: 1em;
-  border-radius: 50%;
-  background-color: $blue2;
-  border: 4px solid $blue3;
-  z-index: 1;
-}
-
-.progress ul.progress-steps li.active>span {
-  color: $black;
-  background-color: $jaune-btn;
-  border: 4px solid $blue4;
-  z-index: 1;
-}
-
-.progress ul.progress-steps li:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 30px;
-  width: 2px;
-  height: 108px;
-  background-color: $light-color;
-}
-
-//Formulaire
-.form-box form {
-  width: 100%;
-  padding: 3em 1em;
-  background-color: $light-color;
-  border-radius: 30px 30px 15px 15px;
-}
-
-.site form>div {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.site form>div p {
-  color: $light-color;
-  margin-bottom: 2em;
-}
-
-.site form>div>div {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-}
-
-.site form :where(input, textarea) {
-  height: 40px;
-  padding: 0 1em;
-  border-radius: 7px;
-  outline-color: $blue4;
-  border: 1px solid $black;
-  background-color: transparent;
-}
-
-.site form :where(textarea) {
-  @include WithTextarea;
-}
-
-.site form label {
-  font-size: 18px;
-  margin-bottom: 0.5em;
-  padding: .01em;
-}
-
-
-.btn-group {
-  @include gpBtnTest;
-}
-
-.btn-group [class*="btn-"] {
-  background-color: $inputHover;
-  color: $light-color;
-  //padding: 1em 2.5em;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.btn-group [class*="btn-"]:disabled {
-  background-color: grey;
-  border-color: $light-color;
-  cursor: text;
-}
-
-.btn-group .btn-envoyer {
-  display: none;
-}
 

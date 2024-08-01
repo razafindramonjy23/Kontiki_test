@@ -25,9 +25,9 @@ const FormSection = ({ id, title, icon, fields, isActive }) => (
     <h2>{title}</h2>
     {fields.map((field, index) => (
       field.type === "textarea" ? (
-        <TextareaField key={index} label={field.label} />
+        <TextareaField key={index} label={field.label} required />
       ) : (
-        <InputField key={index} label={field.label} type={field.type} />
+        <InputField key={index} label={field.label} type={field.type} required />
       )
     ))}
   </div>

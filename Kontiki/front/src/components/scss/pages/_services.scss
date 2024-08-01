@@ -1,7 +1,4 @@
-// .principaleService{
-//     margin: 0 auto;
-// }
-@import '../_button.scss';
+@import '../utilities/button';
 
 .containerService{
     position: relative;
@@ -33,38 +30,30 @@
     top: 0;
     left: 0;
     transform: translate(0, 0);
-    border-radius: 0;
+    border-radius: 20px;
     width: 100%;
     height: 100%;
 }
 
 .slide .service-card:nth-child(3){
-    left: 50%;
+    left: calc(50% + 220px) ;
 }
 
-.slide .service-card:nth-child(4){
-    left: calc(50% + 220px);
-}
-
-.slide .service-card:nth-child(3){
+.slide .service-card:nth-child(n + 4){
     left: calc(50% + 440px);
-
-}
-
-.slide .service-card:nth-child(n + 6){
-    left: calc(50% + 660px);
 }
 
 
 .service-card .content{
     position: absolute;
-    top: 50%;;
+    top: 50%;
     width: 300px;
     text-align: left;
     color: $light-color;
     transform: translate(0, -50%);
     display: none;
 }
+
 
 .slide .service-card:nth-child(2) .content{
     display: block;
@@ -88,9 +77,12 @@
 }
 
 .content button{
+    padding: 10px 20px;
+    margin-left: 30px;
     font-size: 15px;
+    cursor: pointer;
     opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
 
 @keyframes animate {
