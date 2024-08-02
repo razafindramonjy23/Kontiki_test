@@ -1,3 +1,4 @@
+/////////////////SUR LE SLIDE /////////////////////////
 var nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
     carousel = document.querySelector('.carousel'),
@@ -25,7 +26,7 @@ let runNextAuto = setTimeout(() => {
 
 function resetTimeAnimation() {
     runningTime.style.animation = 'none'
-    runningTime.offsetHeight 
+    runningTime.offsetHeight /* trigger reflow */
     runningTime.style.animation = null 
     runningTime.style.animation = 'runningTime 7s linear 1 forwards'
 }
@@ -54,7 +55,7 @@ function showSlider(type) {
         nextBtn.click()
     }, timeAutoNext)
 
-    resetTimeAnimation() 
+    resetTimeAnimation() // Reset the running time animation
 }
 
 // Start the initial animation 
