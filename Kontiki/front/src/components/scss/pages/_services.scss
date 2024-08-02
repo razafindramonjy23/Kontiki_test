@@ -1,120 +1,51 @@
-@import '../utilities/button';
-@import '../bases/couleurs';
-@import '../abstracts/mixin';
-
-
-
-.containerService{
-    position: relative;
-    top: 50%;
-    left: 20%;
-    transform: translateY(-50%, -50%);
-    width: 1000px;
-    height: 600px;
-    background: $light-color;
-    @include iptBoxShadow;
-    margin-bottom: 100px;
+.carousel {
+    width: 100vw; 
+    height: 100vh; 
+    background-Size: cover; 
+    background-Position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    //margin-top: 25px;
+    position:relative;
 }
 
-.containerService .slide .service-card{
-    width: 200px;
-    height: 300px;
+.carousel .list .item {
+    width: 180px;
+    height: 250px;
     position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translateY('70%');
+    left: 70%;
     border-radius: 20px;
-    box-shadow: 0 30px 50px $black;
+    box-shadow: 0 25px 50px rgba($color: #000000, $alpha: 1.0) ;
     background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
+    background-Size: cover;
+    z-index: 100;
+    transition: 1s;
 }
 
-.slide .service-card:nth-child(1), 
-.slide .service-card:nth-child(2){
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
     top: 0;
     left: 0;
     transform: translate(0, 0);
-    border-radius: 20px;
-    @include LongLargPage;
-}
-
-.slide .service-card:nth-child(3){
-    left: calc(50% + 220px) ;
-}
-
-.slide .service-card:nth-child(n + 4){
-    left: calc(50% + 440px);
-}
-
-
-.service-card .content{
-    position: absolute;
-    top: 50%;
-    width: 300px;
-    text-align: left;
-    color: $light-color;
-    transform: translate(0, -50%);
-    display: none;
-}
-
-
-.slide .service-card:nth-child(2) .content{
-    display: block;
-}
-
-.content .card-titre {
-    padding-left: 30px;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
-
-.content .card-description {
-    padding-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
-
-.content button{
-    cursor: pointer;
-    padding: 10px 20px;
-    margin-left: 30px;
-    font-size: 15px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
-
-@keyframes animate {
-    from {
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
-    to{
-        opacity: 1;
-        transform: translate(0);
-        filter: blur(0);
-    }
-}
-
-.btns {
+    border-radius: 0;
     width: 100%;
-    position: absolute;
-    text-align: center;
-    bottom: 20px;
-    @include btnBlanc;
+    height: 90%;
 }
 
-.btns button {
-    width: 40px;
-    height:30px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    background: none;
+.carousel .list .item:nth-child(3){
+    left: 60%;
+}
+
+.carousel .list .item:nth-child(4){
+    left: calc(67% + 100px);
+}
+
+.carousel .list .item:nth-child(5){
+    left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(n + 5){
+    left: calc(67% + 300px);
 }

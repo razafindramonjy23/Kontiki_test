@@ -1,100 +1,31 @@
-import React, { useState } from 'react';
-import lead from './img/lead.jpg';
-import bg3 from './img/3.jpg';
-import bg4 from './img/4.jpg'
+import React from 'react';
 import progress from './img/progression.jpg';
-import bigdata from './img/bigdata.jpg';
-
-function Card({ image, titre, description }) {
-  return (
-    <>
-      <div className="service-card" style={{ backgroundImage: `url(${image})` }}>
-        <div className="content">
-          <h3 className="card-titre">{titre}</h3>
-          <p className="card-description">{description}</p>
-          <button>Voir plus</button>
-        </div>
-        <div className="btns">
-          <button className="prev"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1" /></button>
-          <button className="next"><img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1" /></button>
-        </div>
-      </div>
-    </>
-  );
-}
+import ensemble from './img/ensemble.png';
+import lesFilles from './img/01.jpg';
+import andre from './img/andre.jpg';
+import Rova from './img/Rova.jpg';
+import '../../scss/pages/_services.scss';
 
 function Services() {
-  const servicesData = [
-    {
-      image: lead,
-      titre: "GENERATION DES LEADS",
-      description: "Collecter des prospects qualifiés et générez de nouveaux clients.",
-    },
-    {
-      image: bg3,
-      titre: "CAMPAGNES EMAILING",
-      description: "Gestion de campagnes emailing, depuis la création de KIT, landing page jusqu'à l'envoi et l'analyse des résultats.",
-    },
-    {
-      image: bigdata,
-      titre: "QUALIFICATION DES PROSPECTS",
-      description: "Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.",
-    },
-    {
-      image: progress,
-      titre: "DEVELOPPONS ENSEMBLE VOTRE AVENIR DIGITAL",
-      description: "Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.",
-    },
-    {
-      image: bg4,
-      titre: "QUALIFICATION DES PROSPECTS",
-      description: "Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.",
-    },
-  ];
-
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevClick = () => {
-    const newIndex = currentIndex === 0 ? servicesData.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const handleNextClick = () => {
-    const newIndex = currentIndex === servicesData.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
   return (
-    <>
-      <div className="containerService">
-        <div className="slide">
-          {servicesData.map((service, index) => (
-            <Card
-              key={index}
-              {...service}
-              isActive={index === currentIndex}
-            />
-          ))}
+    <div className="carousel">
+      <div className="list">
+        <div className="item" style={{ backgroundImage: `url(${progress})` }}>        
         </div>
-        <div className="navigation">
-          <button className="prev" onClick={handlePrevClick}>
-            <img width="20" height="20" src="https://img.icons8.com/flat-round/64/left--v1.png" alt="left--v1" />
-          </button>
-          <button className="next" onClick={handleNextClick}>
-            <img width="20" height="20" src="https://img.icons8.com/flat-round/64/right--v1.png" alt="right--v1" />
-          </button>
-        </div>
-      </div>
 
-      <div className="NosForces">
-        <h1>Nos forces</h1>
-        <p>Equipe jeune, dynamique et compétente</p>
-        <p>Large éventail de métiers intéressants</p>
-        <p>Ambiance conviviale et professionnelle</p>  
-        <p>En pleine croissance</p>  
+        <div className="item" style={{ backgroundImage: `url(${Rova})` }}>        
+        </div>
+
+        <div className="item" style={{ backgroundImage: `url(${ensemble})` }}>        
+        </div>
+
+        <div className="item" style={{ backgroundImage: `url(${lesFilles})` }}>        
+        </div>
+
+        <div className="item" style={{ backgroundImage: `url(${andre})` }}>        
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
