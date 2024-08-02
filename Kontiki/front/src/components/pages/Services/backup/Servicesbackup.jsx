@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import lead from './img/lead.jpg';
 import bg3 from './img/3.jpg';
-import bg4 from './img/4.jpg'
+import bg4 from './img/4.jpg';
 import progress from './img/progression.jpg';
 import bigdata from './img/bigdata.jpg';
 
