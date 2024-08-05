@@ -7,6 +7,7 @@ import A_propos from './components/pages/A_propos/A_propos.jsx';
 import Test from './components/pages/Test/Test.jsx';
 import Contact from './components/pages/Contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import EditeurDeCode from './components/pages/Test/Code-editor.jsx';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/test'  element={<Test/>}  />
         <Route path='/Contact' element={<Contact/>}  />
         <Route path='/apropos' element={<A_propos/>}  />
+        <Route path='/codeEditor' element={<EditeurDeCode/>}  />
       </Routes>
 
       <Footer/>

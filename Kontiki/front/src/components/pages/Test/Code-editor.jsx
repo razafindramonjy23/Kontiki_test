@@ -1,11 +1,10 @@
 import React from 'react'
-import {  Box  } from '@chakra-ui/react';
 
 function EditeurDeCode() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <h1>Page editeur de code</h1>
+    </>
   )
 }
 

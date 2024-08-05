@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {  useNavigate } from 'react-router-dom';
 import "../../../App.scss";
 
 const InputField = ({ label, type }) => (
@@ -48,6 +49,7 @@ const ProgressSteps = ({ steps, activeStep }) => (
 
 const Presentation = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const navigate = useNavigate();
 
   const btnSuivant = () => {
     if (activeStep < steps.length - 1) {
@@ -183,6 +185,8 @@ const Presentation = () => {
               <button type="button" className="btn-retour" onClick={btnPrecedent} disabled={activeStep === 0}>Retour</button>
               <button type="button" className="btn-suivant" onClick={btnSuivant} disabled={activeStep === steps.length - 1}>Suivant</button>
               <button type="button" className="btn-envoyer">Envoyer</button>
+              <button type="button" className="btn-code-editor" onClick={() => navigate('/codeEditor')}>Code Editor</button>
+
             </div>
           </form>
         </div>

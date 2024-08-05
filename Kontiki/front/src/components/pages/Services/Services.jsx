@@ -59,7 +59,7 @@ function Services() {
         nextBtn.click();
       }, timeAutoNext);
 
-      resetTimeAnimation(); // Reset the running time animation
+      resetTimeAnimation(); // mamerina ny temps anle animation
     }
 
     nextBtn.onclick = function() {
@@ -70,7 +70,7 @@ function Services() {
       showSlider('prev');
     };
 
-    // Start the initial animation
+    // manomboka ny animation voalohany
     resetTimeAnimation();
 
     return () => {
