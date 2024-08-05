@@ -1,7 +1,7 @@
 
 //        IMPORTATIONS 
 //**********************************//
-@import "./components//scss/bases/_couleurs";
+@import "./components//scss/bases/_variables.scss";
 @import "./components/scss/bases/_bases";
 @import "./components/scss/abstracts/mixin";
 
@@ -28,24 +28,6 @@
 
 
 
-/*/ ================ \
-       Grid
-\ ================ /*/
-// .row {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
-// .row > * {
-//   max-width: 100%;
-//   padding-right: 0.75rem;
-//   padding-left: 0.75rem;
-// }
-
-// [class*="col-"] {
-//   width: 100%;
-// }
-
 $breakpoints: (
   'xs': 'min-width: 360px',
   'sm': 'min-width: 576px',
@@ -54,25 +36,6 @@ $breakpoints: (
   'xl': 'min-width: 1200px',
   'xxl': 'min-width: 1400px'
 );
-
-// @for $i from 1 through 12 {
-//   .col-#{$i} {
-//     flex: 0 0 auto;
-//     width: #{percentage(calc($i / 12))};
-//   }
-// }
-
-// @each $breakpoint, $minWidth in $breakpoints {
-//   @media screen and (#{$minWidth}) {
-//     @for $i from 1 through 12 {
-//       .col-#{$breakpoint}-#{$i} {
-//         flex: 0 0 auto;
-//         width: #{percentage(calc($i / 12))};
-//       }
-//     }
-//   }
-
-// }
 
 
 
