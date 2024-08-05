@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "../../../App.scss";
 
 const InputField = ({ label, type }) => (
@@ -83,7 +83,7 @@ const Presentation = () => {
       title: "SAVOIR-FORMATION",
       icon: "https://img.icons8.com/color/96/reading.png",
       fields: [
-        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea"},
+        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea" },
         { label: "Avez-vous suivi des formations ou vous êtes vous renseignés sur le poste si oui, racontez nous", type: "textarea" },
         { label: "Quel est le dernier travai que vous avez occupé? Combien de temps? Et la raison pour laquelle vous avez quitté votre dernier emploi.", type: "textarea" },
         { label: "Etes-vous aujourd'hui satisfait de votre carrière?", type: "textarea" },
@@ -183,10 +183,14 @@ const Presentation = () => {
 
             <div className="btn-group">
               <button type="button" className="btn-retour" onClick={btnPrecedent} disabled={activeStep === 0}>Retour</button>
-              <button type="button" className="btn-suivant" onClick={btnSuivant} disabled={activeStep === steps.length - 1}>Suivant</button>
-              <button type="button" className="btn-envoyer">Envoyer</button>
-              <button type="button" className="btn-code-editor" onClick={() => navigate('/codeEditor')}>Code Editor</button>
 
+              {activeStep < steps.length - 1 && (
+                <button type="button" className="btn-suivant" onClick={btnSuivant} disabled={activeStep === steps.length - 1}>Suivant</button>
+              )}
+
+              {activeStep === steps.length - 1 && (
+                <button type="button" className="btn-code-editor" onClick={() => navigate('/codeEditor')}>Teste technique</button>
+              )}
             </div>
           </form>
         </div>
