@@ -143,6 +143,7 @@
   
   button {
     @include ContactBtn;
+    cursor: pointer;
   }
   
   button:hover {

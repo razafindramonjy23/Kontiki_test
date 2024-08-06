@@ -1,6 +1,3 @@
-
-//********* FOOTER **********//
-//**********************************************************//
 /*/ ================ \
        Footer
 \ ================ /*/
@@ -62,9 +59,9 @@ footer {
   .footer-basic .social>a:hover {
     opacity: 0.9;
     border-radius: 150px;
-    background: #ffffff;
+    background: $light-color;
     box-shadow: 9px 9px 18px #cfcfcf,
-      -9px -9px 18px #ffffff;
+      -9px -9px 18px $light-color;
   
     transition: .5s;
     font-size: 29px;

@@ -23,6 +23,8 @@ function App() {
         <Route path='/test'  element={<Test/>}  />
         <Route path='/Contact' element={<Contact/>}  />
         <Route path='/apropos' element={<A_propos/>}  />
+
+        
         <Route path='/codeEditor' element={<EditeurDeCode/>}  />
       </Routes>
 
