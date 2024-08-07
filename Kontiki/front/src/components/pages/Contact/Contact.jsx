@@ -66,7 +66,7 @@ function Contact() {
             </div>
               
             <div className="right">
-
+              {/* <div className="ig" onClick={opener}>KontkiTest </div> */}
             </div>
             
           </div>
