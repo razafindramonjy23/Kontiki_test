@@ -19,6 +19,7 @@ const Output = ({editorRef, language}) => {
             <Text mb={2} fontSize="lg" >Output</Text>
 
             <Button
+                className='border-solid border-2 border-indigo-600 ...'
                 variant="otline"
                 colorScheme='green'
                 mb={4}

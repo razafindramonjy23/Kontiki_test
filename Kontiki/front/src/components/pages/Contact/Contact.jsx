@@ -13,7 +13,7 @@ function Contact() {
   return (
     <div>
       <main>
-        <section className='contact'>
+        <section className='contact '>
           <div className="container">
             <div className="left">
               <div className="form-wrapper">
