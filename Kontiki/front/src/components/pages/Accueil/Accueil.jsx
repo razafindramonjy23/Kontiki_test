@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import '../../../App.scss';
+// import '../../../App.scss';
 
 function Accueil() {
   return (

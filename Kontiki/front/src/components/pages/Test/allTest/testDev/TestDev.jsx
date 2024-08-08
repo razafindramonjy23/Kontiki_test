@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import "../../../../../App.scss";
+// import "../../../../../App.scss";
 
 const InputField = ({ label, type }) => (
   <div>

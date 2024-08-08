@@ -9,7 +9,8 @@ import TestDev from './components/pages/Test/allTest/testDev/TestDev.jsx';
 import Contact from './components/pages/Contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import EditeurDeCode from './components/pages/Test/allTest/testDev/Code-editor.jsx';
-import  './index.css'
+import './App.scss';
+
 
 
 

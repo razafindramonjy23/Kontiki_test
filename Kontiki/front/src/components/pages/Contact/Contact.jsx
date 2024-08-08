@@ -50,7 +50,7 @@ function Contact() {
                   </div>
 
                   <div className="contact-buttons w-100">
-                    <button>
+                    <button >
                       <div className="wrapper-1">
                         <div className="wrapper">
                         <img className='iconSend' width="48" height="48" src="https://img.icons8.com/fluency/48/000000/circled-right-2.png" alt="circled-right-2"/>

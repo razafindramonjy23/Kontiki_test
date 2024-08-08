@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../../App.scss'
+// import '../../App.scss'
 import Logo from "../../assets/d.jpg";
 import { Link } from 'react-router-dom';
 
