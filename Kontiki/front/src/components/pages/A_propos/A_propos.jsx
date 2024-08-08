@@ -4,9 +4,9 @@ import './A_propos.jsx'
 
 function A_propos() {
   return (
-    <main>
+    <main className='md:container md:mx-auto red'>
       <section>
-        <div className='text-3xl font-bold underline'>
+        <div >
           <p>
             Spécialiste du marketing digital et du traitement des données massive(Bigdata). <br />
             KONTIKI SERVICE a été crée le 19 mars 2019.

@@ -1,29 +1,44 @@
-import React, { version } from 'react';
+import React from 'react';
 import { Box, Menu, Button, MenuButton, MenuList, MenuItem, Text } from '@chakra-ui/react'
-import { LANG_VERSIONS } from '../constants'
+import { LANGUAGE_VERSIONS } from './constants';
 
+const languages = Object.entries(LANGUAGE_VERSIONS);
+const ACTIVE_COLOR = "blue.400";
 
-function LangSwitch() {
-
-    const languages = Object.entries(LANG_VERSIONS);
+const LangSwitch = ({ language, onSelect }) => {
     return (
         <Box ml={2} mb={4}>
             <Text mb={2} fontSize="lg">
                 Langage:
             </Text>
 
-            <Menu>
-                <MenuButton as={Button}>{languages}</MenuButton>
+            <Menu isLazy>
+                <MenuButton as={Button}>{language}</MenuButton>
 
-                <MenuList>
-                    {languages.map(([languages, version]) =>
-                        <MenuItem key={languages} onClick={() => onselect(languages)}>
+                <MenuList bg="#110c1b">
+                    {languages.map(([lang, version]) => (
+                        <MenuItem key={lang}
+                            color={
+                                lang === language ? "blue.400" : ""
+                            }
+
+                            bg={
+                                lang === language ? "gray.700" : "transparent"
+                            }
+
+                            _hover={{
+                                color: "blue.400",
+                                bg:"gray.900"
+                            }}
+
+                            onClick={() => onSelect(languages)}>
                             {languages}
-                            <Text as="span" color="gray.600" fontSize={sm}>
+                            &nbsp;
+                            <Text as="span" color="gray.600" fontSize="small">
                                 ({version})
                             </Text>
                         </MenuItem>
-                    )}
+                    ))}
                 </MenuList>
             </Menu>
         </Box>

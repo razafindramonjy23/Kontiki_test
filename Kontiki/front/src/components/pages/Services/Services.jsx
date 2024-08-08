@@ -82,7 +82,7 @@ function Services() {
   return (
     <>
       <div className="TitrePrincipal">
-        <h1>Nos Activité principales</h1>
+        <h1 className='text-2xl font-bold'>Nos Activité principales</h1>
       </div>
 
       <div className="carousel" ref={carouselRef}>
