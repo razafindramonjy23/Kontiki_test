@@ -1,16 +1,30 @@
 import { Box, Button, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
+import { executeCode } from './Api';
 
 const Output = ({editorRef, language}) => {
 
     const runCode = async () => {
         const sourceCode = editorRef.currentgetValue();
+        const [output, setOutput] = useState(null);
+        const [isLoading, setIsLoading] = useState(false);
+        const [isError, setIsError] = useState(false);
         if (!sourceCode) return;
-
         try {
-            
+            setIsLoading(true); 
+            const { run: result } = await executeCode(language, sourceCode);
+            setOutput(result.output);
+            result.stderr ? setIsError (true) : setIsError(false)
         } catch (error) {
-            
+            consol.log(error);
+            toast ({
+                title: "An error occured.",
+                description: error.message || "Unable to run code",
+                statut: "error", 
+                duration: 6000,
+            });
+        }finally{
+          setIsLoading(false);  
         }
     }
 
@@ -23,6 +37,7 @@ const Output = ({editorRef, language}) => {
                 variant="otline"
                 colorScheme='green'
                 mb={4}
+                onClick={runCode}
             >
                 Run Code
             </Button>
@@ -32,8 +47,10 @@ const Output = ({editorRef, language}) => {
                 p={2}
                 border='1px solid'
                 borderRadius={4}
-                borderColor="#333"
+                //borderColor={isError ? "red.500" : "#333"}
+                
             >
+                 {/* {output ? output : ' "Click Code" to see the output here'}  */}
                 test
             </Box>
         </Box>

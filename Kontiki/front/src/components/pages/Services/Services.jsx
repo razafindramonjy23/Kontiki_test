@@ -31,7 +31,7 @@ function Services() {
     function resetTimeAnimation() {
       if (runningTime) {
         runningTime.style.animation = 'none';
-        runningTime.offsetHeight; // trigger reflow
+        runningTime.offsetHeight; 
         runningTime.style.animation = null;
         runningTime.style.animation = 'runningTime 7s linear 1 forwards';
       }
@@ -82,7 +82,7 @@ function Services() {
   return (
     <>
       <div className="TitrePrincipal">
-        <h1 className='text-2xl font-bold'>Nos Activité principales</h1>
+        <h1 className='text-4xl py-5 px-5'>Nos Activité principales</h1>
       </div>
 
       <div className="carousel" ref={carouselRef}>
@@ -115,7 +115,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="item" style={{ backgroundImage: `url(${lesFilles})` }}>
+          <div className="item " style={{ backgroundImage: `url(${lesFilles})` }}>
             <div className="content">
               <div className="titre">QUALIFICATION DES PROSPECTS</div>
               <div className="description">

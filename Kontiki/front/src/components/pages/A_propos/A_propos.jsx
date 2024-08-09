@@ -1,33 +1,34 @@
 import React from 'react'
-import './A_propos.jsx'
+//import './A_propos.jsx'
+import profilee from "../../../assets/andre.jpg"
 
 
 function A_propos() {
 
   const people = [
     {
-      name: 'Leslie Alexander',
-      role: 'Co-Founder / CEO',
+      name: 'Michael KONTIKI',
+      role: 'Comptable',
       imageUrl:
         'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
 
     {
-      name: 'Leslie Alexander',
-      role: 'Co-Founder / CEO',
+      name: 'Deddy KONTIKI',
+      role: 'Traffic Manager',
       imageUrl:
         'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
 
     {
-      name: 'Leslie Alexander',
-      role: 'Co-Founder / CEO',
+      name: 'Andre KONTIKI',
+      role: 'Développeur',
       imageUrl:
         'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
-      name: 'Leslie Alexander',
-      role: 'Co-Founder / CEO',
+      name: 'Rita KONTIKI',
+      role: 'CALL',
       imageUrl:
         'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
@@ -35,14 +36,46 @@ function A_propos() {
   ]
   return (
     <>
+
+      <div className="text-center py-5">
+        <h1 className="text-5xl font-bold py-5">A propos de nous</h1>
+        <p className="mt-4 text-lg">Spécialiste du marketing digital et du traitement des données massives (Bigdata), KONTIKI SERVICE a été créé le 19 mars 2019..</p>
+      </div>
+
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-center mb-8">Voici la mission que Miarakap s'est donnée</h1>
+
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-blue-500 p-6">
+              <h2 className="text-2xl font-bold text-white">Première Division</h2>
+              <p className="text-white">Contenu de la première division.</p>
+            </div>
+            <div className="bg-green-500 p-6">
+              <h2 className="text-2xl font-bold text-white">Deuxième Division</h2>
+              <p className="text-white">Contenu de la deuxième division.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-16">
+          <p className="text-3xl font-bold">Notre vision :</p>
+          <ul className="list-disc list-inside mt-4">
+            <p>Vous évoluerez dans l'environnement passionnant du marketing digital,
+              et gagnerez rapidement en compétence et en responsabilité pour construire ensemble l'avenir de la société.
+            </p>
+          </ul>
+        </div>
+      </div>
+
       <div>
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Des métiers de l'avenir</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
-                suspendisse.
+                Nous offrons une opportunité aux jeunes malgaches d'exprimer
+                leurs potentiels et d'occuper des métiers d'avenir challengeant.
               </p>
             </div>
             <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
@@ -62,14 +95,6 @@ function A_propos() {
         </div>
       </div>
 
-      <article className='container bg-yellow-400'>
-        <h2>Boost your conversion rate</h2>
-        <p class="line-clamp-3">Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt. Ut ut sunt laborum ex occaecat eu tempor labore enim adipisicing minim ad. Est in quis eu dolore occaecat excepteur fugiat dolore nisi aliqua fugiat enim ut cillum. Labore enim duis nostrud eu. Est ut eiusmod consequat irure quis deserunt ex. Enim laboris dolor magna pariatur. Dolor et ad sint voluptate sunt elit mollit officia ad enim sit consectetur enim.</p>
-        <div>
-          <img src="..." />
-          Lindsay Walton
-        </div>
-      </article>
     </>
   )
 }

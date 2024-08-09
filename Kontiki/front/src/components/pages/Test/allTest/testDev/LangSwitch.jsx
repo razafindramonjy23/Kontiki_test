@@ -4,7 +4,7 @@ import { LANGUAGE_VERSIONS } from './constants';
 
 const languages = Object.entries(LANGUAGE_VERSIONS);
 const ACTIVE_COLOR = "blue.400";
-
+const CODE_SNIPPETS = "red-200";
 const LangSwitch = ({ language, onSelect }) => {
     return (
         <Box ml={2} mb={4}>

@@ -7,13 +7,13 @@ const API = axios.create({
 
 export const executeCode = async (languages, sourceCode) => {
     const response = await API.post("/execute", {
-        "language": language, 
-        "version": LANGUAGE_VERSIONS[language], 
+        "language": languages, 
+        "version": LANGUAGE_VERSIONS[languages], 
         "files": [
             {
-                "name":'my_cool_code.js',
-                "content": "console.log(process.argv"
-            }
+                content: sourceCode,
+            },
         ],
     })
+    return response.data;
 }
