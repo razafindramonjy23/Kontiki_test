@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-// import '../../App.scss'
+import React, {useState} from 'react';
 import Logo from "../../assets/d.jpg";
 import { Link } from 'react-router-dom';
 
@@ -11,23 +10,23 @@ function Navbar() {
 
   return (
     <div className='navbar'>
-        <div className='leftSide' id={openLinks ? "open" : "close"}>
+        <div className='leftSide ' id={openLinks ? "open" : "close"}  >
             <img src={Logo} alt="logo kontiki"/>
-            <div className='hiddenLinks'>
-              <Link to="/accueil">Accueil</Link>
+            <div className='hiddenLinks '>
+              <Link to="/accueil" className=''>Accueil</Link>
               <Link to="/services">Services</Link>
-              <Link to="/apropos">A propos de nous</Link>
+              <Link to="/apropos">A propos</Link>
               <Link to="/test">Teste</Link>
               <Link to="/contact">Contactez-nous</Link>
             </div>
         </div>
 
-        <div className='rightSide'>
-          <Link to="/accueil">Accueil</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/apropos">A propos de nous</Link>
-          <Link to="/test">Test</Link>
-          <Link to="/contact">Contactez-nous</Link>
+        <div className='rightSide font-normal'>
+          <Link to="/accueil" className='  hover:text-sky-500 '>Accueil</Link>
+          <Link to="/services" className='  hover:text-sky-500 '>Services</Link>
+          <Link to="/apropos" className='  hover:text-sky-500 '>A propos</Link>
+          <Link to="/test" className='  hover:text-sky-500 '>Test</Link>
+          <Link to="/contact" className='  hover:text-sky-500 '>Contactez-nous</Link>
         </div>
     </div>
   )

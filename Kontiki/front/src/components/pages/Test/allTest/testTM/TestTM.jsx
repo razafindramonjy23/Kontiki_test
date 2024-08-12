@@ -200,6 +200,7 @@ const Presentation = () => {
 
   return (
     <div id="page" className="site">
+      <h1 className="container text-5xl px-3 py-3" >Teste de Trafique manager</h1>
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
@@ -225,7 +226,7 @@ const Presentation = () => {
               )}
 
               {activeStep === steps.length - 1 && (
-                <button type="button" className="btn-code-editor" onClick={() => navigate('/codeEditor')}>Teste technique</button>
+                <button type="button" className="btn-code-editor" >Envoyer</button>
               )}
             </div>
           </form>
