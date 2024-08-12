@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 function A_propos() {
   return (
     <>
-      <main >
+      <main className='h-screen'>
         <div className='container px-6 mx-auto md:px-12 lg:px-8'>
-          <div className="text-center text-blue-900  ImageApropos">
-            <p className='pt-10 mb-8 mb-20 font-semibold text-8xl mt-14'>A propos de Kontiki Service</p>
+          <div className="text-center text-primary-text ImageApropos">
+            <p className='pt-10 mb-8 font-semibold text-8xl mt-14'>A propos de Kontiki Service</p>
             <p className="text-3xl text-black">N'hésitez pas à visiter tous les sections pour nous connaitre un peu plus</p>
           </div>
 
@@ -22,8 +22,6 @@ function A_propos() {
           </div>
         </div>
       </main>
-
-
     </>
   )
 }
