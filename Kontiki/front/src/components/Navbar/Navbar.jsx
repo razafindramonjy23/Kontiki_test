@@ -21,12 +21,12 @@ function Navbar() {
             </div>
         </div>
 
-        <div className='rightSide font-normal'>
-          <Link to="/accueil" className='  hover:text-sky-500 '>Accueil</Link>
-          <Link to="/services" className='  hover:text-sky-500 '>Services</Link>
-          <Link to="/apropos" className='  hover:text-sky-500 '>A propos</Link>
-          <Link to="/test" className='  hover:text-sky-500 '>Test</Link>
-          <Link to="/contact" className='  hover:text-sky-500 '>Contactez-nous</Link>
+        <div className='rightSide'>
+          <Link to="/accueil" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Accueil</Link>
+          <Link to="/services" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Services</Link>
+          <Link to="/apropos" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>A propos</Link>
+          <Link to="/test" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Test</Link>
+          <Link to="/contact" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Contactez-nous</Link>
         </div>
     </div>
   )

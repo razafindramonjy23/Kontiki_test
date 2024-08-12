@@ -15,23 +15,14 @@ import EditeurDeCode from './components/pages/Test/allTest/testDev/Code-editor.j
 import MembresKontiki from './components/pages/A_propos/membres/MembresKontiki.jsx';
 
 import './App.scss';
+import Activites from './components/pages/A_propos/actvt/Activites.jsx';
 // import axios from 'axios';
 
 
 
 function App() {
 
-  // const [data, setData] = React.useState([]); 
 
-  // useEffect(() => {
-  //   axios.get ('http://localhost:8000/ api/myendpoint/')
-  //   .then(response => {
-  //   setData(response.data);
-  //   })
-  //   .catch(error => {
-  //     console.error('Error featching data:', error);
-  //   });
-  // }, []);
 
   return (
     <>
@@ -53,6 +44,7 @@ function App() {
 
         {/* A PROPOS  */}
         <Route path='membresKontiki' element={<MembresKontiki />} />
+        <Route path='activites' element={<Activites />} />
 
       </Routes>
 
