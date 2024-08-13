@@ -6,8 +6,15 @@ function Footer() {
     return (
         <div className="footer-basic">
             <footer>
-                {/* <div className="kk">hh</div> */}
-                <div className="social">
+                {/* <div className='inline' >
+                    <h1>Nos Coordinnées</h1>
+                    <p>Porte 404, Tour Sahavola Lot IBG 16 Ter A</p>
+                    <p>Antsahavola-Antananarivo 101</p>
+                    <p></p>
+                    <p></p>
+                </div> */}
+
+                <div className="pt-8 social">
                     <a href="#"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/linkedin-circled--v1.png" alt="linkedin-circled--v1"/></a>
                     <a href="#"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/60/228BE6/skype.png" alt="skype"/></a>
                     <a href="#"><img width="50" height="50" src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new"/></a>

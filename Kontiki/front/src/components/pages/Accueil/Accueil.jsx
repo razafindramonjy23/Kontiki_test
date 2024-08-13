@@ -14,7 +14,7 @@ function Accueil() {
           Notre approche résolument omnicanal mêle emailing, SMS, télémarketing, Google Ads, Facebook Ads...
         </p>
 
-        <Link to='contact' smooth={true} duration={500} ><button className='btn'>
+        <Link to='/Contact' smooth={true} duration={500} ><button className='btn'>
           <span>Contactez-nous &nbsp;</span></button></Link>
       </div>
     </section>

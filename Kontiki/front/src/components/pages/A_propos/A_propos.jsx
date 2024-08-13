@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import bois from '../../pages/Accueil/img/bois.jpg';
 
 function A_propos() {
   return (
     <>
-      <main className='h-screen'>
+      <main className='h-screen' style={{backgroundImage: `url(${bois})`}}>
         <div className='container px-6 mx-auto md:px-12 lg:px-8'>
           <div className="text-center text-primary-text ImageApropos">
             <p className='pt-10 mb-8 font-semibold text-8xl mt-14'>A propos de Kontiki Service</p>
