@@ -18,13 +18,19 @@ function Contact() {
         nom, 
         prenom, 
         email, 
-        message,
+      message,
       });
-      alert("message envoye");
+    alert("message envoye");
+
+    setNom(''); 
+    setPrenom(''); 
+    setEmail('');
+    setMessage('');
+
     } catch(error) {
       console.error("there was an error!", error);
     }
-  }
+}
 
   return (
     <div>

@@ -23,7 +23,6 @@ import Activites from './components/pages/A_propos/actvt/Activites.jsx';
 function App() {
 
 
-
   return (
     <>
 
