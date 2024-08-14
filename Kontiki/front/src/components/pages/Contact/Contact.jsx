@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import bois from './img/bois.jpg';
 import '../../../App.scss';
+import axios from "axios";
 
 function Contact() {
 
-  const [name, setName] = useState('');
+  const [nom, setName] = useState('');
   const [prenom, setPrenom] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:8000/api/contacts/", {
+        nom, 
+        prenom, 
+        email, 
+        message,
+      });
+      alert("message envoye");
+    } catch(error) {
+      console.error("there was an error!", error);
+    }
+  }
 
   return (
     <div>
@@ -22,11 +38,11 @@ function Contact() {
                   <p className="texte">Ou Contactez-nous via : <a href="malto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
                 </div>
 
-                <form className="contact-form">
+                <form className="contact-form"  onSubmit={handleSubmit} >
                   {/* mettre une boucle aux 3 forms et une pour textarea */}
-                  <div className={`input-wrap ${name !== '' ? 'focus not-empty' : ''}`}>
+                  <div className={`input-wrap ${nom !== '' ? 'focus not-empty' : ''}`}>
 
-                    <input type="text" className="contact-input" required name='nom' autoComplete='off' value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" className="contact-input" required name='nom' autoComplete='off' value={nom} onChange={(e) => setName(e.target.value)}/>
                     <label>Nom</label>
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
                   </div>
