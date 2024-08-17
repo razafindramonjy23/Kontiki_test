@@ -3,49 +3,56 @@ import '../../../App.scss';
 
 
 function Contact() {
-  
+
   const [nom, setName] = useState('');
   const [prenom, setPrenom] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  useEffect (() => {
-    const socket = new WebSocket('ws://localhost:8000/ws/contact/');
-    socket.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      console.log(data.message);
-    };
-    return () => socket.close();
-  }, []);
 
-  const handleSubmit = (e) => {
+
+  // useEffect(() => {
+  //   const socket = new WebSocket('ws://localhost:8000/ws/contact/contacts/');
+  //   socket.onmessage = (event) => {
+  //     const data = JSON.parse(event.data);
+  //     console.log(data.message);
+  //   };
+  //   return () => socket.close();
+  // }, []);
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const contactData = {
-      nom, prenom, email, message};
 
-      fetch('http://localhost:8000/contact/',  {
-        method: 'POST', 
+    const contactData = { nom, prenom, email, message };
+    try {
+      const response = await fetch('http://localhost:8000/contact/contacts/create/', {
+
+        method: 'POST',
         headers: {
-          'Content-Type' : 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(contactData),
       })
 
-      .then(response => response.json())
-      .then(data => {
-        console.log('Succes: ', data);
-        getStatus("Message envoyé avec succes");
-      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Succes: ', data);
+          getStatus("Message envoyé avec succes");
+        })
 
-      .catch((error) => {
-        console.log("Error: ", error);
-      });
+        const data = await response.JSON()
+        console.log(data);
+
+    } catch (error) {
+      console.log("Error: ", error);
+    };
   };
 
   return (
     <div>
       <main>
-        <section className='contact '>
+        <section className='contact'>
           <div className="container">
             <div className="left">
               <div className="form-wrapper">
@@ -58,49 +65,49 @@ function Contact() {
                   {/* mettre une boucle aux 3 forms et une pour textarea */}
                   <div className={`input-wrap ${nom !== '' ? 'focus not-empty' : ''}`}>
 
-                    <input type="text" className="contact-input" required name='nom' autoComplete='off' value={nom} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" className="contact-input" required name='nom' autoComplete='off' value={nom} onChange={(e) => setName(e.target.value)} />
                     <label>Nom</label>
-                    <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
+                    <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user" />
                   </div>
 
                   <div className={`input-wrap ${prenom !== '' ? 'focus not-empty' : ''}`}>
                     <input type="text" className="contact-input" required name='prenom' autoComplete='off' value={prenom} onChange={(e) => setPrenom(e.target.value)} />
                     <label>Prenom</label>
-                    <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user"/>
+                    <img className='icon' width="35" height="35" src="https://img.icons8.com/pulsar-gradient/48/000000/user.png" alt="user" />
                   </div>
 
                   <div className={`input-wrap w-100 ${email !== '' ? 'focus not-empty' : ''}`}>
                     <input type="email" className="contact-input" required name='email' autoComplete='off' value={email} onChange={(e) => setEmail(e.target.value)} />
                     <label>Email</label>
-                    <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/circled-envelope.png" alt="circled-envelope"/>
+                    <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/circled-envelope.png" alt="circled-envelope" />
                   </div>
 
-                  <div className= {`input-wrap textarea w-100 ${message !== '' ? 'focus not-empty' : ''}`} >
+                  <div className={`input-wrap textarea w-100 ${message !== '' ? 'focus not-empty' : ''}`} >
                     <textarea name="Message" autoComplete='off' id="" className='contact-input' required value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                     <label>Message</label>
-                    <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/chat-message.png" alt="chat-message"/>
+                    <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/chat-message.png" alt="chat-message" />
                   </div>
 
                   <div className="contact-buttons w-100">
                     <button >
                       <div className="wrapper-1">
                         <div className="wrapper">
-                        <img className='iconSend' width="48" height="48" src="https://img.icons8.com/fluency/48/000000/circled-right-2.png" alt="circled-right-2"/>
+                          <img className='iconSend' width="48" height="48" src="https://img.icons8.com/fluency/48/000000/circled-right-2.png" alt="circled-right-2" />
                         </div>
                       </div>
-                    <span>Envoyer</span>
+                      <span>Envoyer</span>
                     </button>
                   </div>
-                  
+
                 </form>
               </div>
-              
+
             </div>
-              
+
             <div className="right">
               {/* <div className="ig" onClick={opener}>KontkiTest </div> */}
             </div>
-            
+
           </div>
         </section>
       </main>
