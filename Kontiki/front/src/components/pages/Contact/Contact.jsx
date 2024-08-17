@@ -1,36 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import bois from './img/bois.jpg';
 import '../../../App.scss';
-import axios from "axios";
+
 
 function Contact() {
-
+  
   const [nom, setName] = useState('');
   const [prenom, setPrenom] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async(e) => {
+  useEffect (() => {
+    const socket = new WebSocket('ws://localhost:8000/ws/contact/');
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log(data.message);
+    };
+    return () => socket.close();
+  }, []);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const contactData = {
+      nom, prenom, email, message};
 
-    try {
-      await axios.post("http://localhost:8000/api/contacts/", {
-        nom, 
-        prenom, 
-        email, 
-      message,
+      fetch('http://localhost:8000/contact/',  {
+        method: 'POST', 
+        headers: {
+          'Content-Type' : 'application/json',
+        },
+        body: JSON.stringify(contactData),
+      })
+
+      .then(response => response.json())
+      .then(data => {
+        console.log('Succes: ', data);
+        getStatus("Message envoyé avec succes");
+      })
+
+      .catch((error) => {
+        console.log("Error: ", error);
       });
-    alert("message envoye");
-
-    setNom(''); 
-    setPrenom(''); 
-    setEmail('');
-    setMessage('');
-
-    } catch(error) {
-      console.error("there was an error!", error);
-    }
-}
+  };
 
   return (
     <div>
@@ -44,7 +54,7 @@ function Contact() {
                   <p className="texte">Ou Contactez-nous via : <a href="malto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
                 </div>
 
-                <form className="contact-form"  onSubmit={handleSubmit} >
+                <form className="contact-form" onSubmit={handleSubmit}  >
                   {/* mettre une boucle aux 3 forms et une pour textarea */}
                   <div className={`input-wrap ${nom !== '' ? 'focus not-empty' : ''}`}>
 
@@ -78,7 +88,7 @@ function Contact() {
                         <img className='iconSend' width="48" height="48" src="https://img.icons8.com/fluency/48/000000/circled-right-2.png" alt="circled-right-2"/>
                         </div>
                       </div>
-                      <span>Envoyer</span>
+                    <span>Envoyer</span>
                     </button>
                   </div>
                   

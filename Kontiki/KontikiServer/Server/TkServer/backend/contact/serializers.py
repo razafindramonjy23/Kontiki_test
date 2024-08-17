@@ -5,4 +5,5 @@ class ContactSerializer (serializers.ModelSerializer) :
     class Meta: 
         model = Contact 
         fields = '__all__'
-        #fields = ['nom', 'prenom', 'email', 'message']
+        
+

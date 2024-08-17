@@ -82,7 +82,7 @@ function Services() {
   return (
     <>
       <div className="TitrePrincipal">
-        <h1 className='text-4xl py-5 px-5'>Nos Activité principales</h1>
+        <h1 className='px-5 py-5 text-4xl'>Nos Activité principales</h1>
       </div>
 
       <div className="carousel" ref={carouselRef}>
@@ -151,7 +151,7 @@ function Services() {
         <div className="timeRunning" ref={runningTimeRef}></div>
       </div>
 
-      <div className="nosForces">
+      <div className="container">
         <h1>NOS FORCES </h1>
       </div>
     </>
