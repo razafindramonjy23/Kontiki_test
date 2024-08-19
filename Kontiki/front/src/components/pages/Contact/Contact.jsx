@@ -38,7 +38,7 @@ function Contact() {
         .then(response => response.json())
         .then(data => {
           console.log('Succes: ', data);
-          getStatus("Message envoyé avec succes");
+          // getStatus("Message envoyé avec succes");
         })
 
         const data = await response.JSON()

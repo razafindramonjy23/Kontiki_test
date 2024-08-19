@@ -6,7 +6,7 @@
 \ ================ /*/
 .navbar {
     @include LongLargPage;
-    background-color: $light-color;
+    //background-color: $light-color;
     display: flex;
     flex-direction: row;
     @include AllTexte;

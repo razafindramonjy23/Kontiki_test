@@ -1,5 +1,6 @@
 import React from 'react'
 import profil from '../../../../assets/Images/pages/a_propos/devWeb.jpg'
+import ktk from '../../../../assets/ktk.png'
 
 function Activites() {
     return (
@@ -17,7 +18,13 @@ function Activites() {
                 </div>
 
                 {/* Section: Notre équipe */}
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="flex flex-col items-center">
+                        <img src={ktk} alt="Profil" className="w-48 mb-4 rounded-full" />
+                        <h4 className="text-xl font-bold">Votre nom</h4>
+                        <p>Votre poste</p>
+                    </div>
+
                     <div className="flex flex-col items-center">
                         <img src={profil} alt="Profil" className="w-48 mb-4 rounded-full" />
                         <h4 className="text-xl font-bold">Votre nom</h4>
@@ -39,6 +46,7 @@ function Activites() {
                 {/* Section: Témoignages */}
                 <div className="mb-12">
                     <h3 className="mb-4 text-2xl font-bold">Témoignages</h3>
+                    <img src={ktk} alt="" />
                     {/* Ajouter des cartes pour chaque témoignage */}
                 </div>
 

@@ -9,7 +9,7 @@ function Navbar() {
   };
 
   return (
-    <div className='navbar'>
+    <div className='navbar '>
         <div className='leftSide ' id={openLinks ? "open" : "close"}  >
             <img src={Logo} alt="logo kontiki"/>
             <div className='hiddenLinks '>
@@ -21,12 +21,12 @@ function Navbar() {
             </div>
         </div>
 
-        <div className='rightSide'>
-          <Link to="/accueil" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Accueil</Link>
-          <Link to="/services" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Services</Link>
-          <Link to="/apropos" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>A propos</Link>
-          <Link to="/test" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Test</Link>
-          <Link to="/contact" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900'>Contactez-nous</Link>
+        <div className='rightSide '>
+          <Link to="/accueil" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Accueil</Link>
+          <Link to="/services" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Services</Link>
+          <Link to="/apropos" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>A propos</Link>
+          <Link to="/test" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Test</Link>
+          <Link to="/contact" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
         </div>
     </div>
   )

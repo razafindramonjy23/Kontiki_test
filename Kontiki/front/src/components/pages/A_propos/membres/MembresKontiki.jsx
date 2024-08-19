@@ -53,7 +53,7 @@ function MembresKontiki() {
                                 <h5 className='text-xl font-semibold text-gray-800'>Andre Kontiki</h5>
                                 <span className='text-sm text-gray-500 '>Dévellopeur</span>
                             </div>
-                            <Link to="/TeamCall" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
+                            <Link to="/TeamDev" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
                         </div>
 
                         <div className="mt-20 space-y-4 text-center border-t-4 group">

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders', 
     'TestDev',
+    'accounts', 
+    "BackOffice",
     
     
 ]
@@ -130,6 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIR = [
     BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'backend', 'static')
 ]
 
 # Default primary key field type
@@ -138,3 +141,5 @@ STATICFILES_DIR = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+MEDIA_URL = '/media/'

@@ -151,8 +151,8 @@ function Services() {
         <div className="timeRunning" ref={runningTimeRef}></div>
       </div>
 
-      <div className="container">
-        <h1>NOS FORCES </h1>
+      <div className="mb-12">
+        <h2 className='container text-6xl'> NOS FORCES </h2>
       </div>
     </>
   );
