@@ -10,17 +10,6 @@ function Contact() {
   const [message, setMessage] = useState('');
 
 
-
-  // useEffect(() => {
-  //   const socket = new WebSocket('ws://localhost:8000/ws/contact/contacts/');
-  //   socket.onmessage = (event) => {
-  //     const data = JSON.parse(event.data);
-  //     console.log(data.message);
-  //   };
-  //   return () => socket.close();
-  // }, []);
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,8 +30,10 @@ function Contact() {
           // getStatus("Message envoyé avec succes");
         })
 
-        const data = await response.JSON()
-        console.log(data);
+
+
+      const data = await response.JSON()
+      console.log(data);
 
     } catch (error) {
       console.log("Error: ", error);
@@ -104,9 +95,7 @@ function Contact() {
 
             </div>
 
-            <div className="right">
-              {/* <div className="ig" onClick={opener}>KontkiTest </div> */}
-            </div>
+
 
           </div>
         </section>

@@ -6,25 +6,53 @@ import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 function Test() {
   return (
     <>
+    <div>
+    <section>
+        <Link
+          to="/testDev" 
+          className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
+        >
+          <div className="flex items-center space-x-3">
+            <svg
+              className="w-6 h-6 stroke-sky-500 group-hover:stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+            // Ajoutez des attributs nécessaires pour le SVG ici
+            >
+              {/* Contenu SVG */}
+            </svg>
+            <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Développeurs</h3>
+          </div>
+          <p className="text-sm text-slate-500 group-hover:text-white">
+            Create a new project from a variety of starting templates.
+          </p>
+        </Link>
+      </section>
 
-      <div className='bg-gradient-to-r from-cyan-500 to-blue-500'>
-        <main className='py-52 '>
-          <h1 className='container text-6xl flex flex-col
-      items-center justify-center text-center '>Choix du test</h1>
-          <section className="container flex flex-col
-      items-center justify-center text-center py-4">
-            <ul>
-              <li className="container ">
-                <Link to="/testDev" className='text-4xl border rounded-lg inline-block p-4 border-slate-800 mb-4 mr-5 mt-5 hover:bg-amber-200'>
-                  Test Développeur
-                </Link>
-                <Link to="/testTM" className=' text-4xl border rounded-lg inline-block p-4 border-slate-800 mb-4 hover:bg-amber-200
-                '>Test Trafic Manager</Link>
-              </li>
-            </ul>
-          </section>
-        </main>
-      </div>
+      <section>
+        <Link
+          to="/testTM" // Remplacez # par le chemin approprié
+          className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
+        >
+          <div className="flex items-center space-x-3">
+            <svg
+              className="w-6 h-6 stroke-sky-500 group-hover:stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+            // Ajoutez des attributs nécessaires pour le SVG ici
+            >
+              {/* Contenu SVG */}
+            </svg>
+            <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Trafics Manager</h3>
+          </div>
+          <p className="text-sm text-slate-500 group-hover:text-white">
+            Create a new project from a variety of starting templates.
+          </p>
+        </Link>
+      </section>
+    </div>
+      
+
 
 
     </>
