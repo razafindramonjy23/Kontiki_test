@@ -12,33 +12,31 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const contactData = { nom, prenom, email, message };
+  
     try {
-  const response = await fetch(`${REACT_ENDPOINT}/contact/contacts/create/`, {
-
+      const response = await fetch('http://localhost:8000/contact/contacts/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(contactData),
-      })
-
-        .then(response => response.json())
-        .then(data => {
-          console.log('Succes: ', data);
-          // getStatus("Message envoyé avec succes");
-        })
-
-
-
-      const data = await response.JSON()
-      console.log(data);
-
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      console.log('Success: ', data);
+      // getStatus("Message envoyé avec succès");
+  
     } catch (error) {
       console.log("Error: ", error);
-    };
+    }
   };
+  
 
   return (
     <div>
