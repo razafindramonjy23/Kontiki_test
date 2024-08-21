@@ -18,15 +18,15 @@ function Navbar() {
               <Link to="/apropos">A propos</Link>
               <Link to="/test">Teste</Link>
               <Link to="/contact">Contactez-nous</Link>
-            </div>
+            </div> z
         </div>
 
         <div className='rightSide'>
-          <Link to="/accueil" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Accueil</Link>
-          <Link to="/services" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Services</Link>
-          <Link to="/apropos" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>A propos</Link>
-          <Link to="/test" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Test</Link>
-          <Link to="/contact" className='px-3 py-2 font-medium rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
+          <Link to="/accueil" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Accueil</Link>
+          <Link to="/services" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Services</Link>
+          <Link to="/apropos" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>A propos</Link>
+          <Link to="/test" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Test</Link>
+          <Link to="/contact" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
         </div>
     </div>
   )

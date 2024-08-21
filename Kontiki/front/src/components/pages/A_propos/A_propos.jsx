@@ -5,16 +5,21 @@ import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
 import user3 from '../../../assets/Images/pages/a_propos/user3.jpg'
 import user4 from '../../../assets/Images/pages/a_propos/user4.jpg'
+import nous from '../../../assets/Images/pages/a_propos/nous.jpg'
+import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 
 function A_propos() {
   return (
     <>
       <div className=''>
-        {/* <h1 className='container pt-10 mb-32 text-5xl font-semibold mt-14'>A propos de Kontiki</h1> */}
+        <header className='bg-yellow-400 h-[300px] px-8 py-6 kkk' >
+          <h1 className='container pt-10 mb-32 text-5xl font-semibold mt-14'>A propos de Kontiki</h1>
+        </header>
+
         <section id='about' className='py-24'>
           <div className="flex flex-wrap lg:items-center">
             <div className="flex items-center justify-center pl-10 lg:w-1/2">
-              <img className='h-auto max-w-full pr-10 ml-auto' src={equipe} alt="equipe" srcset="" />
+              <img className='h-auto max-w-full pr-10 ml-auto' src={nous} alt="equipe" srcset="" />
             </div>
 
             <div className="pl-10 pr-2 mb-14 lg:mb-0 lg:w-1/2">
@@ -24,7 +29,7 @@ function A_propos() {
               <p className="max-w-xl font-semibold text-center text-yellow-500 lg:text-left lg:max-w-md ">
                 Spécialiste du marketing digital et du traitement des données massives (Bigdata),
                 KONTIKI SERVICE a été créé le 19 mars 2019.
-                
+
               </p>
             </div>
 
@@ -34,12 +39,12 @@ function A_propos() {
       </div>
 
       <section className="py-24">
-        <h1 className="text-5xl font-bold text-center">Votre partenaire de service</h1>
+        <h1 className="text-5xl font-bold text-center">Notre partenaire de service</h1>
         <p className="mt-4 text-lg text-center">Votre texte explicatif ici</p>
       </section>
 
-      <div className="container grid grid-cols-2 gap-8 py-16 mx-auto">
-        <img src={user1} alt="" />
+      <div className="container grid grid-cols-2 gap-20 py-16 mx-auto">
+        <img src={europeens} alt="" />
         <p className='text-3xl'>L’agence propose à ses clients européens des prestations de publicité digitale,
           de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.</p>
       </div>
@@ -47,10 +52,9 @@ function A_propos() {
       <section className='py-20'>
         <div className='bg-white'>
           <div className="container px-6 mx-auto md:px-12 lg:px-8">
-            <div className="mb-12 space-y-4 text-center">
-
+            <div className="mt-20 mb-12 space-y-4 text-center">
               <h1 className="text-4xl font-bold text-blue-950 md:text-5xl" >Notre équipe de Superviseurs</h1>
-              <p className="text-gray-600 lg:w-8/12 lg:mx-auto">
+              <p className="px-5 py-5 mt-10 mb-10 text-gray-600 lg:w-8/12 lg:mx-auto">
                 Chaque département possède leurs propre Superviseurs.
               </p>
             </div>

@@ -81,8 +81,8 @@ function Services() {
 
   return (
     <>
-      <div className="TitrePrincipal">
-        <h1 className='px-5 py-5 text-4xl'>Nos Activité principales</h1>
+      <div className="container flex justify-center TitrePrincipal">
+        <h1 className='px-5 py-5 mt-10 mb-10 text-4xl'>Nos Activité principales</h1>
       </div>
 
       <div className="carousel" ref={carouselRef}>
@@ -150,9 +150,9 @@ function Services() {
         <div className="timeRunning" ref={runningTimeRef}></div>
       </div>
 
-      <div className="mb-12">
-        <h2 className='container font-sans text-5xl font-semibold text-blue-900'> NOS FORCES </h2>
-
+      <div className="container flex justify-center">
+        <h2 className='px-5 py-5 mt-10 mb-10 text-4xl'> NOS FORCES </h2>
+          
       </div>
     </>
   );
