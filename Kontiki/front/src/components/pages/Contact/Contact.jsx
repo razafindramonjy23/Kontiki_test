@@ -15,7 +15,7 @@ function Contact() {
 
     const contactData = { nom, prenom, email, message };
     try {
-      const response = await fetch('http://localhost:8000/contact/contacts/create/', {
+  const response = await fetch(`${REACT_ENDPOINT}/contact/contacts/create/`, {
 
         method: 'POST',
         headers: {

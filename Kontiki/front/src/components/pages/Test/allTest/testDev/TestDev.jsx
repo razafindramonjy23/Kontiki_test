@@ -18,10 +18,10 @@ const TextareaField = ({ label }) => (
   </div>
 );
 
-const FormSection = ({ id, title, icon, fields, isActive }) => (
-  <div className={id} style={{ display: isActive ? "block" : "none" }}>
+const FormSection = ({ Id, title, icon, fields, isActive }) => (
+  <div className={Id} style={{ display: isActive ? "block" : "none" }}>
     <div className="bg-svg">
-      <img width="96" height="96" src={icon} alt={title} />
+      <img wIdth="96" height="96" src={icon} alt={title} />
     </div>
     <h2>{title}</h2>
     {fields.map((field, index) => (
@@ -65,7 +65,7 @@ const Presentation = () => {
 
   const steps = [
     {
-      id: "form1",
+      Id: "form1",
       title: "Information personnel",
       icon: "https://img.icons8.com/3d-fluency/94/user-male-circle.png",
       fields: [
@@ -79,7 +79,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form2",
+      Id: "form2",
       title: "SAVOIR-FORMATION",
       icon: "https://img.icons8.com/color/96/reading.png",
       fields: [
@@ -91,7 +91,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form3",
+      Id: "form3",
       title: "PONCTUALITE",
       icon: "https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Punctuality-business-presentations-and-meetings-vectorslab-flat-vectorslab.png",
       fields: [
@@ -100,7 +100,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form4",
+      Id: "form4",
       title: "TENACITE",
       icon: "https://img.icons8.com/color/96/courage.png",
       fields: [
@@ -111,7 +111,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form5",
+      Id: "form5",
       title: "INTEGRATION",
       icon: "https://img.icons8.com/arcade/64/onboarding.png",
       fields: [
@@ -121,17 +121,17 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form6",
+      Id: "form6",
       title: "SENS DU SERVICE",
       icon: "https://img.icons8.com/fluency/96/service.png",
       fields: [
         { label: "Vous êtes salarié de notre société, affecté au département DEVELOPPEUR. Ce matin vous êtes occupé dans une tâche urgente et importante. L'un de vos collègues va vers vous et se plaint vivement auprès de vous, car il est en retard sur son travail parce que son ordi a des soucis (la connexion internet ne marche pas). Quelle est votre réaction?", type: "textarea" },
         { label: "Vous remarquez quil y a une tâche qui est pas faite et pourtant cette tâche ne fait pas partie de votre fiche de poste. Que faites-vous?", type: "textarea" },
-        { label: "Avez-vous l'esprit d'initiative? Prouvez-le à l'aide d'exemples.", type: "textarea" }
+        { label: "Avez-vous l'esprit d'initiative? Prouvez-le à l'aIde d'exemples.", type: "textarea" }
       ]
     },
     {
-      id: "form7",
+      Id: "form7",
       title: "AUTONOMIE",
       icon: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-autonomy-gig-economy-flaticons-flat-flat-icons.png",
       fields: [
@@ -140,7 +140,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form8",
+      Id: "form8",
       title: "ORGANISATION",
       icon: "https://img.icons8.com/officel/80/making-notes.png",
       fields: [
@@ -148,12 +148,12 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form9",
+      Id: "form9",
       title: "SATISFACTION",
       icon: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png",
       fields: [
         { label: "Quelles ont été vos satisfactions dans les postes que vous avez occupés?", type: "textarea" },
-        { label: "Quel serait le poste idéal pour vous?", type: "textarea" },
+        { label: "Quel serait le poste Idéal pour vous?", type: "textarea" },
         { label: "Si on vous propose le même salaire et le même nombre d\"heures, entre deux entreprises, laquelle choisissez-vous?", type: "textarea" },
         { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien traité?", type: "textarea" },
         { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien rémunéré?", type: "textarea" },
@@ -162,7 +162,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form10",
+      Id: "form10",
       title: "TEST TECHNIQUE-Python",
       icon: "",
       fields: [
@@ -176,7 +176,7 @@ const Presentation = () => {
       ]
     },
     {
-      id: "form11",
+      Id: "form11",
       title: "TEST TECHNIQUE-Javascript",
       icon: "",
       fields: [
@@ -187,7 +187,7 @@ const Presentation = () => {
       ]
     }, 
     {
-      id: "form12",
+      Id: "form12",
       title: "TEST TECHNIQUE-Fullstack",
       icon: "",
       fields: [
@@ -199,7 +199,7 @@ const Presentation = () => {
   ];
 
   return (
-    <div id="page" className="site">
+    <div Id="page" className="site">
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
@@ -207,8 +207,8 @@ const Presentation = () => {
           <form action="" className="formulaire">
             {steps.map((step, index) => (
               <FormSection
-                key={step.id}
-                id={step.id}
+                key={step.Id}
+                Id={step.Id}
                 title={step.title}
                 icon={step.icon}
                 fields={step.fields}

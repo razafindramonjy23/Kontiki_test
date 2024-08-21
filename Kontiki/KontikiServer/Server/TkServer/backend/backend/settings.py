@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'contact',
     'rest_framework',
     'corsheaders', 
-
+    'testDev',
     'accounts', 
     "BackOffice",
     

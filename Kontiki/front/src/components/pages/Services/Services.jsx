@@ -106,8 +106,7 @@ function Services() {
             <div className="content">
               <div className="titre">CAMPAGNES EMAILING</div>
               <div className="description">
-                Gestion de campagnes emailing, depuis la création de KIT, landing page
-                jusqu'à l'envoi et l'analyse des résultats.
+                Gestion des campagnes emailing, depuis la création de KIT, landing page jusqu'à l'envoi et l'analyse des résultats.
               </div>
               <div className="btns">
                 <button>Voir plus</button>
@@ -152,7 +151,8 @@ function Services() {
       </div>
 
       <div className="mb-12">
-        <h2 className='container text-6xl'> NOS FORCES </h2>
+        <h2 className='container font-sans text-5xl font-semibold text-blue-900'> NOS FORCES </h2>
+
       </div>
     </>
   );

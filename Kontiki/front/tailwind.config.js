@@ -8,8 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        'primary-text' : '#29335c',
+      colors: {'primary-text' : '#29335c',},
+      fontFamily: {
+        sans:['Poppins', 'sans-serif']
       },
     },
   },
