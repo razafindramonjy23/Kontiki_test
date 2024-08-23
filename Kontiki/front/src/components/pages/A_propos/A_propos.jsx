@@ -12,25 +12,37 @@ function A_propos() {
   return (
     <>
       <div className=''>
-        <header className='bg-yellow-400 h-[300px] px-8 py-6 kkk' >
-          <h1 className='container pt-10 mb-32 text-5xl font-semibold mt-14'>A propos de Kontiki</h1>
-        </header>
+        <section className="relative p-10 bg-blue-100 text-blue-950">
+          <div className="absolute top-0 left-0 right-0 h-64 bg-center bg-cover opacity-80"
+            style={{ backgroundImage: "url('./equipe.png')" }} // Replace with your background image path
+          >
+
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <h1 className="mb-4 text-4xl font-bold">Qui sommes nous?</h1>
+            <p className="mb-6 text-lg">
+              Spécialiste du marketing digital et du traitement des données massives (Bigdata),
+              KONTIKI SERVICE a été créé le 19 mars 2019.
+            </p>
+            <p className="text-lg">
+              Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
+            </p>
+          </div>
+          <div className="relative z-10 max-w-5xl mx-auto mt-10">
+            <img src="/team-photo.jpg" alt="Team" className="w-full rounded-lg shadow-lg" /> {/* Replace with your image */}
+          </div>
+        </section>
 
         <section id='about' className='py-24'>
           <div className="flex flex-wrap lg:items-center">
             <div className="flex items-center justify-center pl-10 lg:w-1/2">
-              <img className='h-auto max-w-full pr-10 ml-auto' src={nous} alt="equipe" srcset="" />
+              <img className='h-auto max-w-full pr-10 ml-auto ' src={nous} alt="equipe" srcset="" />
             </div>
 
             <div className="pl-10 pr-2 mb-14 lg:mb-0 lg:w-1/2">
               <h1 className="max-w-xl text-[3rem] leading-none text-blue-950 font-semibold text-center lg:text-5xl lg:text-left lg:leading-tight mb-8 flex items-center  ">
                 Nous sommes plus d'une trentaine de collaborateurs.
               </h1>
-              <p className="max-w-xl font-semibold text-center text-yellow-500 lg:text-left lg:max-w-md ">
-                Spécialiste du marketing digital et du traitement des données massives (Bigdata),
-                KONTIKI SERVICE a été créé le 19 mars 2019.
-
-              </p>
             </div>
 
           </div>

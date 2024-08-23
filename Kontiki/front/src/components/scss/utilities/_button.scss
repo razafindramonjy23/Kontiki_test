@@ -1,7 +1,7 @@
 //**********************************//
 //  Mixin Bouttons
 //**********************************//
-@mixin btnEnvoyer {
+@mixin btnEnvoyer{
     font-size: 18px;
     background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
     color: $light-color;
@@ -58,7 +58,6 @@
 @mixin ContactBtn {
   font-size: 18px;
   background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
-
   color: $light-color;
   padding: 0.8rem 1.2rem; 
   @include flex-center;

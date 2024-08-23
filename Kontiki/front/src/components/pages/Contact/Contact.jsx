@@ -12,31 +12,27 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const contactData = { nom, prenom, email, message };
-  
+
     try {
-      const response = await fetch('http://localhost:8000/contact/contacts/create/', {
+      const response = await fetch('http://127.0.0.1:8000/contact/contacts/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(contactData),
       });
-  
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-  
+
       const data = await response.json();
       console.log('Success: ', data);
       // getStatus("Message envoyé avec succès");
-  
+
     } catch (error) {
       console.log("Error: ", error);
     }
   };
-  
+
 
   return (
     <div>
@@ -77,14 +73,14 @@ function Contact() {
                     <img className='icon' width="35" height="35" src="https://img.icons8.com/fluency/48/000000/chat-message.png" alt="chat-message" />
                   </div>
 
-                  <div className="contact-buttons w-100">
+                  <div className="contact-buttons w-100 ">
                     <button >
                       <div className="wrapper-1">
                         <div className="wrapper">
                           <img className='iconSend' width="48" height="48" src="https://img.icons8.com/fluency/48/000000/circled-right-2.png" alt="circled-right-2" />
                         </div>
                       </div>
-                      <span>Envoyer</span>
+                      <span className=''>Envoyer</span>
                     </button>
                   </div>
 
@@ -92,8 +88,6 @@ function Contact() {
               </div>
 
             </div>
-
-
 
           </div>
         </section>

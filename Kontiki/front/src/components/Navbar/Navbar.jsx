@@ -18,7 +18,7 @@ function Navbar() {
               <Link to="/apropos">A propos</Link>
               <Link to="/test">Teste</Link>
               <Link to="/contact">Contactez-nous</Link>
-            </div> z
+            </div> 
         </div>
 
         <div className='rightSide'>

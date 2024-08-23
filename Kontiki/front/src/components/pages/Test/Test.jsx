@@ -6,7 +6,7 @@ import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 function Test() {
   return (
     <>
-      <div className='container flex justify-around h-screen kkk'>
+      <div className='container flex justify-around h-screen bg-blue-300'>
         <section className='pt-60'>
           <Link
             to="/testDev"
@@ -24,8 +24,7 @@ function Test() {
               <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Développeurs</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
-              Create a new project from a variety of starting templates.
-              pour les dev front veuillez vous inscrire
+              Test pour les dev front veuillez vous inscrire
             </p>
           </Link>
         </section>
@@ -74,7 +73,7 @@ function Test() {
           </Link>
         </section>
 
-        
+
       </div>
 
     </>
