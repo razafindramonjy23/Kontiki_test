@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import equipe from '../../../assets/equipe.png';
+import equipes from '../../../assets/equipe.png';
 import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
 import user3 from '../../../assets/Images/pages/a_propos/user3.jpg'
@@ -11,16 +11,15 @@ import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 function A_propos() {
   return (
     <>
-      <div className=''>
-        <section className="relative p-10 bg-blue-100 text-blue-950">
-          <div className="absolute top-0 left-0 right-0 h-64 bg-center bg-cover opacity-80"
-            style={{ backgroundImage: "url('./equipe.png')" }} // Replace with your background image path
+      <div className='font-sans'>
+        <section className="relative p-16 mb-10 bg-blue-50 text-blue-950 h-96">
+          <div className="absolute top-0 left-0 right-0 bg-center bg-cover opacity-30 h-96 equipe"
+          // style={{ backgroundImage: `url(${equipes})` }} // Replace with your background image path
           >
-
           </div>
           <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h1 className="mb-4 text-4xl font-bold">Qui sommes nous?</h1>
-            <p className="mb-6 text-lg">
+            <h1 className="mb-6 text-5xl font-bold">Qui sommes nous?</h1>
+            <p className="mb-6 text-3xl">
               Spécialiste du marketing digital et du traitement des données massives (Bigdata),
               KONTIKI SERVICE a été créé le 19 mars 2019.
             </p>
@@ -28,15 +27,12 @@ function A_propos() {
               Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
             </p>
           </div>
-          <div className="relative z-10 max-w-5xl mx-auto mt-10">
-            <img src="/team-photo.jpg" alt="Team" className="w-full rounded-lg shadow-lg" /> {/* Replace with your image */}
-          </div>
         </section>
 
-        <section id='about' className='py-24'>
+        {/* <section id='about' className='py-24'>
           <div className="flex flex-wrap lg:items-center">
             <div className="flex items-center justify-center pl-10 lg:w-1/2">
-              <img className='h-auto max-w-full pr-10 ml-auto ' src={nous} alt="equipe" srcset="" />
+              <img className='max-w-full pr-10 ml-auto h-96 ' src={nous} alt="equipe" srcset="" />
             </div>
 
             <div className="pl-10 pr-2 mb-14 lg:mb-0 lg:w-1/2">
@@ -45,6 +41,42 @@ function A_propos() {
               </h1>
             </div>
 
+          </div>
+        </section> */}
+
+        <section className="py-16 bg-white">
+          <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
+            <div className="text-center lg:text-left lg:w-1/2">
+              <h2 className="mb-4 text-5xl font-bold text-gray-800">KONTIKI SERVICES</h2>
+              <p className="mb-6 text-lg text-green-600 transition-transform duration-300 ease-in-out hover:scale-110">
+                La première Application de Kontiki Sevices à Madagascar
+              </p>
+              <p className="mb-8 text-gray-600">
+                En quelques clics, accédez facilement à nos services
+              </p>
+              
+              <div className="flex justify-center space-x-4 lg:justify-start">
+                <p className="flex items-center px-4 py-2 text-white bg-gray-800 rounded-lg">
+                  {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.3 2.7 8.1 6.5 9.5.5.1.7-.2.7-.5v-1.7c-2.7.5-3.2-1.3-3.2-1.3-.4-1-.9-1.2-.9-1.2-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.3 2.1 1 2.6.8.1-.5.3-.8.5-1-2.2-.3-4.5-1.1-4.5-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.6 1 .8-.2 1.7-.3 2.6-.3.9 0 1.8.1 2.6.3 1.8-1.3 2.6-1 2.6-1 .5 1.5.2 2.6.1 2.9.7.7 1 1.6 1 2.6 0 3.7-2.3 4.4-4.5 4.7.3.3.6.7.6 1.3v2c0 .3.2.6.7.5C19.3 20.1 22 16.3 22 12c0-5.5-4.5-10-10-10z" />
+                  </svg> */}
+                  Télécharger dans Apple Store
+                </p>
+                <p className="flex items-center px-4 py-2 text-white bg-gray-800 rounded-lg">
+                  {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.3 2.7 8.1 6.5 9.5.5.1.7-.2.7-.5v-1.7c-2.7.5-3.2-1.3-3.2-1.3-.4-1-.9-1.2-.9-1.2-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.3 2.1 1 2.6.8.1-.5.3-.8.5-1-2.2-.3-4.5-1.1-4.5-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.6 1 .8-.2 1.7-.3 2.6-.3.9 0 1.8.1 2.6.3 1.8-1.3 2.6-1 2.6-1 .5 1.5.2 2.6.1 2.9.7.7 1 1.6 1 2.6 0 3.7-2.3 4.4-4.5 4.7.3.3.6.7.6 1.3v2c0 .3.2.6.7.5C19.3 20.1 22 16.3 22 12c0-5.5-4.5-10-10-10z" />
+                  </svg> */}
+                  Disponible sur Google Play
+                </p>
+              </div>
+            </div>
+            <div className="mt-12 lg:mt-0 lg:w-1/2">
+              <img
+                src="./mobile_app_mockup.png"
+                alt="KONTIKI Digital app"
+                className="w-full"
+              />
+            </div>
           </div>
         </section>
 
