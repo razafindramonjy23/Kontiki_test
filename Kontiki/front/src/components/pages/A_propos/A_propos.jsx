@@ -5,7 +5,7 @@ import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
 import user3 from '../../../assets/Images/pages/a_propos/user3.jpg'
 import user4 from '../../../assets/Images/pages/a_propos/user4.jpg'
-import nous from '../../../assets/Images/pages/a_propos/nous.jpg'
+import vision from '../../../assets/Images/pages/a_propos/vision.png'
 import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 
 function A_propos() {
@@ -20,40 +20,17 @@ function A_propos() {
           <div className="flex justify-center mt-2">
             <div className="w-24 h-1 bg-amber-500"></div>
           </div>
-        </div>
 
-        {/* <section className="relative p-16 mb-10 bg-blue-50 text-blue-950 h-96">
-          <div className="absolute top-0 left-0 right-0 bg-center bg-cover opacity-30 h-96 equipe"
-          // style={{ backgroundImage: `url(${equipes})` }} // Replace with your background image path
-          >
-          </div>
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h1 className="mb-6 text-5xl font-bold">Qui sommes nous?</h1>
-            <p className="mb-6 text-3xl">
-              Spécialiste du marketing digital et du traitement des données massives (Bigdata),
+          <div className="my-8 text-lg text-center">
+            <p className="mt-20 text-blue-950">
+              Spécialiste du marketing digital et du traitement des données massives (Bigdata),<br />
               KONTIKI SERVICE a été créé le 19 mars 2019.
             </p>
-            <p className="text-lg">
+            <p className='mb-6 text-blue-950'>
               Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
             </p>
           </div>
-        </section> */}
-
-
-        {/* <section id='about' className='py-24'>
-          <div className="flex flex-wrap lg:items-center">
-            <div className="flex items-center justify-center pl-10 lg:w-1/2">
-              <img className='max-w-full pr-10 ml-auto h-96 ' src={nous} alt="equipe" srcset="" />
-            </div>
-
-            <div className="pl-10 pr-2 mb-14 lg:mb-0 lg:w-1/2">
-              <h1 className="max-w-xl text-[3rem] leading-none text-blue-950 font-semibold text-center lg:text-5xl lg:text-left lg:leading-tight mb-8 flex items-center  ">
-                Nous sommes plus d'une trentaine de collaborateurs.
-              </h1>
-            </div>
-
-          </div>
-        </section> */}
+        </div>
 
         <section className="py-16 bg-white">
           <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
@@ -90,8 +67,30 @@ function A_propos() {
             </div>
           </div>
         </section>
-
       </div>
+
+
+
+      <section className="py-16 bg-white">
+        <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
+          <div className="mt-12 lg:mt-0 lg:w-1/2">
+            <h2 className="mb-4 text-3xl font-bold text-blue-950">Des métiers d'avenirs</h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Nous offrons une opportunité aux jeunes malgaches d'exprimer leurs potentiels et d'occuper des métiers d'avenir challengeant.
+            </p>
+            <img src={europeens} alt="" />
+          </div>
+
+          <div className="text-center lg:text-left lg:w-1/2 ">
+            <h2 className="mb-4 text-3xl font-bold text-blue-950">Notre vision</h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Vous évoluerez dans l'environnement passionnant du marketing digital, et gagnerez rapidement en compétence et en responsabilité pour construire ensemble l'avenir de la société.
+            </p>
+            <img src={vision} alt="" />
+          </div>
+
+        </div>
+      </section>
 
       <div className="my-8 mb-20 font-sans text-center">
         <h2 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
@@ -104,17 +103,17 @@ function A_propos() {
 
       <section className="py-16 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
-        <div className="mt-12 lg:mt-0 lg:w-1/2">
-          <img
-            src={europeens}
-            alt="KONTIKI Digital app"
-            className="w-full rounded-lg"
-          />
-        </div>
+          <div className="mt-12 lg:mt-0 lg:w-1/2">
+            <img
+              src={europeens}
+              alt="KONTIKI Digital app"
+              className="w-full rounded-lg"
+            />
+          </div>
           <div className="text-center lg:text-left lg:w-1/2 ">
             <p className="mb-8 text-2xl text-gray-600">
-            L’agence propose à ses clients européens des prestations de publicité digitale,
-            de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.
+              L’agence propose à ses clients européens des prestations de publicité digitale,
+              de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.
             </p>
           </div>
 
