@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import equipes from '../../../assets/equipe.png';
+import phone from '../../../assets/Images/pages/a_propos/phone.png'
 import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
 import user3 from '../../../assets/Images/pages/a_propos/user3.jpg'
@@ -12,7 +12,17 @@ function A_propos() {
   return (
     <>
       <div className='font-sans'>
-        <section className="relative p-16 mb-10 bg-blue-50 text-blue-950 h-96">
+
+        <div className="my-8 text-center">
+          <h2 className="text-4xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
+            Qui sommes nous vraiment ?
+          </h2>
+          <div className="flex justify-center mt-2">
+            <div className="w-24 h-1 bg-amber-500"></div>
+          </div>
+        </div>
+
+        {/* <section className="relative p-16 mb-10 bg-blue-50 text-blue-950 h-96">
           <div className="absolute top-0 left-0 right-0 bg-center bg-cover opacity-30 h-96 equipe"
           // style={{ backgroundImage: `url(${equipes})` }} // Replace with your background image path
           >
@@ -27,7 +37,8 @@ function A_propos() {
               Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
             </p>
           </div>
-        </section>
+        </section> */}
+
 
         {/* <section id='about' className='py-24'>
           <div className="flex flex-wrap lg:items-center">
@@ -47,14 +58,14 @@ function A_propos() {
         <section className="py-16 bg-white">
           <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
             <div className="text-center lg:text-left lg:w-1/2">
-              <h2 className="mb-4 text-5xl font-bold text-gray-800">KONTIKI SERVICES</h2>
+              <h2 className="mb-4 text-5xl font-bold text-blue-950">KONTIKI SERVICES</h2>
               <p className="mb-6 text-lg text-green-600 transition-transform duration-300 ease-in-out hover:scale-110">
                 La première Application de Kontiki Sevices à Madagascar
               </p>
               <p className="mb-8 text-gray-600">
                 En quelques clics, accédez facilement à nos services
               </p>
-              
+
               <div className="flex justify-center space-x-4 lg:justify-start">
                 <p className="flex items-center px-4 py-2 text-white bg-gray-800 rounded-lg">
                   {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -72,7 +83,7 @@ function A_propos() {
             </div>
             <div className="mt-12 lg:mt-0 lg:w-1/2">
               <img
-                src="./mobile_app_mockup.png"
+                src={phone}
                 alt="KONTIKI Digital app"
                 className="w-full"
               />
@@ -82,16 +93,34 @@ function A_propos() {
 
       </div>
 
-      <section className="py-24">
-        <h1 className="text-5xl font-bold text-center">Notre partenaire de service</h1>
-        <p className="mt-4 text-lg text-center">Votre texte explicatif ici</p>
+      <div className="my-8 mb-20 font-sans text-center">
+        <h2 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
+          Notre partenaire de services ?
+        </h2>
+        <div className="flex justify-center mt-2">
+          <div className="w-24 h-1 bg-amber-500"></div>
+        </div>
+      </div>
+
+      <section className="py-16 bg-white">
+        <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
+        <div className="mt-12 lg:mt-0 lg:w-1/2">
+          <img
+            src={europeens}
+            alt="KONTIKI Digital app"
+            className="w-full rounded-lg"
+          />
+        </div>
+          <div className="text-center lg:text-left lg:w-1/2 ">
+            <p className="mb-8 text-2xl text-gray-600">
+            L’agence propose à ses clients européens des prestations de publicité digitale,
+            de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.
+            </p>
+          </div>
+
+        </div>
       </section>
 
-      <div className="container grid grid-cols-2 gap-20 py-16 mx-auto">
-        <img src={europeens} alt="" />
-        <p className='text-3xl'>L’agence propose à ses clients européens des prestations de publicité digitale,
-          de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.</p>
-      </div>
 
       <section className='py-20'>
         <div className='bg-white'>
