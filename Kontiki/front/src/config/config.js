@@ -1,1 +1,1 @@
-// REACT_ENDPOINT = 'http://localhost:8000/'
+const endpoint = 'http://localhost:8000/contact/';

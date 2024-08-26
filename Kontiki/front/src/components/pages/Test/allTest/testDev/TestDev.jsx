@@ -204,7 +204,7 @@ const Presentation = () => {
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
 
-          <form action="" className="formulaire">
+          <form action="POST" className="formulaire">
             {steps.map((step, index) => (
               <FormSection
                 key={step.Id}

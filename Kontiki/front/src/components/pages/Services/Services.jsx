@@ -31,7 +31,7 @@ function Services() {
     function resetTimeAnimation() {
       if (runningTime) {
         runningTime.style.animation = 'none';
-        runningTime.offsetHeight; 
+        runningTime.offsetHeight;
         runningTime.style.animation = null;
         runningTime.style.animation = 'runningTime 7s linear 1 forwards';
       }
@@ -62,11 +62,11 @@ function Services() {
       resetTimeAnimation(); // mamerina ny temps anle animation
     }
 
-    nextBtn.onclick = function() {
+    nextBtn.onclick = function () {
       showSlider('next');
     };
 
-    prevBtn.onclick = function() {
+    prevBtn.onclick = function () {
       showSlider('prev');
     };
 
@@ -81,13 +81,18 @@ function Services() {
 
   return (
     <>
-      <div className="container flex justify-center TitrePrincipal">
-        <h1 className='px-5 py-5 mt-10 mb-10 text-4xl'>Nos Activité principales</h1>
+      <div className="my-8 mb-20 font-sans text-center">
+        <h2 className="text-5xl font-semibold ">
+          NOTRE ACTIVITES
+        </h2>
+        <div className="flex justify-center mt-2">
+          <div className="w-24 h-1 bg-amber-500"></div>
+        </div>
       </div>
 
       <div className="carousel" ref={carouselRef}>
         <div className="list" ref={listRef}>
-          <div className="item" style={{ backgroundImage: `url(${andre})` }}>
+          <div className="item" style={{ backgroundImage: `url(${progress})` }}>
           </div>
 
           <div className="item" style={{ backgroundImage: `url(${Rova})` }}>
@@ -97,7 +102,7 @@ function Services() {
                 Collecter des prospects qualifiés et générez de nouveaux clients.
               </div>
               <div className="btns">
-                <button>Voir plus</button>
+              <button>Voir plus</button>
               </div>
             </div>
           </div>
@@ -126,7 +131,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="item" style={{ backgroundImage: `url(${progress})` }}>
+          <div className="item" style={{ backgroundImage: `url(${andre})` }}>
             <div className="content">
               <div className="titre">DEVELOPPONS ENSEMBLE VOTRE AVENIR DIGITAL</div>
               <div className="description">
@@ -150,10 +155,58 @@ function Services() {
         <div className="timeRunning" ref={runningTimeRef}></div>
       </div>
 
-      <div className="container flex justify-center">
-        <h2 className='px-5 py-5 mt-10 mb-10 text-4xl'> NOS FORCES </h2>
-          
-      </div>
+      {/* <div className="my-8 mb-20 font-sans text-center">
+        <h2 className="text-5xl font-semibold ">
+          NOS FORCES
+        </h2>
+        <div className="flex justify-center mt-2">
+          <div className="w-24 h-1 bg-amber-500"></div>
+        </div>
+      </div> */}
+
+
+
+      <section className="py-20 bg-white">
+        <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
+          <div className="text-center lg:text-left lg:w-1/2">
+            <div className="my-8 mb-20 font-sans text-center">
+              <h2 className="text-5xl font-semibold ">
+                NOS FORCES
+              </h2>
+              <div className="flex justify-center mt-2">
+                <div className="w-24 h-1 bg-amber-500"></div>
+              </div>
+            </div>
+            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+              Equipe jeune, dynamique et compétente
+            </p>
+
+            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+              Large éventail de métiers intéressants
+            </p>
+
+            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+              Ambiance conviviale et professionnelle
+            </p>
+
+            <div className="flex justify-center space-x-4 lg:justify-start">
+              <p className="flex items-center px-5 py-2 rounded-lg text-blue-950 bg-amber-400">
+                {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.3 2.7 8.1 6.5 9.5.5.1.7-.2.7-.5v-1.7c-2.7.5-3.2-1.3-3.2-1.3-.4-1-.9-1.2-.9-1.2-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.3 2.1 1 2.6.8.1-.5.3-.8.5-1-2.2-.3-4.5-1.1-4.5-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.6 1 .8-.2 1.7-.3 2.6-.3.9 0 1.8.1 2.6.3 1.8-1.3 2.6-1 2.6-1 .5 1.5.2 2.6.1 2.9.7.7 1 1.6 1 2.6 0 3.7-2.3 4.4-4.5 4.7.3.3.6.7.6 1.3v2c0 .3.2.6.7.5C19.3 20.1 22 16.3 22 12c0-5.5-4.5-10-10-10z" />
+                  </svg> */}
+                EN PLEIN CROISSANCE
+              </p>
+            </div>
+          </div>
+          <div className="mt-12 lg:mt-0 lg:w-1/2">
+            <img
+              src=""
+              alt="Jeunes"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

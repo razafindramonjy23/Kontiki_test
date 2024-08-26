@@ -6,7 +6,7 @@ import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 function Test() {
   return (
     <>
-      <div className='container flex justify-around h-screen bg-blue-300'>
+      <div className='flex justify-around h-screen bg-blue-300 '>
         <section className='pt-60'>
           <Link
             to="/testDev"
@@ -21,7 +21,7 @@ function Test() {
               >
                 {/* Contenu SVG */}
               </svg>
-              <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Développeurs</h3>
+              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Test pour les Développeurs</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
               Test pour les dev front veuillez vous inscrire
@@ -43,7 +43,7 @@ function Test() {
               >
                 {/* Contenu SVG */}
               </svg>
-              <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Trafics Manager</h3>
+              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Affiliète Manager</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
               Create a new project from a variety of starting templates.
@@ -65,17 +65,14 @@ function Test() {
               >
                 {/* Contenu SVG */}
               </svg>
-              <h3 className="text-lg font-semibold text-slate-900 group-hover:text-white">Test pour les Trafics Manager</h3>
+              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Test Trafics Manager</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
               Create a new project from a variety of starting templates.
             </p>
           </Link>
         </section>
-
-
       </div>
-
     </>
   )
 }

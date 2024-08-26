@@ -16,8 +16,6 @@ import MembresKontiki from './components/pages/A_propos/membres/MembresKontiki.j
 
 import './App.scss';
 import Activites from './components/pages/A_propos/actvt/Activites.jsx';
-// import axios from 'axios';
-
 
 
 function App() {

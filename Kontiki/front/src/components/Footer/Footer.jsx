@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
-        <div className="footer-basic">
-            <footer>
+        <div className="font-sans footer-basic ">
+            <footer className='bg-slate-100'>
                 {/* <div className='inline' >
                     <h1>Nos Coordinnées</h1>
                     <p>Porte 404, Tour Sahavola Lot IBG 16 Ter A</p>
@@ -27,7 +27,7 @@ function Footer() {
                     <li className="list-inline-item"><Link to="/test">Test</Link></li>
                     <li className="list-inline-item"><Link to="/contact">Contactez-nous</Link></li>
                 </ul>
-                <p className="copyright">Copyright © 2024 Kontiki Service</p>
+                <p className="pb-5 copyright">Copyright © 2024 Kontiki Service</p>
             </footer>
         </div>
     );

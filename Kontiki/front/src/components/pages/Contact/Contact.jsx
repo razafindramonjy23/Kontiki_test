@@ -37,7 +37,7 @@ function Contact() {
   return (
     <div>
       <main>
-        <section className='contact'>
+        <section className='font-sans contact'>
           <div className="container">
             <div className="left">
               <div className="form-wrapper">

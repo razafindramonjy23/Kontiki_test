@@ -8,6 +8,8 @@ import user4 from '../../../assets/Images/pages/a_propos/user4.jpg'
 import vision from '../../../assets/Images/pages/a_propos/vision.png'
 import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 
+
+
 function A_propos() {
   return (
     <>
@@ -121,7 +123,7 @@ function A_propos() {
       </section>
 
 
-      <section className='py-20'>
+      <section className='py-20 font-sans'>
         <div className='bg-white'>
           <div className="container px-6 mx-auto md:px-12 lg:px-8">
             <div className="mt-20 mb-12 space-y-4 text-center">
@@ -141,7 +143,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Rita Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Marketing</span>
                 </div>
-                <Link to="/TeamCall" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
+                <Link to="/TeamCall" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
               <div className="space-y-4 text-center border-t-4 group">
@@ -152,7 +154,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Mamisoa Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Affiliète</span>
                 </div>
-                <Link to="/TeamCall" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
+                <Link to="/TeamCall" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
               <div className="space-y-4 text-center border-t-4 group">
@@ -163,7 +165,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Andre Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Dévellopeur</span>
                 </div>
-                <Link to="/TeamDev" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
+                <Link to="/TeamDev" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
               <div className="mt-20 space-y-4 text-center border-t-4 group">
@@ -174,7 +176,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Deddy Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Trafic Manager</span>
                 </div>
-                <Link to="/TeamCall" className="block mx-auto text-center text-blue-500 w-max">Département</Link>
+                <Link to="/TeamCall" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
             </div>
