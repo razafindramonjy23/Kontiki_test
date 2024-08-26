@@ -28,7 +28,7 @@ const FormSection = ({ Id, title, icon, fields, isActive }) => (
       field.type === "textarea" ? (
         <TextareaField key={index} label={field.label} required name={`question_${field.id}`} />
       ) : (
-        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`}/>
+        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} />
       )
     ))}
   </div>
@@ -66,18 +66,28 @@ const Presentation = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.targer);
+    const formData = new FormData(event.target);
 
 
-    fetch('/submit_responses/', {
-      method: 'POST', 
+    fetch('/api/submit_responses/', {
+      method: 'POST',
       body: formData,
-    })
-    .then(response => {
-      if (response.ok){
-        navigate('/thank_you');
+      headers: {
+        'X-Requested-with': 'XMLHttpRequest',
       }
-    });
+    })
+      .then(response => {
+        if (response.ok) {
+          navigate('/thank_you');
+        } else {
+          return response.json().then(data => {
+            console.error(data)
+          });
+        }
+      })
+      .catch(error => {
+        console.log('error', error);
+      })
   };
 
 
@@ -184,13 +194,13 @@ const Presentation = () => {
       title: "TEST TECHNIQUE-Python",
       icon: "",
       fields: [
-        { label: "Expliquez brièvement le processus d'exécution d'un fichier Python" , type: "textarea" },
-        { label: "Nous savons que Python est un langage orienté objet, mais a-t-il des spécificateurs d'accès ?" , type: "textarea" },
-        { label: "Quand devez-vous utiliser la copie superficielle au lieu de la copie profonde, et vice versa ?" , type: "textarea" },
-        { label: "Expliquez l'utilisation de décorateurs en Python. Donnez un exemple pratique de situation où vous utiliseriez un décorateur." , type: "textarea" },
-        { label: "Comment gérer les exceptions de manière robuste en Python? Donnez des exemples de situations où les exceptions seraient appropriées" , type: "textarea" },
-        { label: "Pouvez-vous expliquer comment une exception peut être attrapée dans un programme Python ?" , type: "textarea" },
-        { label: "Décrivez les différences entre le threading et le multiprocessing en Python. Quand choisiriez-vous l'un par rapport à l'autre?" , type: "textarea" }
+        { label: "Expliquez brièvement le processus d'exécution d'un fichier Python", type: "textarea" },
+        { label: "Nous savons que Python est un langage orienté objet, mais a-t-il des spécificateurs d'accès ?", type: "textarea" },
+        { label: "Quand devez-vous utiliser la copie superficielle au lieu de la copie profonde, et vice versa ?", type: "textarea" },
+        { label: "Expliquez l'utilisation de décorateurs en Python. Donnez un exemple pratique de situation où vous utiliseriez un décorateur.", type: "textarea" },
+        { label: "Comment gérer les exceptions de manière robuste en Python? Donnez des exemples de situations où les exceptions seraient appropriées", type: "textarea" },
+        { label: "Pouvez-vous expliquer comment une exception peut être attrapée dans un programme Python ?", type: "textarea" },
+        { label: "Décrivez les différences entre le threading et le multiprocessing en Python. Quand choisiriez-vous l'un par rapport à l'autre?", type: "textarea" }
       ]
     },
     {
@@ -198,20 +208,20 @@ const Presentation = () => {
       title: "TEST TECHNIQUE-Javascript",
       icon: "",
       fields: [
-        { label: "Comparez les avantages et les inconvénients des états locaux (local state) et des états gérés globalement (global state) dans une application Vue.js ou React.js." , type: "textarea" },
-        { label: "Créez un composant fonctionnel nommé UserList qui reçoit une liste d'utilisateurs en tant que prop et affiche leurs noms dans une liste. Assurez-vous que le composant met à jour correctement le state avec la liste d'utilisateurs. (* sur vscode)" , type: "textarea" },
-        { label: "Créez un composant parent nommé App qui contient le state avec une liste initiale d'utilisateurs. Ce composant doit rendre le composant UserList créé précédemment et un nouveau composant UserForm qui permet d'ajouter un nouvel utilisateur à la liste. (* sur vscode)" , type: "textarea" },
-        { label: "Implémentez le composant UserForm avec un formulaire simple qui permet à l'utilisateur de saisir un nom. Lorsque le formulaire est soumis, ajoutez un nouvel utilisateur à la liste dans le state du composant parent (App). Assurez-vous que le state est mis à jour correctement. (* sur vscode)" , type: "textarea" },
+        { label: "Comparez les avantages et les inconvénients des états locaux (local state) et des états gérés globalement (global state) dans une application Vue.js ou React.js.", type: "textarea" },
+        { label: "Créez un composant fonctionnel nommé UserList qui reçoit une liste d'utilisateurs en tant que prop et affiche leurs noms dans une liste. Assurez-vous que le composant met à jour correctement le state avec la liste d'utilisateurs. (* sur vscode)", type: "textarea" },
+        { label: "Créez un composant parent nommé App qui contient le state avec une liste initiale d'utilisateurs. Ce composant doit rendre le composant UserList créé précédemment et un nouveau composant UserForm qui permet d'ajouter un nouvel utilisateur à la liste. (* sur vscode)", type: "textarea" },
+        { label: "Implémentez le composant UserForm avec un formulaire simple qui permet à l'utilisateur de saisir un nom. Lorsque le formulaire est soumis, ajoutez un nouvel utilisateur à la liste dans le state du composant parent (App). Assurez-vous que le state est mis à jour correctement. (* sur vscode)", type: "textarea" },
       ]
-    }, 
+    },
     {
       Id: "form12",
       title: "TEST TECHNIQUE-Fullstack",
       icon: "",
       fields: [
-        { label: "Mettez en place une route côté serveur (Django, Flask) qui renvoie une liste d'utilisateurs au format JSON. La liste d'utilisateurs peut être stockée dans un fichier json. (* sur vscode)" , type: "textarea" },
-        { label: "Comment optimisez-vous les requêtes vers une base de données pour améliorer les performances d'une application? Parlez de l'indexation, du caching, ou d'autres stratégies que vous avez déjà mise en œuvre dans vos expériences." , type: "textarea" },
-        { label: "Décrivez le processus de déploiement d'une application fullstack, en mettant l'accent sur les bonnes pratiques. Parlez de l'utilisation d'outils tels que Docker, Kubernetes, ou autres, selon votre expérience." , type: "textarea" },
+        { label: "Mettez en place une route côté serveur (Django, Flask) qui renvoie une liste d'utilisateurs au format JSON. La liste d'utilisateurs peut être stockée dans un fichier json. (* sur vscode)", type: "textarea" },
+        { label: "Comment optimisez-vous les requêtes vers une base de données pour améliorer les performances d'une application? Parlez de l'indexation, du caching, ou d'autres stratégies que vous avez déjà mise en œuvre dans vos expériences.", type: "textarea" },
+        { label: "Décrivez le processus de déploiement d'une application fullstack, en mettant l'accent sur les bonnes pratiques. Parlez de l'utilisation d'outils tels que Docker, Kubernetes, ou autres, selon votre expérience.", type: "textarea" },
       ]
     }
   ];
@@ -235,7 +245,7 @@ const Presentation = () => {
             ))}
 
             <div className="btn-group">
-              
+
               <button type="button" className="btn-retour" onClick={btnPrecedent} disabled={activeStep === 0}>Retour</button>
 
               {activeStep < steps.length - 1 && (
