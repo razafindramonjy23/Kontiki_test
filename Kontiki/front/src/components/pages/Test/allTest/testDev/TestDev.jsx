@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-const InputField = ({ label, type }) => (
+const InputField = ({ label, type, name }) => (
   <div>
     <label>{label}</label>
     <br />
-    <input type={type} name={label} />
+    <input type={type} name={name} />
   </div>
 );
 
-const TextareaField = ({ label }) => (
+const TextareaField = ({ label, name }) => (
   <div>
     <label>{label}</label>
     <br />
-    <textarea name={label}></textarea>
+    <textarea name={name}></textarea>
   </div>
 );
 
@@ -26,9 +26,9 @@ const FormSection = ({ Id, title, icon, fields, isActive }) => (
     <h2>{title}</h2>
     {fields.map((field, index) => (
       field.type === "textarea" ? (
-        <TextareaField key={index} label={field.label} required />
+        <TextareaField key={index} label={field.label} required name={`question_${field.id}`} />
       ) : (
-        <InputField key={index} label={field.label} type={field.type} required />
+        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`}/>
       )
     ))}
   </div>
@@ -62,6 +62,24 @@ const Presentation = () => {
       setActiveStep(activeStep - 1);
     }
   };
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.targer);
+
+
+    fetch('/submit_responses/', {
+      method: 'POST', 
+      body: formData,
+    })
+    .then(response => {
+      if (response.ok){
+        navigate('/thank_you');
+      }
+    });
+  };
+
 
   const steps = [
     {
@@ -204,7 +222,7 @@ const Presentation = () => {
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
 
-          <form action="POST" className="formulaire">
+          <form onSubmit={handleSubmit} className="formulaire">
             {steps.map((step, index) => (
               <FormSection
                 key={step.Id}

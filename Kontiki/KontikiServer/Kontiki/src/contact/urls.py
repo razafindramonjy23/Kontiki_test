@@ -2,6 +2,7 @@ from django.urls import path, include
 from .views import get_contacts, create_contacts, contact_detail
 
 
+
 # router = DefaultRouter() 
 # router.register(r'contacts', ContactViewSet)
 
