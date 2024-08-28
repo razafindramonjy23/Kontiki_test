@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-const InputField = ({ label, type, name }) => (
+const InputField = ({ label, type, name, onChange }) => (
   <div>
     <label>{label}</label>
     <br />
-    <input type={type} name={name} />
+    <input type={type} name={name} onChange={onChange} />
   </div>
 );
 
-const TextareaField = ({ label, name }) => (
+const TextareaField = ({ label, name, onChange }) => (
   <div>
     <label>{label}</label>
     <br />
-    <textarea name={name}></textarea>
+    <textarea name={name} onChange={onChange}></textarea>
   </div>
 );
 
-const FormSection = ({ id, title, icon, fields, isActive }) => (
+const FormSection = ({ id, title, icon, fields, isActive, onChange }) => (
   <div className={id} style={{ display: isActive ? "block" : "none" }}>
     <div className="bg-svg">
       <img width="96" height="96" src={icon} alt={title} />
@@ -26,9 +26,20 @@ const FormSection = ({ id, title, icon, fields, isActive }) => (
     <h2>{title}</h2>
     {fields.map((field, index) => (
       field.type === "textarea" ? (
-        <TextareaField key={index} label={field.label} required name={`question_${field.id}`} />
+        <TextareaField
+          key={index}
+          label={field.label}
+          name={`question_${field.id}`}
+          onChange={onChange}
+        />
       ) : (
-        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} />
+        <InputField
+          key={index}
+          label={field.label}
+          type={field.type}
+          name={`question_${field.id}`}
+          onChange={onChange}
+        />
       )
     ))}
   </div>
@@ -49,7 +60,44 @@ const ProgressSteps = ({ steps, activeStep }) => (
 
 const Presentation = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [formData, setFormData] = useState({});
+  const [sections, setSections] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchSections = async () => {
+      try {
+        const data = await getAllSections();
+        setSections(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchSections();
+  }, []);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    try {
+      const response = await submitResponses(formData);
+      console.log('Success:', response);
+      // Vous pouvez rediriger ou afficher un message de succès ici
+    } catch (error) {
+      console.error('Submit error:', error);
+      setError(error.message);
+    }
+  };
 
   const btnSuivant = () => {
     if (activeStep < steps.length - 1) {
@@ -62,56 +110,6 @@ const Presentation = () => {
       setActiveStep(activeStep - 1);
     }
   };
-
-//   try {
-      //     const response = await fetch('http://127.0.0.1:8000/api/submit_responses/', {
-      //       method: 'POST',
-      //       headers: {
-      //         'Content-Type': 'application/json',
-      //         'Authorization': `Bearer ${localStorage.getItem('token')}`,
-      //       },
-      //       body: JSON.stringify(formData),
-      //     });
-
-      //     const data = await response.json();
-      //     console.log('Success: ', data);
-      //     navigate('/thank_you');
-
-      //   } catch (error) {
-      //     console.log('Error: ', error);
-      //   }
-      // };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    console.log(e.target);
-    
-    try {
-      const formData = new FormData(e.target);
-      const data = {};
-
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      console.log("Form Data:", data);
-
-      fetch("http://localhost:8000/api/submit_responses/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((result) => console.log("Réponse de l'API:", result))
-        .catch((error) => console.error("Erreur lors de l'envoi des données:", error));
-    } catch (error) {
-      console.error("Erreur lors de la création de FormData:", error);
-    }
-  };
-
-
 
   const steps = [
     {
