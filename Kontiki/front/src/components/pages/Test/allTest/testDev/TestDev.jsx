@@ -63,37 +63,51 @@ const Presentation = () => {
     }
   };
 
+//   try {
+      //     const response = await fetch('http://127.0.0.1:8000/api/submit_responses/', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //         'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      //       },
+      //       body: JSON.stringify(formData),
+      //     });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+      //     const data = await response.json();
+      //     console.log('Success: ', data);
+      //     navigate('/thank_you');
 
-    const formData = new FormData(event.target);
+      //   } catch (error) {
+      //     console.log('Error: ', error);
+      //   }
+      // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  
-    const formDataJSON = {};
-    formData.forEach((value, key) => {
-      formDataJSON[key] = value;
-    });
-
+    console.log(e.target);
+    
     try {
-      const response = await 
-      fetch('http://127.0.0.1:8000/api/submit_responses/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        },
-        body: JSON.stringify(formDataJSON),
+      const formData = new FormData(e.target);
+      const data = {};
+
+      formData.forEach((value, key) => {
+        data[key] = value;
       });
 
-      if (response.ok) {
-        navigate('/thank_you');
-      } else {
-        const errorData = await response.json();
-        console.error('Erreur:', errorData);
-      }
+      console.log("Form Data:", data);
+
+      fetch("http://localhost:8000/api/submit_responses/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((result) => console.log("Réponse de l'API:", result))
+        .catch((error) => console.error("Erreur lors de l'envoi des données:", error));
     } catch (error) {
-      console.error('Erreur lors de la soumission:', error);
+      console.error("Erreur lors de la création de FormData:", error);
     }
   };
 

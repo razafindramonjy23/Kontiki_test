@@ -63,7 +63,7 @@ class TestTechniquePython(models.Model):
     capture_exception = models.TextField("Pouvez-vous expliquer comment une exception peut être attrapée dans un programme Python ?")
     threading_vs_multiprocessing = models.TextField("Décrivez les différences entre le threading et le multiprocessing en Python. Quand choisiriez-vous l'un par rapport à l'autre ?")
 
-class TestTechniqueJavascript(models.Model):
+class TestTechniqueJavaScript(models.Model):
     local_state_vs_global_state = models.TextField("Comparez les avantages et les inconvénients des états locaux (local state) et des états gérés globalement (global state) dans une application Vue.js ou React.js.")
     userlist_component = models.TextField("Créez un composant fonctionnel nommé UserList qui reçoit une liste d'utilisateurs en tant que prop et affiche leurs noms dans une liste. Assurez-vous que le composant met à jour correctement le state avec la liste d'utilisateurs.")
     app_component = models.TextField("Créez un composant parent nommé App qui contient le state avec une liste initiale d'utilisateurs. Ce composant doit rendre le composant UserList créé précédemment et un nouveau composant UserForm qui permet d'ajouter un nouvel utilisateur à la liste.")
