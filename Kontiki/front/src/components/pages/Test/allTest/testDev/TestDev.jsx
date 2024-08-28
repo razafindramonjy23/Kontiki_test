@@ -26,20 +26,9 @@ const FormSection = ({ id, title, icon, fields, isActive, onChange }) => (
     <h2>{title}</h2>
     {fields.map((field, index) => (
       field.type === "textarea" ? (
-        <TextareaField
-          key={index}
-          label={field.label}
-          name={`question_${field.id}`}
-          onChange={onChange}
-        />
+        <TextareaField key={index} label={field.label} required name={`question_${field.id}`} onChange={onChange} />
       ) : (
-        <InputField
-          key={index}
-          label={field.label}
-          type={field.type}
-          name={`question_${field.id}`}
-          onChange={onChange}
-        />
+        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} onChange={onChange} />
       )
     ))}
   </div>
@@ -61,41 +50,35 @@ const ProgressSteps = ({ steps, activeStep }) => (
 const Presentation = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState({});
-  const [sections, setSections] = useState(null);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchSections = async () => {
-      try {
-        const data = await getAllSections();
-        setSections(data);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-
-    fetchSections();
-  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+  };
+
+  const submitResponses = async (data) => {
+    const response = await fetch('http://localhost:8000/api/api/submit-responses/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new Error('Erreur lors de la soumission des réponses.');
+    }
+    return response.json();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
     try {
-      const response = await submitResponses(formData);
-      console.log('Success:', response);
-      // Vous pouvez rediriger ou afficher un message de succès ici
+      await submitResponses(formData);
+      alert('Réponses soumises avec succès !');
     } catch (error) {
-      console.error('Submit error:', error);
-      setError(error.message);
+      console.error('Erreur lors de la soumission :', error);
+      alert('Erreur lors de la soumission.');
     }
   };
 
