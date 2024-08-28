@@ -6,7 +6,7 @@ import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 function Test() {
   return (
     <>
-      <div className='flex justify-around h-screen bg-blue-300 '>
+      <div className='flex justify-around h-screen bg-yellow-200'>
         <section className='pt-60'>
           <Link
             to="/testDev"

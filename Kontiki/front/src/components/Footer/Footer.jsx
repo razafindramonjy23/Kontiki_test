@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
-        <div className="font-sans footer-basic ">
+        <div className="font-sans footer-basic">
             <footer className='bg-slate-100'>
                 {/* <div className='inline' >
                     <h1>Nos Coordinnées</h1>

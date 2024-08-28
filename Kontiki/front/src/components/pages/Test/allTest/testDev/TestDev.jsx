@@ -18,10 +18,10 @@ const TextareaField = ({ label, name }) => (
   </div>
 );
 
-const FormSection = ({ Id, title, icon, fields, isActive }) => (
-  <div className={Id} style={{ display: isActive ? "block" : "none" }}>
+const FormSection = ({ id, title, icon, fields, isActive }) => (
+  <div className={id} style={{ display: isActive ? "block" : "none" }}>
     <div className="bg-svg">
-      <img wIdth="96" height="96" src={icon} alt={title} />
+      <img width="96" height="96" src={icon} alt={title} />
     </div>
     <h2>{title}</h2>
     {fields.map((field, index) => (
@@ -64,36 +64,44 @@ const Presentation = () => {
   };
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = new FormData(event.target);
 
+  
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
 
-    fetch('/api/submit_responses/', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'X-Requested-with': 'XMLHttpRequest',
+    try {
+      const response = await 
+      fetch('http://127.0.0.1:8000/api/submit_responses/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify(formDataJSON),
+      });
+
+      if (response.ok) {
+        navigate('/thank_you');
+      } else {
+        const errorData = await response.json();
+        console.error('Erreur:', errorData);
       }
-    })
-      .then(response => {
-        if (response.ok) {
-          navigate('/thank_you');
-        } else {
-          return response.json().then(data => {
-            console.error(data)
-          });
-        }
-      })
-      .catch(error => {
-        console.log('error', error);
-      })
+    } catch (error) {
+      console.error('Erreur lors de la soumission:', error);
+    }
   };
+
 
 
   const steps = [
     {
-      Id: "form1",
+      id: "form1",
       title: "Information personnel",
       icon: "https://img.icons8.com/3d-fluency/94/user-male-circle.png",
       fields: [
@@ -107,7 +115,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form2",
+      id: "form2",
       title: "SAVOIR-FORMATION",
       icon: "https://img.icons8.com/color/96/reading.png",
       fields: [
@@ -119,7 +127,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form3",
+      id: "form3",
       title: "PONCTUALITE",
       icon: "https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Punctuality-business-presentations-and-meetings-vectorslab-flat-vectorslab.png",
       fields: [
@@ -128,7 +136,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form4",
+      id: "form4",
       title: "TENACITE",
       icon: "https://img.icons8.com/color/96/courage.png",
       fields: [
@@ -139,7 +147,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form5",
+      id: "form5",
       title: "INTEGRATION",
       icon: "https://img.icons8.com/arcade/64/onboarding.png",
       fields: [
@@ -149,7 +157,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form6",
+      id: "form6",
       title: "SENS DU SERVICE",
       icon: "https://img.icons8.com/fluency/96/service.png",
       fields: [
@@ -159,7 +167,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form7",
+      id: "form7",
       title: "AUTONOMIE",
       icon: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-autonomy-gig-economy-flaticons-flat-flat-icons.png",
       fields: [
@@ -168,7 +176,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form8",
+      id: "form8",
       title: "ORGANISATION",
       icon: "https://img.icons8.com/officel/80/making-notes.png",
       fields: [
@@ -176,7 +184,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form9",
+      id: "form9",
       title: "SATISFACTION",
       icon: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png",
       fields: [
@@ -190,7 +198,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form10",
+      id: "form10",
       title: "TEST TECHNIQUE-Python",
       icon: "",
       fields: [
@@ -204,7 +212,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form11",
+      id: "form11",
       title: "TEST TECHNIQUE-Javascript",
       icon: "",
       fields: [
@@ -215,7 +223,7 @@ const Presentation = () => {
       ]
     },
     {
-      Id: "form12",
+      id: "form12",
       title: "TEST TECHNIQUE-Fullstack",
       icon: "",
       fields: [
@@ -227,7 +235,7 @@ const Presentation = () => {
   ];
 
   return (
-    <div Id="page" className="site">
+    <div id="page" className="site">
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
@@ -235,8 +243,8 @@ const Presentation = () => {
           <form onSubmit={handleSubmit} className="formulaire">
             {steps.map((step, index) => (
               <FormSection
-                key={step.Id}
-                Id={step.Id}
+                key={step.id}
+                id={step.id}
                 title={step.title}
                 icon={step.icon}
                 fields={step.fields}
@@ -245,17 +253,47 @@ const Presentation = () => {
             ))}
 
             <div className="btn-group">
-
-              <button type="button" className="btn-retour" onClick={btnPrecedent} disabled={activeStep === 0}>Retour</button>
+              <button
+                type="button"
+                className="btn-retour"
+                onClick={btnPrecedent}
+                disabled={activeStep === 0}
+              >
+                Retour
+              </button>
 
               {activeStep < steps.length - 1 && (
-                <button type="button" className="btn-suivant" onClick={btnSuivant} disabled={activeStep === steps.length - 1}>Suivant</button>
+                <button
+                  type="button"
+                  className="btn-suivant"
+                  onClick={btnSuivant}
+                  disabled={activeStep === steps.length - 1}
+                >
+                  Suivant
+                </button>
               )}
 
               {activeStep === steps.length - 1 && (
-                <button type="button" className="btn-code-editor" onClick={() => navigate('/codeEditor')}>Teste technique</button>
+                <>
+                  <button
+                    type="submit"
+                    className="btn-envoyer"
+                    onClick={handleSubmit}
+                  >
+                    Envoyer
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn-code-editor"
+                    onClick={() => navigate('/codeEditor')}
+                  >
+                    Teste technique
+                  </button>
+                </>
               )}
             </div>
+
           </form>
         </div>
       </div>

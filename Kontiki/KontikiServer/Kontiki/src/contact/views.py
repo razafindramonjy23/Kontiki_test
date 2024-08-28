@@ -5,9 +5,6 @@ from rest_framework import status
 from .models import Contact
 from .serializers import ContactSerializer
 
-# def index(request): 
-#     return render(request, 'base.html')
-
 @api_view(['GET'])
 def get_contacts(request): 
     contacts = Contact.objects.all()

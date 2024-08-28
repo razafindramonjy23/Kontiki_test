@@ -1,19 +1,67 @@
 from rest_framework import serializers
-from .models import Question, UserResponse, FormSection
+from .models import (InformationPersonnel, SavoirFormation, 
+Ponctualite, Tenacite, Integration, SensDuService, Autonomie,
+Organisation, Satisfaction, TestTechniquePython, 
+TestTechniqueJavascript, TestTechniqueFullstack)
 
-class QuestionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Question
+class InfoPersoSializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = InformationPersonnel
+        fields = '__all__'
+        
+class SavoirFormationSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = SavoirFormation
         fields = '__all__'
 
-class UserResponseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserResponse
+class PonctualiteSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Ponctualite
         fields = '__all__'
-
-class FormSectionSerializer(serializers.ModelSerializer):
-    questions = QuestionSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = FormSection
+        
+class TenaciteSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Tenacite
+        fields = '__all__'
+               
+class IntegrationSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Integration
+        fields = '__all__'
+        
+class SensDuServiceSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = SensDuService
+        fields = '__all__'
+        
+class AutonomieSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Autonomie
+        fields = '__all__'
+        
+class OrganisationSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Organisation
+        fields = '__all__'
+        
+        
+class SatisfactionSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = Satisfaction
+        fields = '__all__'
+        
+class TestTechPySerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = TestTechniquePython
+        fields = '__all__'
+        
+        
+class TestTechJsSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = TestTechniqueJavascript
+        fields = '__all__'
+    
+class TestTechFullSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = TestTechniqueFullstack
         fields = '__all__'
