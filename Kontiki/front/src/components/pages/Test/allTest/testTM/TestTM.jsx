@@ -200,7 +200,7 @@ const Presentation = () => {
 
   return (
     <div id="page" className="site">
-      <h1 className="container text-5xl px-3 py-3" >Teste de Trafique manager</h1>
+      <h1 className="container px-3 py-3 text-5xl" >Teste de Trafique manager</h1>
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />

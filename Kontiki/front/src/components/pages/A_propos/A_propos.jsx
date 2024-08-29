@@ -16,7 +16,7 @@ function A_propos() {
       <div className='font-sans'>
 
         <div className="my-8 text-center">
-          <h2 className="text-4xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
+          <h2 className="text-4xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-4xl hover:scale-125">
             Qui sommes nous vraiment ?
           </h2>
           <div className="flex justify-center mt-2">
@@ -165,7 +165,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Andre Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Dévellopeur</span>
                 </div>
-                <Link to="/TeamDev" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
+                <Link to="/dev" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
               <div className="mt-20 space-y-4 text-center border-t-4 group">

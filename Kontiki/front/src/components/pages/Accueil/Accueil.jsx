@@ -6,7 +6,7 @@ function Accueil() {
   return (
     <section id='intro'>
       <div className="introContent">
-        <span className='kontiki'>Feno Fitiavana</span>
+        <span className='kontiki'>Kontiki Service</span>
         <span className="introTexte"> est spécialiste du <br/></span>
         <span className='introMarketing'> marketing relationnel digital</span>
         <p className="introPara">

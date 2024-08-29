@@ -16,6 +16,7 @@ import MembresKontiki from './components/pages/A_propos/membres/MembresKontiki.j
 
 import './App.scss';
 import Activites from './components/pages/A_propos/actvt/Activites.jsx';
+import DevActivites from './components/pages/A_propos/actvt/dev/DevActivites.jsx';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         {/* A PROPOS  */}
         <Route path='membresKontiki' element={<MembresKontiki />} />
         <Route path='activites' element={<Activites />} />
+        <Route path='dev' element={<DevActivites/>} />
 
       </Routes>
 

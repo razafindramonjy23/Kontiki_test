@@ -58,7 +58,7 @@ const Presentation = () => {
   };
 
   const submitResponses = async (data) => {
-    const response = await fetch('http://localhost:8000/api/api/submit-responses/', {
+    const response = await fetch('http://localhost:8000/api/submit-responses/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

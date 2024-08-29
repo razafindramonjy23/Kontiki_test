@@ -6,7 +6,17 @@ import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 function Test() {
   return (
     <>
-      <div className='flex justify-around h-screen bg-yellow-200'>
+
+      <div className="my-8 font-sans text-center ">
+        <h2 className="text-6xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-5xl hover:scale-125">
+          KONTIKI TEST
+        </h2>
+        <div className="flex justify-center mt-2">
+          <div className="w-24 h-1 bg-amber-500"></div>
+        </div>
+      </div>
+
+      <div className='flex justify-around h-screen font-sans bg-blue-300'>
         <section className='pt-60'>
           <Link
             to="/testDev"
