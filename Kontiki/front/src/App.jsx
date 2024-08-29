@@ -12,7 +12,6 @@ import Contact from './components/pages/Contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import EditeurDeCode from './components/pages/Test/allTest/testDev/Code-editor.jsx';
 
-import MembresKontiki from './components/pages/A_propos/membres/MembresKontiki.jsx';
 
 import './App.scss';
 import Activites from './components/pages/A_propos/actvt/Activites.jsx';
@@ -41,7 +40,6 @@ function App() {
         <Route path='testTM' element={<TestTM />} />
 
         {/* A PROPOS  */}
-        <Route path='membresKontiki' element={<MembresKontiki />} />
         <Route path='activites' element={<Activites />} />
         <Route path='dev' element={<DevActivites/>} />
 
