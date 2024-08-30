@@ -71,6 +71,25 @@ const Presentation = () => {
     return response.json();
   };
 
+  useEffect(() => {
+
+    function submitResponses(){
+
+      fetch('http://localhost:8000/api/submit-responses/' ,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(respo => respo.json())
+      .then(data => setFormData(data))
+      .catch(err => console.error("", err)
+      )
+    }
+
+  });
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
