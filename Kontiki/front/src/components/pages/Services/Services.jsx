@@ -90,7 +90,7 @@ function Services() {
         </div>
       </div>
 
-      <div className="carousel" ref={carouselRef}>
+      <div className="carousel " ref={carouselRef}>
         <div className="list" ref={listRef}>
           <div className="item" style={{ backgroundImage: `url(${progress})` }}>
           </div>
@@ -101,9 +101,9 @@ function Services() {
               <div className="description">
                 Collecter des prospects qualifiés et générez de nouveaux clients.
               </div>
-              <div className="btns">
+              {/* <div className="btns">
               <button>Voir plus</button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -113,9 +113,9 @@ function Services() {
               <div className="description">
                 Gestion des campagnes emailing, depuis la création de KIT, landing page jusqu'à l'envoi et l'analyse des résultats.
               </div>
-              <div className="btns">
+              {/* <div className="btns">
                 <button>Voir plus</button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -125,9 +125,9 @@ function Services() {
               <div className="description">
                 Nous qualifions les contacts pour cibler au plus juste les prospects de nos clients.
               </div>
-              <div className="btns">
+              {/* <div className="btns">
                 <button>Voir plus</button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -137,9 +137,9 @@ function Services() {
               <div className="description">
                 Faites-nous confiance.
               </div>
-              <div className="btns">
+              {/* <div className="btns">
                 <button>Voir plus</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
