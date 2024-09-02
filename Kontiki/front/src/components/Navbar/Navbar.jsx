@@ -21,7 +21,9 @@ function Navbar() {
           <Link to="/contact" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
         </div>
 
-        <img className='block text-5xl cursor-pointer xl:hidden' width="50" height="50" src="https://img.icons8.com/ios/50/menu--v1.png" alt="menu--v1" onClick={() => setIsMenuOpen(!isMenuOpen)}/>
+        
+
+        <img className='block text-5xl cursor-pointer xl:hidden' width="50" height="50" src="https://img.icons8.com/ios-filled/50/menu--v6.png" alt="menu--v6"/>
 
         {/* <div className={`absolute xl:hidden top-24 left-0 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
         

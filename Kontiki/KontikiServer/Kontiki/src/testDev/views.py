@@ -5,8 +5,9 @@ from .serializers import (
     InfoPersoSerializer, SavoirFormationSerializer, PonctualiteSerializer,
     TenaciteSerializer, IntegrationSerializer, SensDuServiceSerializer,
     AutonomieSerializer, OrganisationSerializer, SatisfactionSerializer,
-    TestTechPySerializer, TestTechJsSerializer, TestTechFullSerializer
+    TestTechniquePythonSerializer, TestTechniqueJavaScriptSerializer, TestTechniqueFullstackSerializer
 )
+
 from .models import (
     InformationPersonnel, SavoirFormation, Ponctualite, 
     Tenacite, Integration, SensDuService, Autonomie, 
@@ -27,9 +28,9 @@ def submit_responses(request):
         'autonomie': AutonomieSerializer,
         'organisation': OrganisationSerializer,
         'satisfaction': SatisfactionSerializer,
-        'test_technique_python': TestTechPySerializer,
-        'test_technique_javascript': TestTechJsSerializer,
-        'test_technique_fullstack': TestTechFullSerializer
+        'test_technique_python': TestTechniquePythonSerializer,
+        'test_technique_javascript': TestTechniqueJavaScriptSerializer,
+        'test_technique_fullstack': TestTechniqueFullstackSerializer
     }
 
     response_data = {}
@@ -77,9 +78,9 @@ def get_all_sections(request):
         'autonomie': AutonomieSerializer(autonomie, many=True).data,
         'organisation': OrganisationSerializer(organisation, many=True).data,
         'satisfaction': SatisfactionSerializer(satisfaction, many=True).data,
-        'test_technique_python': TestTechPySerializer(test_tech_python, many=True).data,
-        'test_technique_javascript': TestTechJsSerializer(test_tech_javascript, many=True).data,
-        'test_technique_fullstack': TestTechFullSerializer(test_tech_fullstack, many=True).data
+        'test_technique_python': TestTechniquePythonSerializer(test_tech_python, many=True).data,
+        'test_technique_javascript': TestTechniqueJavaScriptSerializer(test_tech_javascript, many=True).data,
+        'test_technique_fullstack': TestTechniqueFullstackSerializer(test_tech_fullstack, many=True).data
     }
 
     return Response(data, status=status.HTTP_200_OK)
