@@ -23,15 +23,8 @@ function Test() {
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
           >
             <div className="flex items-center space-x-3">
-              <svg
-                className="w-6 h-6 stroke-sky-500 group-hover:stroke-white"
-                fill="none"
-                viewBox="0 0 24 24"
-              // Ajoutez des attributs nécessaires pour le SVG ici
-              >
-                {/* Contenu SVG */}
-              </svg>
-              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Test pour les Développeurs</h3>
+              <img src="https://img.icons8.com/ios/50/ios-development.png" alt="ios-development" />
+              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Test DEV</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
               Test pour les dev front veuillez vous inscrire
@@ -45,14 +38,7 @@ function Test() {
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
           >
             <div className="flex items-center space-x-3">
-              <svg
-                className="w-6 h-6 stroke-sky-500 group-hover:stroke-white"
-                fill="none"
-                viewBox="0 0 24 24"
-              // Ajoutez des attributs nécessaires pour le SVG ici
-              >
-                {/* Contenu SVG */}
-              </svg>
+              <img width="64" height="64" src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/external-Affiliate-business-and-marketing-bearicons-glyph-bearicons.png" alt="external-Affiliate-business-and-marketing-bearicons-glyph-bearicons" />
               <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Affiliète Manager</h3>
             </div>
             <p className="text-sm text-slate-500 group-hover:text-white">
