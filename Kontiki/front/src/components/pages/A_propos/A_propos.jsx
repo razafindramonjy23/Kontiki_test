@@ -9,6 +9,9 @@ import vision from '../../../assets/Images/pages/a_propos/vision.png'
 import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 
 import { motion } from 'framer-motion';
+import { FadeUp } from '../../utility/animation';
+import { FadeLeft } from '../../utility/animation';
+import { FadeRight } from '../../utility/animation';
 
 
 
@@ -22,11 +25,14 @@ function A_propos() {
           <h2 className="text-4xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-4xl hover:scale-125">
             Qui sommes nous vraiment ?
           </h2>
+
           <div className="flex justify-center mt-2">
             <div className="w-24 h-1 bg-amber-500"></div>
           </div>
 
-          <div className="my-8 text-lg text-center">
+          <motion.div
+
+            className="my-8 text-lg text-center">
             <p className="mt-20 text-blue-950">
               Spécialiste du marketing digital et du traitement des données massives (Bigdata),<br />
               KONTIKI SERVICE a été créé le 19 mars 2019.
@@ -34,14 +40,21 @@ function A_propos() {
             <p className='mb-6 text-blue-950'>
               Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        <section className="py-16 bg-white">
+        <motion.section
+
+          variants={FadeUp(0.5)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{  once: true  }}
+
+          className="py-16 bg-white">
           <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
             <div className="text-center lg:text-left lg:w-1/2">
               <h2 className="mb-4 text-5xl font-bold text-blue-950">KONTIKI SERVICES</h2>
-              <p className="mb-6 text-lg text-green-600 transition-transform duration-300 ease-in-out hover:scale-110">
+              <p className="mb-6 text-lg text-green-800 transition-transform font-semibold duration-300 ease-in-out hover:scale-110">
                 La première Application de Kontiki Sevices à Madagascar
               </p>
               <p className="mb-8 text-gray-600">
@@ -71,33 +84,47 @@ function A_propos() {
               />
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
 
 
 
       <section className="py-16 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
-          <div className="mt-12 lg:mt-0 lg:w-1/2">
+          <motion.div 
+          
+          variants={FadeRight(0.8)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{  once: true  }}
+          
+          className="mt-12 lg:mt-0 lg:w-1/2">
             <h2 className="mb-4 text-3xl font-bold text-blue-950">Des métiers d'avenirs</h2>
             <p className="mb-8 text-lg text-gray-600">
               Nous offrons une opportunité aux jeunes malgaches d'exprimer leurs potentiels et d'occuper des métiers d'avenir challengeant.
             </p>
             <img src={europeens} alt="" />
-          </div>
+          </motion.div>
 
-          <div className="text-center lg:text-left lg:w-1/2 ">
+          <motion.div 
+          
+          variants={FadeLeft(0.9)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{  once: true  }}
+          
+          className="text-center lg:text-left lg:w-1/2 ">
             <h2 className="mb-4 text-3xl font-bold text-blue-950">Notre vision</h2>
             <p className="mb-8 text-lg text-gray-600">
               Vous évoluerez dans l'environnement passionnant du marketing digital, et gagnerez rapidement en compétence et en responsabilité pour construire ensemble l'avenir de la société.
             </p>
             <img src={vision} alt="" />
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
-      <div className="my-8 mb-20 font-sans text-center">
+      <div className="my-8 py-20 mb-20 font-sans text-center">
         <h2 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
           Notre partenaire de services ?
         </h2>
@@ -108,25 +135,48 @@ function A_propos() {
 
       <section className="py-16 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
-          <div className="mt-12 lg:mt-0 lg:w-1/2">
+          <motion.div 
+          
+                    
+          variants={FadeRight(0.6)}
+          initial="hidden"
+          animate="visible"
+
+          className="mt-12 lg:mt-0 lg:w-1/2">
             <img
               src={europeens}
               alt="KONTIKI Digital app"
               className="w-full rounded-lg"
             />
-          </div>
-          <div className="text-center lg:text-left lg:w-1/2 ">
+          </motion.div>
+          <motion.div 
+          
+          variants={FadeLeft(1.2)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{  once: true  }}
+          
+          className="text-center lg:text-left lg:w-1/2 ">
             <p className="mb-8 text-2xl text-gray-600">
               L’agence propose à ses clients européens des prestations de publicité digitale,
               de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.
             </p>
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
 
-      <section className='py-20 font-sans'>
+      <motion.section 
+      
+      
+      variants={FadeUp(0.8)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{  once: true  }}
+      
+      
+      className='py-20 font-sans'>
         <div className='bg-white'>
           <div className="container px-6 mx-auto md:px-12 lg:px-8">
             <div className="mt-20 mb-12 space-y-4 text-center">
@@ -182,10 +232,21 @@ function A_propos() {
                 <Link to="/TeamCall" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
+              <div className="mt-20 space-y-4 text-center border-t-4 group">
+                <div className="w-32 h-32 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden ">
+                  <img src={user3} alt="DeddyKontiki" loading='lazy' width="640" height="805" className='object-cover w-full h-full mx-auto transition duration-300 scale-125 -rotate-45 ' />
+                </div>
+                <div className='text-center'>
+                  <h5 className='text-xl font-semibold text-gray-800'>Landy Kontiki</h5>
+                  <span className='text-sm text-gray-500 '>Trafic Manager</span>
+                </div>
+                <Link to="/TeamRD" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
+              </div>
+
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }

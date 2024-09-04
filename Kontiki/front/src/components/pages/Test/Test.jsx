@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import bois from '../../../assets/Images/pages/test/bg-test-bois.jpg'
 
 
+import { motion } from 'framer-motion';
+import { FadeLeft } from '../../utility/animation';
+import { FadeRight } from '../../utility/animation';
+import { FadeUp } from '../../utility/animation';
+
+
 function Test() {
   return (
     <>
@@ -17,7 +23,14 @@ function Test() {
       </div>
 
       <div className='flex justify-around h-screen font-sans bg-blue-300'>
-        <section className='pt-60'>
+        <motion.section 
+        
+        variants={FadeRight(0.6)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  once: true  }}
+        
+        className='pt-60'>
           <Link
             to="/testDev"
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
@@ -30,9 +43,16 @@ function Test() {
               Test pour les dev front veuillez vous inscrire
             </p>
           </Link>
-        </section>
+        </motion.section>
 
-        <section className='pt-60'>
+        <motion.section 
+        
+        variants={FadeUp(0.8)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  once: true  }}
+        
+        className='pt-60'>
           <Link
             to="/testTM"
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
@@ -45,9 +65,16 @@ function Test() {
               Create a new project from a variety of starting templates.
             </p>
           </Link>
-        </section>
+        </motion.section>
 
-        <section className='pt-60'>
+        <motion.section 
+        
+        variants={FadeLeft(1.2)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  once: true  }}
+        
+        className='pt-60'>
           <Link
             to="/testTM"
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
@@ -67,7 +94,7 @@ function Test() {
               Create a new project from a variety of starting templates.
             </p>
           </Link>
-        </section>
+        </motion.section>
       </div>
     </>
   )
