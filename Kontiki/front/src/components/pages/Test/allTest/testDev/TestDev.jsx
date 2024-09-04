@@ -49,57 +49,177 @@ const ProgressSteps = ({ steps, activeStep }) => (
 
 const Presentation = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [formData, setFormData] = useState({});
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    // Information Personnel
+    nom: '',
+    prenom: '',
+    age: '',
+    situation_matrimoniale: '',
+    adresse_actuelle: '',
+    numero_telephone: '',
+    adresse_email: '',
+
+    // Savoir Formation
+    poste_envisage: '',
+    formations_suivies: '',
+    dernier_travail: '',
+    satisfaction_carriere: '',
+    exemples_realisations: '',
+
+    // Ponctualité
+    respect_horaires: '',
+    retard_justifie: '',
+    ponctualite_globale: '',
+
+    // Ténacité
+    perseverance: '',
+    resistance_aux_obstacles: '',
+    gestion_stress: '',
+
+    // Intégration
+    esprit_equipe: '',
+    collaboration: '',
+    relations_avec_collegues: '',
+
+    // Sens du Service
+    ecoute_client: '',
+    satisfaction_client: '',
+    service_apres_vente: '',
+
+    // Autonomie
+    prise_initiative: '',
+    travail_independant: '',
+    gestion_taches: '',
+
+    // Organisation
+    planification: '',
+    respect_des_deadlines: '',
+    organisation_globale: '',
+
+    // Satisfaction
+    satisfaction_generale: '',
+    commentaires_suggestions: '',
+
+    // Test Technique Python
+    python_experience: '',
+    python_projets_realises: '',
+    python_niveau_competence: '',
+
+    // Test Technique JavaScript
+    javascript_experience: '',
+    javascript_projets_realises: '',
+    javascript_niveau_competence: '',
+
+    // Test Technique Fullstack
+    fullstack_experience: '',
+    fullstack_projets_realises: '',
+    fullstack_niveau_competence: '',
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData(prevData => ({ ...prevData, [name]: value }));
-  };
-
-  const submitResponses = async (data) => {
-    const response = await fetch('http://localhost:8000/api/submit-responses/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+    setFormData({
+      ...formData,
+      [name]: value,
     });
-    if (!response.ok) {
-      throw new Error('Erreur lors de la soumission des réponses.');
-    }
-    return response.json();
   };
 
-  useEffect(() => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    function submitResponses(){
+    const structuredData = {
+      information_personnel: {
+        nom: formData.nom,
+        prenom: formData.prenom,
+        age: formData.age,
+        situation_matrimoniale: formData.situation_matrimoniale,
+        adresse_actuelle: formData.adresse_actuelle,
+        numero_telephone: formData.numero_telephone,
+        adresse_email: formData.adresse_email,
+      },
+      savoir_formation: {
+        poste_envisage: formData.poste_envisage,
+        formations_suivies: formData.formations_suivies,
+        dernier_travail: formData.dernier_travail,
+        satisfaction_carriere: formData.satisfaction_carriere,
+        exemples_realisations: formData.exemples_realisations,
+      },
+      ponctualite: {
+        respect_horaires: formData.respect_horaires,
+        retard_justifie: formData.retard_justifie,
+        ponctualite_globale: formData.ponctualite_globale,
+      },
+      tenacite: {
+        perseverance: formData.perseverance,
+        resistance_aux_obstacles: formData.resistance_aux_obstacles,
+        gestion_stress: formData.gestion_stress,
+      },
+      integration: {
+        esprit_equipe: formData.esprit_equipe,
+        collaboration: formData.collaboration,
+        relations_avec_collegues: formData.relations_avec_collegues,
+      },
+      sens_du_service: {
+        ecoute_client: formData.ecoute_client,
+        satisfaction_client: formData.satisfaction_client,
+        service_apres_vente: formData.service_apres_vente,
+      },
+      autonomie: {
+        prise_initiative: formData.prise_initiative,
+        travail_independant: formData.travail_independant,
+        gestion_taches: formData.gestion_taches,
+      },
+      organisation: {
+        planification: formData.planification,
+        respect_des_deadlines: formData.respect_des_deadlines,
+        organisation_globale: formData.organisation_globale,
+      },
+      satisfaction: {
+        satisfaction_generale: formData.satisfaction_generale,
+        commentaires_suggestions: formData.commentaires_suggestions,
+      },
+      test_technique_python: {
+        python_experience: formData.python_experience,
+        python_projets_realises: formData.python_projets_realises,
+        python_niveau_competence: formData.python_niveau_competence,
+      },
+      test_technique_javascript: {
+        javascript_experience: formData.javascript_experience,
+        javascript_projets_realises: formData.javascript_projets_realises,
+        javascript_niveau_competence: formData.javascript_niveau_competence,
+      },
+      test_technique_fullstack: {
+        fullstack_experience: formData.fullstack_experience,
+        fullstack_projets_realises: formData.fullstack_projets_realises,
+        fullstack_niveau_competence: formData.fullstack_niveau_competence,
+      },
+    };
 
-      fetch('http://localhost:8000/api/submit-responses/' ,{
+
+    try {
+      const response = await fetch('http://localhost:8000/api/submit_responses/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
-      })
-      .then(respo => respo.json())
-      .then(data => setFormData(data))
-      .catch(err => console.error("", err)
-      )
-    }
+        body: JSON.stringify(structuredData),
+      });
 
-  });
+      // if (!response.ok) {
+      //   throw new Error('Erreur lors de la soumission des réponses.');
+      // }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      await submitResponses(formData);
-      alert('Réponses soumises avec succès !');
+      const result = await response.json();
+      console.log('Réponses soumises avec succès:', result);
+      // alert('Réponses soumises avec succès !');
     } catch (error) {
       console.error('Erreur lors de la soumission :', error);
-      alert('Erreur lors de la soumission.');
+      // alert('Erreur lors de la soumission.');
     }
   };
+
 
   const btnSuivant = () => {
     if (activeStep < steps.length - 1) {

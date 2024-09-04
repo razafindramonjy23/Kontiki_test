@@ -8,6 +8,9 @@ import user4 from '../../../assets/Images/pages/a_propos/user4.jpg'
 import vision from '../../../assets/Images/pages/a_propos/vision.png'
 import europeens from '../../../assets/Images/pages/a_propos/europeens.jpg'
 
+import { motion } from 'framer-motion';
+
+
 
 
 function A_propos() {

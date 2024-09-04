@@ -1,19 +1,22 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.exceptions import ValidationError
+
 from .serializers import (
     InfoPersoSerializer, SavoirFormationSerializer, PonctualiteSerializer,
     TenaciteSerializer, IntegrationSerializer, SensDuServiceSerializer,
     AutonomieSerializer, OrganisationSerializer, SatisfactionSerializer,
     TestTechniquePythonSerializer, TestTechniqueJavaScriptSerializer, TestTechniqueFullstackSerializer
 )
-
 from .models import (
     InformationPersonnel, SavoirFormation, Ponctualite, 
     Tenacite, Integration, SensDuService, Autonomie, 
     Organisation, Satisfaction, TestTechniquePython, TestTechniqueJavaScript,
     TestTechniqueFullstack
 )
+
+
 @api_view(['POST'])
 def submit_responses(request):
     data = request.data
@@ -45,6 +48,8 @@ def submit_responses(request):
                     response_data[key] = serializer.data
                 else:
                     errors[key] = serializer.errors
+            except ValidationError as e:
+                errors[key] = e.detail
             except Exception as e:
                 errors[key] = str(e)
     
@@ -84,3 +89,7 @@ def get_all_sections(request):
     }
 
     return Response(data, status=status.HTTP_200_OK)
+
+@api_view(['PUT', 'DELETE'])
+def test_detail(request, pk): 
+    pass

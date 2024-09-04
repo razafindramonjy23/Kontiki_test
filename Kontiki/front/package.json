@@ -23,7 +23,7 @@
     "@mui/material": "^5.16.4",
     "axios": "^1.7.3",
     "codemirror": "^5.65.17",
-    "framer-motion": "^11.3.21",
+    "framer-motion": "^11.4.0",
     "monaco-editor": "^0.50.0",
     "react": "^18.3.1",
     "react-codemirror2": "^8.0.0",
@@ -46,6 +46,4 @@
     "tailwindcss": "^3.4.8",
     "vite": "^5.3.1"
   }
-
-
 }
