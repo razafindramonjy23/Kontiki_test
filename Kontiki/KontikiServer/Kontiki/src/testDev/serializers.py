@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 
-
 from .models import (
     InformationPersonnel, SavoirFormation, Ponctualite, Tenacite, Integration,
     SensDuService, Autonomie, Organisation, Satisfaction, TestTechniquePython,

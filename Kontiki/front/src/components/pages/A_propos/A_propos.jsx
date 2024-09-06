@@ -76,13 +76,20 @@ function A_propos() {
                 </p>
               </div>
             </div>
-            <div className="mt-12 lg:mt-0 lg:w-1/2">
+            <motion.div 
+            
+            variants={FadeUp(0.8)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{  once: true  }}
+
+            className="mt-12 lg:mt-0 lg:w-1/2">
               <img
                 src={phone}
                 alt="KONTIKI Digital app"
                 className="w-full"
               />
-            </div>
+            </motion.div>
           </div>
         </motion.section>
       </div>
@@ -135,20 +142,21 @@ function A_propos() {
 
       <section className="py-16 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
+         
           <motion.div 
-          
-                    
-          variants={FadeRight(0.6)}
+                      
+          variants={FadeRight(0.8)}
           initial="hidden"
           animate="visible"
 
-          className="mt-12 lg:mt-0 lg:w-1/2">
+          className="mt-12 pr-12 lg:mt-0 lg:w-1/2">
             <img
               src={europeens}
               alt="KONTIKI Digital app"
               className="w-full rounded-lg"
             />
           </motion.div>
+
           <motion.div 
           
           variants={FadeLeft(1.2)}
@@ -156,7 +164,7 @@ function A_propos() {
           whileInView="visible"
           viewport={{  once: true  }}
           
-          className="text-center lg:text-left lg:w-1/2 ">
+          className="text-center pl-5 lg:text-left lg:w-1/2 ">
             <p className="mb-8 text-2xl text-gray-600">
               L’agence propose à ses clients européens des prestations de publicité digitale,
               de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.

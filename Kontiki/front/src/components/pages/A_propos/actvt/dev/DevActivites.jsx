@@ -17,7 +17,7 @@ function DevActivites() {
                     </p>
 
                     <p className='mb-6 text-blue-950'>
-                        Les Langages, Frameworks ou Soltions que nous utilisons au quotidien
+                        Les Langages, Frameworks ou Solutions que nous utilisons au quotidien
                     </p>
                 </div>
             </div>

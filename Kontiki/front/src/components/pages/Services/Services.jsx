@@ -6,6 +6,11 @@ import andre from './img/andre.jpg';
 import Rova from './img/Rova.jpg';
 import '../../scss/pages/_services.scss';
 
+import { FadeLeft } from '../../utility/animation';
+import { FadeRight } from '../../utility/animation';
+import { FadeUp } from '../../utility/animation';
+import { motion } from 'framer-motion';
+
 function Services() {
   const nextBtnRef = useRef(null);
   const prevBtnRef = useRef(null);
@@ -169,42 +174,84 @@ function Services() {
       <section className="py-20 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
           <div className="text-center lg:text-left lg:w-1/2">
-            <div className="my-8 mb-20 font-sans text-center">
+            <motion.div
+
+              variants={FadeUp(0.5)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+
+              className="my-8 mb-20 font-sans text-center">
               <h2 className="text-5xl font-semibold ">
                 NOS FORCES
               </h2>
               <div className="flex justify-center mt-2">
                 <div className="w-24 h-1 bg-amber-500"></div>
               </div>
-            </div>
-            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+            </motion.div>
+            <motion.p
+
+              variants={FadeRight(0.6)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+
+              className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
               Equipe jeune, dynamique et compétente
-            </p>
+            </motion.p>
 
-            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+            <motion.p
+
+              variants={FadeRight(0.8)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+
+              className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
               Large éventail de métiers intéressants
-            </p>
+            </motion.p>
 
-            <p className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
+            <motion.p
+
+              variants={FadeRight(0.9)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+
+              className="mb-6 text-lg transition-transform duration-300 ease-in-out text-black-600 hover:scale-110">
               Ambiance conviviale et professionnelle
-            </p>
+            </motion.p>
 
-            <div className="flex justify-center space-x-4 lg:justify-start">
+            <motion.div 
+            
+            variants={FadeUp(1.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            
+            className="flex justify-center space-x-4 lg:justify-start">
               <p className="flex items-center px-5 py-2 rounded-lg text-blue-950 bg-amber-400">
                 {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12c0 4.3 2.7 8.1 6.5 9.5.5.1.7-.2.7-.5v-1.7c-2.7.5-3.2-1.3-3.2-1.3-.4-1-.9-1.2-.9-1.2-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.3 2.1 1 2.6.8.1-.5.3-.8.5-1-2.2-.3-4.5-1.1-4.5-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.6 1 .8-.2 1.7-.3 2.6-.3.9 0 1.8.1 2.6.3 1.8-1.3 2.6-1 2.6-1 .5 1.5.2 2.6.1 2.9.7.7 1 1.6 1 2.6 0 3.7-2.3 4.4-4.5 4.7.3.3.6.7.6 1.3v2c0 .3.2.6.7.5C19.3 20.1 22 16.3 22 12c0-5.5-4.5-10-10-10z" />
                   </svg> */}
                 EN PLEIN CROISSANCE
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className="mt-12 lg:mt-0 lg:w-1/2">
+          <motion.div 
+          
+          variants={FadeLeft(1.3)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          
+          className="mt-12 lg:mt-0 lg:w-1/2">
             <img
               src=""
               alt="Jeunes"
               className="w-full"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
