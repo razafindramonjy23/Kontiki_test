@@ -4,7 +4,9 @@ import react from "../../../../../assets/Images/pages/a_propos/technologies/reac
 import tailwind from "../../../../../assets/Images/pages/a_propos/technologies/tailwind.jpeg"
 import vuejs from "../../../../../assets/Images/pages/a_propos/technologies/vuejs.png"
 import js from "../../../../../assets/Images/pages/a_propos/technologies/js.jpeg"
-import django from "../../../../../assets/Images/pages/a_propos/technologies/django.jpeg"
+import django from "../../../../../assets/Images/pages/a_propos/technologies/django.png"
+import python from "../../../../../assets/Images/pages/a_propos/technologies/python.png"
+import angular from "../../../../../assets/Images/pages/a_propos/technologies/angular.png"
 
 function DevActivites() {
     return (
@@ -19,10 +21,6 @@ function DevActivites() {
                 <div className="my-8 text-lg text-center">
                     <p className='mb-6 text-4xl text-blue-950'>
                         Bienvenue dans le Département des développeurs
-                    </p>
-
-                    <p className='mb-6 text-blue-950'>
-                        Les Langages, Frameworks ou Solutions que nous utilisons au quotidien
                     </p>
                 </div>
             </div>
@@ -43,9 +41,9 @@ function DevActivites() {
                                 Industrialisez, économisez !
                             </h3>
                             <p className="text-gray-600">
-                                Nos services s’adressent à des clients souhaitant industrialiser
+                                Nos services s’adressent à des clients souhaitant numériser
                                 leur activité et optimiser leurs coûts de fonctionnement grâce à
-                                l’off-shore.
+                                notre super equipe.
                             </p>
                             <div className="h-1 bg-gradient-to-r from-yellow-400 to-red-400 mt-4"></div>
                         </div>
@@ -97,43 +95,31 @@ function DevActivites() {
                         <p className='mb-6 text-blue-950'>
                             Les Langages, Frameworks ou Solutions que nous utilisons au quotidien
                         </p>
+                        <p className='mb-6 text-4xl text-blue-950'>
+                            Technologies frontend
+                        </p>
+                        <div className="flex justify-center items-center space-x-6 pt-20">
+                            <img src={alpine} alt="alpine" className="h-20 md:h-25" />
 
-                        <div className="flex justify-center items-center space-x-6">
-                            <img
-                                src={alpine}
-                                alt="alpine"
-                                className="h-12 md:h-16"
-                            />
-                            <img
-                                src={react}
-                                alt="react.js"
-                                className="h-12 md:h-16"
-                            />
-                            <img
-                                src={tailwind}
-                                alt="tailwind"
-                                className="h-12 md:h-16"
-                            />
-                            <img
-                                src={vuejs}
-                                alt="vue.js"
-                                className="h-12 md:h-16"
-                            />
-                            <img
-                                src={js}
-                                alt="JavaScript"
-                                className="h-12 md:h-16"
-                            />
+                            <img src={react} alt="react.js" className="h-20 md:h-25" />
+
+                            <img src={tailwind} alt="tailwind" className="h-20 md:h-25" />
+
+                            <img src={vuejs} alt="vue.js" className="h-20 md:h-25" />
+
+                            <img src={js} alt="JavaScript" className="h-20 md:h-25" />
 
                         </div>
                     </div>
 
                     <div className="my-8 text-lg text-center">
                         <p className='mb-6 text-4xl text-blue-950'>
-                            Quelques unes des technologies utilisées
+                            Technologies backend
                         </p>
                         <div className="flex justify-center items-center space-x-6">
-                            <img src={django} alt="django" className="h-12 md:h-16"/>
+                            <img src={django} alt="django" className="h-20 md:h-25" />
+                            <img src={python} alt="python" className="h-20 md:h-25" />
+                            <img src={angular} alt="angular" className="h-24 md:h-30" />
                         </div>
                     </div>
                 </div>
