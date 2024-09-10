@@ -204,7 +204,7 @@ function A_propos() {
                   <h5 className='text-xl font-semibold text-gray-800'>Rita Kontiki</h5>
                   <span className='text-sm text-gray-500 '>Marketing</span>
                 </div>
-                <Link to="/TeamCall" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
+                <Link to="/call" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
 
               <div className="space-y-4 text-center border-t-4 group">

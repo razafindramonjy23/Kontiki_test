@@ -16,6 +16,9 @@ import EditeurDeCode from './components/pages/Test/allTest/testDev/Code-editor.j
 import './App.scss';
 import Activites from './components/pages/A_propos/actvt/Activites.jsx';
 import DevActivites from './components/pages/A_propos/actvt/dev/DevActivites.jsx';
+import CallActivite from './components/pages/A_propos/actvt/call/CallActivite.jsx';
+
+import { Spinner } from "@material-tailwind/react";
 
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
         {/* A PROPOS  */}
         <Route path='activites' element={<Activites />} />
         <Route path='dev' element={<DevActivites/>} />
+        <Route path='call' element={<CallActivite/>} />
 
       </Routes>
 
