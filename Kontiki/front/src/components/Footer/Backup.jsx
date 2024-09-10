@@ -1,7 +1,12 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+
 <footer className="py-6 dark:bg-gray-100 dark:text-gray-900">
 	<div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
 		<div className="grid grid-cols-12">
 			<div className="pb-6 col-span-full md:pb-0 md:col-span-6">
+				
 				<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
 					<div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-50">
@@ -11,26 +16,30 @@
 					<span className="self-center text-2xl font-semibold">Brand name</span>
 				</a>
 			</div>
+
+
 			<div className="col-span-6 text-center md:text-left md:col-span-3">
-				<p className="pb-1 text-lg font-medium">Category</p>
+				<p className="pb-1 text-lg font-medium">Kontiki</p>
 				<ul>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+						<Link rel="noopener noreferrer" to="/" className="hover:dark:text-violet-600">Accueil</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+						<Link rel="noopener noreferrer" to="/services" className="hover:dark:text-violet-600">Services</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+						<Link rel="noopener noreferrer" to="/apropos" className="hover:dark:text-violet-600">A propos de nous</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+						<Link rel="noopener noreferrer" to="/test" className="hover:dark:text-violet-600">Link</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Link</a>
+						<Link rel="noopener noreferrer" to="/contact" className="hover:dark:text-violet-600">Contactez-nous</Link>
 					</li>
 				</ul>
 			</div>
+
+			
 			<div className="col-span-6 text-center md:text-left md:col-span-3">
 				<p className="pb-1 text-lg font-medium">Category</p>
 				<ul>

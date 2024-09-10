@@ -51,8 +51,7 @@ def submit_responses(request):
             except ValidationError as e:
                 errors[key] = e.detail
             except Exception as e:
-                errors[key] = str(e)
-    
+                errors[key] = str(e)   
     if errors:
         return Response({'status': 'error', 'errors': errors}, status=status.HTTP_400_BAD_REQUEST)
     

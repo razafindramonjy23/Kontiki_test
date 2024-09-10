@@ -211,8 +211,8 @@ const Presentation = () => {
       //   throw new Error('Erreur lors de la soumission des réponses.');
       // }
 
-      const result = await response.json();
-      console.log('Réponses soumises avec succès:', result);
+      const data = await response.json();
+      console.log('Réponses soumises avec succès:', data);
       // alert('Réponses soumises avec succès !');
     } catch (error) {
       console.error('Erreur lors de la soumission :', error);
@@ -427,7 +427,6 @@ const Presentation = () => {
                 </>
               )}
             </div>
-
           </form>
         </div>
       </div>
