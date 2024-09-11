@@ -369,7 +369,7 @@ const Presentation = () => {
   ];
 
   return (
-    <div id="page" className="site">
+    <div id="page" className="site font-sans">
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
@@ -389,7 +389,7 @@ const Presentation = () => {
             <div className="btn-group">
               <button
                 type="button"
-                className="btn-retour"
+                className="btn-retour mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
                 onClick={btnPrecedent}
                 disabled={activeStep === 0}
               >
@@ -399,7 +399,7 @@ const Presentation = () => {
               {activeStep < steps.length - 1 && (
                 <button
                   type="button"
-                  className="btn-suivant"
+                  className="btn-suivant mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
                   onClick={btnSuivant}
                   disabled={activeStep === steps.length - 1}
                 >
@@ -411,7 +411,7 @@ const Presentation = () => {
                 <>
                   <button
                     type="submit"
-                    className="btn-envoyer"
+                    className="btn-envoyer mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
                     onClick={handleSubmit}
                   >
                     Envoyer
@@ -419,7 +419,7 @@ const Presentation = () => {
 
                   <button
                     type="button"
-                    className="btn-code-editor"
+                    className="btn-code-editor mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
                     onClick={() => navigate('/codeEditor')}
                   >
                     Teste technique

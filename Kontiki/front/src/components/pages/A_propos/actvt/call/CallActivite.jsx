@@ -1,12 +1,12 @@
 import React from 'react'
-import { Breadcrumbs } from "@material-tailwind/react";
-import { Link } from 'react-router-dom';
+// import { Breadcrumbs } from "@material-tailwind/react";
+// import { Link } from 'react-router-dom';
 
 function CallActivite() {
   return (
     <>
     
-    <Breadcrumbs>
+    {/* <Breadcrumbs>
       <a href="#" className="opacity-60">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ function CallActivite() {
 
       <a to="/">Team Call</a>
 
-    </Breadcrumbs>
+    </Breadcrumbs> */}
     
     </>
   )

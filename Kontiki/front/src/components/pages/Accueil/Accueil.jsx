@@ -15,7 +15,7 @@ function Accueil() {
         </p>
 
         <Link to='/Contact' smooth={true} duration={500} >
-        <button className='mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100'> <span>Contactez-nous &nbsp;</span> </button></Link>
+        <button className='mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500'> <span>Contactez-nous &nbsp;</span> </button></Link>
       </div>
     </section>
   )

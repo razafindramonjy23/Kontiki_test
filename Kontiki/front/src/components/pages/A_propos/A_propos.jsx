@@ -176,8 +176,7 @@ function A_propos() {
 
 
       <motion.section 
-      
-      
+           
       variants={FadeUp(0.8)}
       initial="hidden"
       whileInView="visible"

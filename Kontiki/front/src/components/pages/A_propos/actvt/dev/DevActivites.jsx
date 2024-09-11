@@ -166,16 +166,29 @@ function DevActivites() {
                     </div>
                 </div>
             </section> */}
+            <div className="my-8 text-center mt-20">
+                <h2 className="text-6xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-5xl hover:scale-125">
+                    LA TEAM
+                </h2>
+                <div className="flex justify-center mt-2">
+                    <div className="w-24 h-1 bg-amber-500"></div>
+                </div>
+            </div>
             <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
                 <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
-                    <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">Development team</p>
-                    <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">The talented people behind the scenes</h1>
+                    {/* <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">La team</p> */}
+                    {/* <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">The talented people behind the scenes</h1> */}
+                    <div className="my-5 text-lg text-center">
+                        <p className='mt-5 text-3xl text-blue-950'>
+                            The talented people behind the scenes
+                        </p>
+                    </div>
                     <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?0" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Andre KONTIKI</p>
+                                <p>Backend</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">
@@ -204,8 +217,8 @@ function DevActivites() {
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?1" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Calin KONTIKI</p>
+                                <p>Backend</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">
@@ -234,8 +247,8 @@ function DevActivites() {
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?2" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Tim KONTIKI</p>
+                                <p>Front-end</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">
@@ -264,8 +277,8 @@ function DevActivites() {
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?3" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Hurga KONTIKI</p>
+                                <p>Frontend</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">
@@ -294,8 +307,8 @@ function DevActivites() {
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?4" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Rodolphe KONTIKI</p>
+                                <p>Backend</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">
@@ -324,8 +337,8 @@ function DevActivites() {
                         <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:bg-gray-800 dark:text-gray-100">
                             <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?5" />
                             <div className="flex-1 my-4">
-                                <p className="text-xl font-semibold leading-snug">Leroy Jenkins</p>
-                                <p>Visual Designer</p>
+                                <p className="text-xl font-semibold leading-snug">Antonio KONTIKI</p>
+                                <p>Backend</p>
                             </div>
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a rel="noopener noreferrer" href="#" title="Email" className="dark:text-gray-50 hover:dark:text-violet-600">

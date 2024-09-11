@@ -3,7 +3,6 @@ import Logo from "../../assets/d.jpg";
 import { Link } from 'react-router-dom';
 
 
-// const [isMenuOpen, setIsMenuOpen] = useState(false) 
 
 function Navbar() {
   return (

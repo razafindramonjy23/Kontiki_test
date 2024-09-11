@@ -18,7 +18,7 @@ import Activites from './components/pages/A_propos/actvt/Activites.jsx';
 import DevActivites from './components/pages/A_propos/actvt/dev/DevActivites.jsx';
 import CallActivite from './components/pages/A_propos/actvt/call/CallActivite.jsx';
 
-import { Spinner } from "@material-tailwind/react";
+// import { Spinner } from "@material-tailwind/react";
 
 
 function App() {

@@ -119,16 +119,16 @@
   }
   
   .btn-group [class*="btn-"] {
-    background-color: $inputHover;
-    color: $light-color;
+    // background-color: $inputHover;
+    // color: $light-color;
     //padding: 1em 2.5em;
     border-radius: 30px;
     cursor: pointer;
   }
   
   .btn-group [class*="btn-"]:disabled {
-    background-color: grey;
-    border-color: $light-color;
+    // background-color: grey;
+    // border-color: $light-color;
     cursor: text;
   }
   
