@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+
+
+
 import phone from '../../../assets/Images/pages/a_propos/phone.png'
 import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
@@ -17,8 +20,21 @@ import { FadeRight } from '../../utility/animation';
 
 
 function A_propos() {
+
+  const [activeEvent, setActiveEvent] = useState(null);
+
+  const handleMouseEnter = (event) => {
+    setActiveEvent(event);
+  }
+
+  const handleMouseLeave = () => {
+    setActiveEvent(null);
+  }
+
   return (
     <>
+
+
       <div className='font-sans'>
 
         <div className="my-8 text-center">
@@ -54,7 +70,7 @@ function A_propos() {
           <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row">
             <div className="text-center lg:text-left lg:w-1/2">
               <h2 className="mb-4 text-5xl font-bold text-blue-950">KONTIKI SERVICES</h2>
-              <p className="mb-6 text-lg text-green-800 transition-transform font-semibold duration-300 ease-in-out hover:scale-110">
+              <p className="mb-6 text-lg font-semibold text-green-800 transition-transform duration-300 ease-in-out hover:scale-110">
                 La première Application de Kontiki Sevices à Madagascar
               </p>
               <p className="mb-8 text-gray-600">
@@ -95,7 +111,6 @@ function A_propos() {
       </div>
 
 
-
       <section className="py-16 bg-white">
         <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
           <motion.div 
@@ -131,7 +146,7 @@ function A_propos() {
         </div>
       </section>
 
-      <div className="my-8 py-20 mb-20 font-sans text-center">
+      <div className="py-20 my-8 mb-20 font-sans text-center">
         <h2 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
           Notre partenaire de services ?
         </h2>
@@ -149,7 +164,7 @@ function A_propos() {
           initial="hidden"
           animate="visible"
 
-          className="mt-12 pr-12 lg:mt-0 lg:w-1/2">
+          className="pr-12 mt-12 lg:mt-0 lg:w-1/2">
             <img
               src={europeens}
               alt="KONTIKI Digital app"
@@ -164,7 +179,7 @@ function A_propos() {
           whileInView="visible"
           viewport={{  once: true  }}
           
-          className="text-center pl-5 lg:text-left lg:w-1/2 ">
+          className="pl-5 text-center lg:text-left lg:w-1/2 ">
             <p className="mb-8 text-2xl text-gray-600">
               L’agence propose à ses clients européens des prestations de publicité digitale,
               de conseil en communication et CRM, de génération de prospects qualifiés et d’animation de bases de contacts.
@@ -254,6 +269,104 @@ function A_propos() {
           </div>
         </div>
       </motion.section>
+
+
+      <div className="flex flex-col items-center py-12 bg-gradient-to-r from-teal-400 to-blue-500">
+      {/* Chronologie */}
+      <div className="relative w-full max-w-4xl">
+        <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2"></div>
+
+        {/* Événements de la chronologie */}
+        <div className="relative flex items-center justify-between px-8">
+          {/* Événement 1 */}
+          <div
+            className="flex flex-col items-center text-center"
+            onMouseEnter={() => handleMouseEnter('event1')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="w-6 h-6 bg-white border-2 border-teal-500 rounded-full"></div>
+            <p className="mt-2 font-semibold text-white">Welcome</p>
+            <p className="text-sm text-gray-200">01 February 2015</p>
+
+            {/* Affichage dynamique de la description */}
+            {activeEvent === 'event1' && (
+              <div className="absolute top-0 w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md">
+                <h3 className="font-bold text-purple-600">Welcome Event!</h3>
+                <p className="mt-2 text-gray-600">
+                  The journey begins here. Get ready for an exciting ride!
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Événement 2 */}
+          <div
+            className="flex flex-col items-center text-center"
+            onMouseEnter={() => handleMouseEnter('event2')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="w-6 h-6 bg-teal-500 border-2 border-teal-500 rounded-full"></div>
+            <p className="mt-2 font-semibold text-white">First Work</p>
+            <p className="text-sm text-gray-200">05 February 2015</p>
+
+            {/* Affichage dynamique de la description */}
+            {activeEvent === 'event2' && (
+              <div className="absolute top-0 w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md">
+                <h3 className="font-bold text-purple-600">First Work!</h3>
+                <h4 className="text-xl font-semibold text-teal-600">Be Productive!</h4>
+                <p className="mt-2 text-gray-600">
+                  A small river named Duden flows by their place and supplies it with the necessary regalia. It is a paradise.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Événement 3 */}
+          <div
+            className="flex flex-col items-center text-center"
+            onMouseEnter={() => handleMouseEnter('event3')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="w-6 h-6 bg-white border-2 border-teal-500 rounded-full"></div>
+            <p className="mt-2 font-semibold text-white">Christmas</p>
+            <p className="text-sm text-gray-200">31 December 2015</p>
+
+            {/* Affichage dynamique de la description */}
+            {activeEvent === 'event3' && (
+              <div className="absolute top-0 w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md">
+                <h3 className="font-bold text-purple-600">Christmas!</h3>
+                <p className="mt-2 text-gray-600">
+                  Time to celebrate with family and friends!
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Événement 4 */}
+          <div
+            className="flex flex-col items-center text-center"
+            onMouseEnter={() => handleMouseEnter('event4')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="w-6 h-6 bg-white border-2 border-teal-500 rounded-full"></div>
+            <p className="mt-2 font-semibold text-white">First Meetup</p>
+            <p className="text-sm text-gray-200">05 February 2015</p>
+
+            {/* Affichage dynamique de la description */}
+            {activeEvent === 'event4' && (
+              <div className="absolute top-0 w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md">
+                <h3 className="font-bold text-purple-600">First Meetup!</h3>
+                <p className="mt-2 text-gray-600">
+                  Meet like-minded individuals and network!
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
     </>
   )
 }
