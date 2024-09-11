@@ -33,12 +33,14 @@ function DevActivites() {
             <section className="py-12 bg-gray-100">
                 <div className="container mx-auto text-center">
                     <h2 className="my-8 text-3xl font-semibold text-gray-800">
-                        Bienvenue chez votre partenaire de service informatique
+                        Votre partenaire de service informatique
                     </h2>
 
 
                     <div className="grid grid-cols-1 gap-8 my-10 mb-20 md:grid-cols-3">
-                        <div className="p-6 bg-white rounded-lg shadow-md">
+
+
+                        <div className="flex flex-col p-6 bg-white rounded-lg shadow-md">
                             <div className="flex items-center justify-center mb-4">
                                 <span className="text-4xl text-yellow-500">🚀</span>
                             </div>
@@ -50,8 +52,10 @@ function DevActivites() {
                                 leur activité et optimiser leurs coûts de fonctionnement grâce à
                                 notre super equipe.
                             </p>
+
                             <div className="h-1 mt-4 bg-gradient-to-r from-yellow-400 to-blue-400"></div>
                         </div>
+
 
                         <div className="flex flex-col p-6 bg-white rounded-lg shadow-md">
                             <div className="flex items-center justify-center mb-4">
@@ -63,13 +67,14 @@ function DevActivites() {
                             <p className="text-gray-600">
                                 Nous trouvons pour vous le meilleur collaborateur adapté à votre
                                 besoin en quelques jours seulement.
+                                
                             </p>
                             <div className="h-1 mt-4 bg-gradient-to-r from-yellow-400 to-blue-400"></div>
 
                         </div>
 
 
-                        <div className="p-6 bg-white rounded-lg shadow-md">
+                        <div className="p-6 flex flex-col bg-white rounded-lg shadow-md">
                             <div className="flex items-center justify-center mb-4">
                                 <span className="text-4xl text-yellow-500">💻</span>
                             </div>
@@ -89,7 +94,7 @@ function DevActivites() {
 
             <section className='py-12 bg-white-100' >
                 <div className="pb-10 my-20 text-center">
-                    <h2 className="text-6xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-5xl hover:scale-125">
+                    <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-5xl hover:text-6xl">
                         TECHNOLOGIES
                     </h2>
                     <div className="flex justify-center mt-2">
@@ -131,7 +136,7 @@ function DevActivites() {
 
 
             <div className="my-2 mt-20 text-center">
-                <h2 className="text-6xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-5xl hover:scale-125">
+                <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-5xl hover:text-6xl">
                     L'EQUIPE
                 </h2>
                 <div className="flex justify-center mt-2">

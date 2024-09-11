@@ -38,7 +38,7 @@ function A_propos() {
       <div className='font-sans'>
 
         <div className="my-8 text-center">
-          <h2 className="text-4xl font-semibold transition-transform duration-700 ease-in-out text-blue-950 md:text-4xl hover:scale-125">
+          <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-4xl hover:text-5xl">
             Qui sommes nous vraiment ?
           </h2>
 
@@ -147,7 +147,7 @@ function A_propos() {
       </section>
 
       <div className="py-20 my-8 mb-20 font-sans text-center">
-        <h2 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">
+        <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-3xl hover:text-4xl">
           Notre partenaire de services ?
         </h2>
         <div className="flex justify-center mt-2">
@@ -274,7 +274,7 @@ function A_propos() {
       <div className="flex flex-col items-center py-12 bg-gradient-to-r from-teal-400 to-blue-500">
         {/* Chronologie */}
         <div className="relative w-full max-w-4xl">
-          <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2"></div>
+          <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2 -top-full"></div>
 
           {/* Événements de la chronologie */}
           <div className="relative flex items-center justify-between px-8">
@@ -284,15 +284,15 @@ function A_propos() {
               onMouseEnter={() => handleMouseEnter('event1')}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="w-6 h-6 bg-white border-2 border-teal-500 rounded-full"></div>
+              <div className="w-6 h-6 bg-white border-2 border-teal-500 rounded-full -top-full"></div>
               <p className="mt-2 font-semibold text-white">Bienvenue</p>
               <p className="text-sm text-gray-200">01 February 2015</p>
 
               {/* Affichage dynamique de la description */}
               {activeEvent === 'event1' && (
-                <div className="absolute top-0 w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md">
+                <div className="absolute w-64 p-4 -mt-24 text-center -top-20 bg-white rounded-lg shadow-md">
                   <h3 className="font-bold text-purple-600">Bienvenue chez Kontiki</h3>
-                  <p className="mt-2 text-gray-600">
+                  <p className="mt-2 text-gray-600 ">
                     Le voyage commence ici. Préparez-vous pour une aventure passionnante
                   </p>
                 </div>
@@ -305,16 +305,16 @@ function A_propos() {
               onMouseEnter={() => handleMouseEnter('event2')}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="w-6 h-6 bg-teal-500 border-2 border-teal-500 rounded-full"></div>
+              <div className="w-6 h-6 bg-teal-500 border-2 border-teal-500 rounded-full "></div>
               <p className="mt-2 font-semibold text-white">First Work</p>
               <p className="text-sm text-gray-200">05 February 2015</p>
 
               {/* Affichage dynamique de la description */}
               {activeEvent === 'event2' && (
-                <div className="absolute w-64 p-4 -mt-24 text-center bg-red-500 rounded-lg shadow-md -top-full">
+                <div className="absolute w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md -top-full">
                   <h3 className="font-bold text-purple-600">First Work!</h3>
                   <h4 className="text-xl font-semibold text-teal-600">Be Productive!</h4>
-                   <p className="mt-2 text-gray-600">
+                  <p className="mt-2 text-gray-600">
                     A small river named Duden flows by their place and supplies it with the necessary regalia. It is a paradise.
                   </p>
                 </div>

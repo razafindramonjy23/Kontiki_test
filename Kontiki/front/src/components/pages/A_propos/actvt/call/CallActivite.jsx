@@ -24,8 +24,6 @@ function CallActivite() {
       </div>
     </section>
 
-
-
     
     
     </>
