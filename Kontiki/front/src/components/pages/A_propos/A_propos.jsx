@@ -41,7 +41,6 @@ function A_propos() {
           <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-4xl hover:text-5xl">
             Qui sommes nous vraiment ?
           </h2>
-
           <div className="flex justify-center mt-2">
             <div className="w-24 h-1 bg-amber-500"></div>
           </div>
@@ -290,7 +289,7 @@ function A_propos() {
 
               {/* Affichage dynamique de la description */}
               {activeEvent === 'event1' && (
-                <div className="absolute w-64 p-4 -mt-24 text-center -top-20 bg-white rounded-lg shadow-md">
+                <div className="absolute w-64 p-4 -mt-24 text-center bg-white rounded-lg shadow-md -top-20">
                   <h3 className="font-bold text-purple-600">Bienvenue chez Kontiki</h3>
                   <p className="mt-2 text-gray-600 ">
                     Le voyage commence ici. Préparez-vous pour une aventure passionnante

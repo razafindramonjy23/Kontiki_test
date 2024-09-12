@@ -86,8 +86,8 @@ function Services() {
 
   return (
     <>
-      <div className="my-8 mb-20 font-sans text-center">
-        <h2 className="text-5xl font-semibold ">
+      <div className="my-20 mb-20 font-sans text-center">
+        <h2 className="text-4xl font-semibold ">
           NOTRE ACTIVITES
         </h2>
         <div className="flex justify-center mt-2">
