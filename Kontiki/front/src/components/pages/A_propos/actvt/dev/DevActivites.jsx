@@ -67,14 +67,14 @@ function DevActivites() {
                             <p className="text-gray-600">
                                 Nous trouvons pour vous le meilleur collaborateur adapté à votre
                                 besoin en quelques jours seulement.
-                                
+
                             </p>
                             <div className="h-1 mt-4 bg-gradient-to-r from-yellow-400 to-blue-400"></div>
 
                         </div>
 
 
-                        <div className="p-6 flex flex-col bg-white rounded-lg shadow-md">
+                        <div className="flex flex-col p-6 bg-white rounded-lg shadow-md">
                             <div className="flex items-center justify-center mb-4">
                                 <span className="text-4xl text-yellow-500">💻</span>
                             </div>
@@ -104,7 +104,6 @@ function DevActivites() {
                         <p className='mb-6 text-4xl text-blue-950'>
                             Quelques unes des technologies utilisées
                         </p>
-
                         <p className='mb-6 text-blue-950'>
                             Les Langages, Frameworks ou Solutions que nous utilisons au quotidien
                         </p>
