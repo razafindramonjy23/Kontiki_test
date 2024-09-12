@@ -50,8 +50,7 @@ function A_propos() {
 
             className="my-8 text-lg text-center">
             <p className="mt-20 text-blue-950">
-              Spécialiste du marketing digital et du traitement des données massives (Bigdata),<br />
-              KONTIKI SERVICE a été créé le 19 mars 2019.
+              Spécialiste du marketing digital et du traitement des données massives (Bigdata).<br />
             </p>
             <p className='mb-6 text-blue-950'>
               Située à Antsahavola, KONTIKI SERVICE compte aujourd’hui plus de 30 collaborateurs.
@@ -274,7 +273,7 @@ function A_propos() {
       <div className="flex flex-col items-center py-12 bg-gradient-to-r from-teal-400 to-blue-500">
         {/* Chronologie */}
         <div className="relative w-full max-w-4xl">
-          <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2 -top-full"></div>
+          <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2 "></div>
 
           {/* Événements de la chronologie */}
           <div className="relative flex items-center justify-between px-8">
@@ -306,8 +305,8 @@ function A_propos() {
               onMouseLeave={handleMouseLeave}
             >
               <div className="w-6 h-6 bg-teal-500 border-2 border-teal-500 rounded-full "></div>
-              <p className="mt-2 font-semibold text-white">First Work</p>
-              <p className="text-sm text-gray-200">05 February 2015</p>
+              <p className="mt-2 font-semibold text-white">Création de KONTIKI</p>
+              <p className="text-sm text-gray-200">19 Mars 2019</p>
 
               {/* Affichage dynamique de la description */}
               {activeEvent === 'event2' && (
