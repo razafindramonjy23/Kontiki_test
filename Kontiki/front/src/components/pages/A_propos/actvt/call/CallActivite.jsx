@@ -71,14 +71,14 @@ function CallActivite() {
       <div className="w-auto p-8 font-sans text-white ">
         <div className="text-center ">
           <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-5xl hover:text-6xl">
-          La Team Call
+            La Team Call
           </h2>
           <div className="flex justify-center mt-2">
             <div className="w-24 h-1 bg-amber-500"></div>
           </div>
           <div className="my-8 text-lg text-center">
             <p className='mt-10 text-xl text-blue-950'>
-            Nous essayons constamment de nous exprimer et de réaliser nos rêves. Si vous avez la possibilité de jouer à ce jeu de la vie, vous devez apprécier chaque instant.
+              Nous essayons constamment de nous exprimer et de réaliser nos rêves. Si vous avez la possibilité de jouer à ce jeu de la vie, vous devez apprécier chaque instant.
             </p>
           </div>
         </div>
@@ -97,11 +97,6 @@ function CallActivite() {
                 <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                   <svg className="w-5 h-5 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.21 0-4 1.79-4 4v16c0 2.21 1.79 4 4 4h14c2.21 0 4-1.79 4-4v-16c0-2.21-1.79-4-4-4zm-10.5 20h-2.25v-10.5h2.25v10.5zm-1.125-11.75c-.72 0-1.125-.48-1.125-1.08 0-.6.435-1.08 1.125-1.08s1.125.48 1.125 1.08c0 .6-.405 1.08-1.125 1.08zm13.875 11.75h-2.25v-5.25c0-1.25-.025-2.85-1.75-2.85-1.75 0-2.015 1.25-2.015 2.55v5.55h-2.25v-10.5h2.25v1.45h.025c.315-.6 1.075-1.25 2.2-1.25 2.35 0 2.775 1.55 2.775 3.55v7.75z" />
-                  </svg>
-                </a>
-                <a href={member.website} target="_blank" rel="noopener noreferrer">
-                  <svg className="w-5 h-5 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 4h-6v2h6v14h-6v2h6c1.104 0 2-.896 2-2v-14c0-1.104-.896-2-2-2zm-14 0c-1.104 0-2 .896-2 2v14c0 1.104.896 2 2 2h6v-2h-6v-14h6v-2h-6zm0 0h-3.5c-1.104 0-2 .896-2 2v14c0 1.104.896 2 2 2h3.5v-2h-3.5v-14h3.5v-2h-3.5z" />
                   </svg>
                 </a>
               </div>
