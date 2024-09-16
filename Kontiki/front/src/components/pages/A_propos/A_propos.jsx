@@ -258,7 +258,7 @@ function A_propos() {
                 </div>
                 <div className='text-center'>
                   <h5 className='text-xl font-semibold text-gray-800'>Landy Kontiki</h5>
-                  <span className='text-sm text-gray-500 '>Trafic Manager</span>
+                  <span className='text-sm text-gray-500 '>RD</span>
                 </div>
                 <Link to="/TeamRD" className="block px-4 py-2 mx-auto text-center text-white transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg w-max hover:scale-95">Département</Link>
               </div>
@@ -269,7 +269,7 @@ function A_propos() {
       </motion.section>
 
 
-      <div className="flex flex-col items-center py-12 bg-gradient-to-r from-teal-400 to-blue-500">
+      <div className="flex flex-col items-center py-12 bg-gradient-to-r from-teal-400 to-blue-700">
         {/* Chronologie */}
         <div className="relative w-full max-w-4xl">
           <div className="absolute inset-x-0 h-1 transform -translate-y-1/2 bg-gray-200 top-1/2 "></div>

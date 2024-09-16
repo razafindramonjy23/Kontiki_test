@@ -18,7 +18,9 @@ const TextareaField = ({ label, name, onChange }) => (
   </div>
 );
 
-const FormSection = ({ id, title, icon, fields, isActive, onChange }) => (
+const FormSection = ({ id, title, icon, fields, isActive, onChange }) => {
+  
+  return (
   <div className={id} style={{ display: isActive ? "block" : "none" }}>
     <div className="bg-svg">
       <img width="96" height="96" src={icon} alt={title} />
@@ -32,7 +34,7 @@ const FormSection = ({ id, title, icon, fields, isActive, onChange }) => (
       )
     ))}
   </div>
-);
+)};
 
 const ProgressSteps = ({ steps, activeStep }) => (
   <div className="progress">
@@ -128,7 +130,6 @@ const Presentation = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const structuredData = {
       information_personnel: {
         nom: formData.nom,
@@ -199,7 +200,7 @@ const Presentation = () => {
 
 
     try {
-      const response = await fetch('http://localhost:8000/api/submit_responses/', {
+      const response = await fetch('http://127.0.0.1:8000/api/submit_responses/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -207,16 +208,17 @@ const Presentation = () => {
         body: JSON.stringify(structuredData),
       });
 
-      // if (!response.ok) {
-      //   throw new Error('Erreur lors de la soumission des réponses.');
-      // }
+      //  if (!response.ok) {
+      //    const errorText = await response.json(); // ou response.json() si le backend renvoie une réponse JSON
+      //    throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
+      //  } 
 
       const data = await response.json();
       console.log('Réponses soumises avec succès:', data);
-      // alert('Réponses soumises avec succès !');
+       alert('Réponses soumises avec succès !');
     } catch (error) {
       console.error('Erreur lors de la soumission :', error);
-      // alert('Erreur lors de la soumission.');
+       alert('Erreur lors de la soumission.');
     }
   };
 
@@ -383,6 +385,7 @@ const Presentation = () => {
                 icon={step.icon}
                 fields={step.fields}
                 isActive={index === activeStep}
+                onChange={handleChange}
               />
             ))}
 
