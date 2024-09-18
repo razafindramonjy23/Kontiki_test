@@ -19,22 +19,23 @@ const TextareaField = ({ label, name, onChange }) => (
 );
 
 const FormSection = ({ id, title, icon, fields, isActive, onChange }) => {
-  
+
   return (
-  <div className={id} style={{ display: isActive ? "block" : "none" }}>
-    <div className="bg-svg">
-      <img width="96" height="96" src={icon} alt={title} />
+    <div className={id} style={{ display: isActive ? "block" : "none" }}>
+      <div className="bg-svg">
+        <img width="96" height="96" src={icon} alt={title} />
+      </div>
+      <h2>{title}</h2>
+      {fields.map((field, index) => (
+        field.type === "textarea" ? (
+          <TextareaField key={index} label={field.label} required name={`question_${field.id}`} onChange={onChange} />
+        ) : (
+          <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} onChange={onChange} />
+        )
+      ))}
     </div>
-    <h2>{title}</h2>
-    {fields.map((field, index) => (
-      field.type === "textarea" ? (
-        <TextareaField key={index} label={field.label} required name={`question_${field.id}`} onChange={onChange} />
-      ) : (
-        <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} onChange={onChange} />
-      )
-    ))}
-  </div>
-)};
+  )
+};
 
 const ProgressSteps = ({ steps, activeStep }) => (
   <div className="progress">
@@ -74,6 +75,7 @@ const Presentation = () => {
     respect_horaires: '',
     retard_justifie: '',
     ponctualite_globale: '',
+    conflit: '',
 
     // Ténacité
     perseverance: '',
@@ -93,7 +95,7 @@ const Presentation = () => {
     // Autonomie
     prise_initiative: '',
     travail_independant: '',
-    gestion_taches: '',
+    // gestion_taches: '',
 
     // Organisation
     planification: '',
@@ -102,14 +104,24 @@ const Presentation = () => {
 
     // Satisfaction
     satisfaction_generale: '',
-    commentaires_suggestions: '',
+    poste_Ideal: '',
+    salaire: '',
+    traite: '',
+    remunere: '',
+    travailler_soir: '',
+    competence_aporte: '',
 
     // Test Technique Python
+    processus: '',
+    oriente_objet: '',
+    superficielle: '',
+    décorateurs: '',
     python_experience: '',
     python_projets_realises: '',
     python_niveau_competence: '',
 
     // Test Technique JavaScript
+    Comparez: '',
     javascript_experience: '',
     javascript_projets_realises: '',
     javascript_niveau_competence: '',
@@ -122,14 +134,22 @@ const Presentation = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // const isFormValid = Object.values(formData).every(value => value.trim() !== '');
+    // if (!isFormValid) {
+    //   alert('Tous les champs doivent être remplis.');
+    //   return;
+    // }
+    
     const structuredData = {
       information_personnel: {
         nom: formData.nom,
@@ -179,7 +199,12 @@ const Presentation = () => {
       },
       satisfaction: {
         satisfaction_generale: formData.satisfaction_generale,
-        commentaires_suggestions: formData.commentaires_suggestions,
+        poste_Ideal: formData.poste_Ideal,
+        salaire: formData.salaire,
+        traite: formData.traite,
+        remunere: formData.remunere,
+        travailler_soir: formData.travailler_soir,
+        competence_aporte: formData.competence_aporte,
       },
       test_technique_python: {
         python_experience: formData.python_experience,
@@ -208,17 +233,17 @@ const Presentation = () => {
         body: JSON.stringify(structuredData),
       });
 
-      //  if (!response.ok) {
-      //    const errorText = await response.json(); // ou response.json() si le backend renvoie une réponse JSON
-      //    throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
-      //  } 
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
+      } 
 
       const data = await response.json();
       console.log('Réponses soumises avec succès:', data);
-       alert('Réponses soumises avec succès !');
+      alert('Réponses soumises avec succès !');
     } catch (error) {
       console.error('Erreur lors de la soumission :', error);
-       alert('Erreur lors de la soumission.');
+      alert('Erreur lors de la soumission.');
     }
   };
 
@@ -241,13 +266,13 @@ const Presentation = () => {
       title: "Information personnel",
       icon: "https://img.icons8.com/3d-fluency/94/user-male-circle.png",
       fields: [
-        { label: "Nom", type: "text" },
-        { label: "Prenom", type: "text" },
-        { label: "Age", type: "text" },
-        { label: "Situation matrimoniale", type: "text" },
-        { label: "Adresse actuelle", type: "text" },
-        { label: "Numéro de téléphone", type: "text" },
-        { label: "Adresse e-mail", type: "email" }
+        { label: "Nom", type: "text", name: "nom" },
+        { label: "Prenom", type: "text", name: "prenom" },
+        { label: "Age", type: "text", name: "age" },
+        { label: "Situation matrimoniale", type: "text", name: "situation_matrimoniale" },
+        { label: "Adresse actuelle", type: "text", name: "adresse_actuelle" },
+        { label: "Numéro de téléphone", type: "text", name: "numero_telephone" },
+        { label: "Adresse e-mail", type: "email", name: "adresse_email" }
       ]
     },
     {
@@ -255,11 +280,11 @@ const Presentation = () => {
       title: "SAVOIR-FORMATION",
       icon: "https://img.icons8.com/color/96/reading.png",
       fields: [
-        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea" },
-        { label: "Avez-vous suivi des formations ou vous êtes vous renseignés sur le poste si oui, racontez nous", type: "textarea" },
-        { label: "Quel est le dernier travai que vous avez occupé? Combien de temps? Et la raison pour laquelle vous avez quitté votre dernier emploi.", type: "textarea" },
-        { label: "Etes-vous aujourd'hui satisfait de votre carrière?", type: "textarea" },
-        { label: "Pouvez-vous nous donner quelques exemples de réalisations?", type: "textarea" }
+        { label: "Poste envisagée chez KONTIKI et qu'est-ce qui vous attire, dans le poste proposé?", type: "textarea", name: "poste_envisage" },
+        { label: "Avez-vous suivi des formations ou vous êtes vous renseignés sur le poste si oui, racontez nous", type: "textarea", name: "formations_suivies" },
+        { label: "Quel est le dernier travai que vous avez occupé? Combien de temps? Et la raison pour laquelle vous avez quitté votre dernier emploi.", type: "textarea", name: "dernier_travail" },
+        { label: "Etes-vous aujourd'hui satisfait de votre carrière?", type: "textarea", name: "satisfaction_carriere" },
+        { label: "Pouvez-vous nous donner quelques exemples de réalisations?", type: "textarea", name: "exemples_realisations" }
       ]
     },
     {
@@ -267,8 +292,8 @@ const Presentation = () => {
       title: "PONCTUALITE",
       icon: "https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Punctuality-business-presentations-and-meetings-vectorslab-flat-vectorslab.png",
       fields: [
-        { label: "La dernière fois que vous êtes arrivé en retard, comment avez-vous géré la sitation?", type: "textarea" },
-        { label: "Selon vous, à partir de combien de temps êtes-vous en retard?", type: "textarea" }
+        { label: "La dernière fois que vous êtes arrivé en retard, comment avez-vous géré la sitation?", type: "textarea", name: "respect_horaires" },
+        { label: "Selon vous, à partir de combien de temps êtes-vous en retard?", type: "textarea", name: "retard_justifie" }
       ]
     },
     {
@@ -276,10 +301,10 @@ const Presentation = () => {
       title: "TENACITE",
       icon: "https://img.icons8.com/color/96/courage.png",
       fields: [
-        { label: "Racontez-nous la dernière fois où vous avez été confroné à une difficulté en situation professionnelle. Qu'avez-vous fait? Comment avez-vous réagi?", type: "textarea" },
-        { label: "Dans vos expériences professionnelle, quelles ont été les activités les plus difficiles à réaliser pour vous?", type: "textarea" },
-        { label: "Donnez-moi un exemple de situation où votre travail a été critiqué", type: "textarea" },
-        { label: "Donnez-moi un exemple de situation professionnelle où vous avez dû faire face à un conflit d'intérêts.", type: "textarea" }
+        { label: "Racontez-nous la dernière fois où vous avez été confroné à une difficulté en situation professionnelle. Qu'avez-vous fait? Comment avez-vous réagi?", type: "textarea", name: "perseverance" },
+        { label: "Dans vos expériences professionnelle, quelles ont été les activités les plus difficiles à réaliser pour vous?", type: "textarea", name: "resistance_aux_obstacles" },
+        { label: "Donnez-moi un exemple de situation où votre travail a été critiqué", type: "textarea", name: "gestion_stress" },
+        { label: "Donnez-moi un exemple de situation professionnelle où vous avez dû faire face à un conflit d'intérêts.", type: "textarea", name: "conflit" }
       ]
     },
     {
@@ -287,9 +312,9 @@ const Presentation = () => {
       title: "INTEGRATION",
       icon: "https://img.icons8.com/arcade/64/onboarding.png",
       fields: [
-        { label: "Avec quels types de personnes aimez-vous le mieux travailler? Pour quel raisons?", type: "textarea" },
-        { label: "Un collègue vous fait une remarque négative sur la qualité de votre travail. Comment réagissez-vous?", type: "textarea" },
-        { label: "Avez-vous déjà été dépassé par la situation? Donnez-moi un exemple.", type: "textarea" }
+        { label: "Avec quels types de personnes aimez-vous le mieux travailler? Pour quel raisons?", type: "textarea", name: "esprit_equipe" },
+        { label: "Un collègue vous fait une remarque négative sur la qualité de votre travail. Comment réagissez-vous?", type: "textarea", name: "collaboration" },
+        { label: "Avez-vous déjà été dépassé par la situation? Donnez-moi un exemple.", type: "textarea", name: "relations_avec_collegues" }
       ]
     },
     {
@@ -297,9 +322,9 @@ const Presentation = () => {
       title: "SENS DU SERVICE",
       icon: "https://img.icons8.com/fluency/96/service.png",
       fields: [
-        { label: "Vous êtes salarié de notre société, affecté au département DEVELOPPEUR. Ce matin vous êtes occupé dans une tâche urgente et importante. L'un de vos collègues va vers vous et se plaint vivement auprès de vous, car il est en retard sur son travail parce que son ordi a des soucis (la connexion internet ne marche pas). Quelle est votre réaction?", type: "textarea" },
-        { label: "Vous remarquez quil y a une tâche qui est pas faite et pourtant cette tâche ne fait pas partie de votre fiche de poste. Que faites-vous?", type: "textarea" },
-        { label: "Avez-vous l'esprit d'initiative? Prouvez-le à l'aIde d'exemples.", type: "textarea" }
+        { label: "Vous êtes salarié de notre société, affecté au département DEVELOPPEUR. Ce matin vous êtes occupé dans une tâche urgente et importante. L'un de vos collègues va vers vous et se plaint vivement auprès de vous, car il est en retard sur son travail parce que son ordi a des soucis (la connexion internet ne marche pas). Quelle est votre réaction?", type: "textarea", name: "ecoute_client" },
+        { label: "Vous remarquez quil y a une tâche qui est pas faite et pourtant cette tâche ne fait pas partie de votre fiche de poste. Que faites-vous?", type: "textarea", name: "satisfaction_client" },
+        { label: "Avez-vous l'esprit d'initiative? Prouvez-le à l'aIde d'exemples.", type: "textarea", name: "service_apres_vente" }
       ]
     },
     {
@@ -307,8 +332,8 @@ const Presentation = () => {
       title: "AUTONOMIE",
       icon: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-autonomy-gig-economy-flaticons-flat-flat-icons.png",
       fields: [
-        { label: "Avez-vous déjà travaillé seul? Qu'est-ce que vous avez trouvé difficile?", type: "textarea" },
-        { label: "Le client vous demande un travail non prévu sur votre fiche de poste? Que faites-vous?", type: "textarea" }
+        { label: "Avez-vous déjà travaillé seul? Qu'est-ce que vous avez trouvé difficile?", type: "textarea", name: "prise_initiative" },
+        { label: "Le client vous demande un travail non prévu sur votre fiche de poste? Que faites-vous?", type: "textarea", name: "travail_independant" }
       ]
     },
     {
@@ -316,7 +341,7 @@ const Presentation = () => {
       title: "ORGANISATION",
       icon: "https://img.icons8.com/officel/80/making-notes.png",
       fields: [
-        { label: "Vous arrivez au bureau. Que faites-vous en premier? Comment vous organisez-vous?", type: "textarea" }
+        { label: "Vous arrivez au bureau. Que faites-vous en premier? Comment vous organisez-vous?", type: "textarea", name: "planification" }
       ]
     },
     {
@@ -324,13 +349,13 @@ const Presentation = () => {
       title: "SATISFACTION",
       icon: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-satisfaction-web-store-flaticons-lineal-color-flat-icons-3.png",
       fields: [
-        { label: "Quelles ont été vos satisfactions dans les postes que vous avez occupés?", type: "textarea" },
-        { label: "Quel serait le poste Idéal pour vous?", type: "textarea" },
-        { label: "Si on vous propose le même salaire et le même nombre d\"heures, entre deux entreprises, laquelle choisissez-vous?", type: "textarea" },
-        { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien traité?", type: "textarea" },
-        { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien rémunéré?", type: "textarea" },
-        { label: "Est-ce un problème si l'on vous demande de travailler le soir et/ou le week-end?", type: "textarea" },
-        { label: "Quelle compétence pouvez-vous apporter à cette entreprise?", type: "textarea" }
+        { label: "Quelles ont été vos satisfactions dans les postes que vous avez occupés?", type: "textarea", name: "satisfaction_generale" },
+        { label: "Quel serait le poste Idéal pour vous?", type: "textarea", name: "poste_Ideal" },
+        { label: "Si on vous propose le même salaire et le même nombre d\"heures, entre deux entreprises, laquelle choisissez-vous?", type: "textarea", name: "salaire" },
+        { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien traité?", type: "textarea", name: "traite" },
+        { label: "Quand avez-vous senti dans vos précédents postes que vous avez été bien rémunéré?", type: "textarea", name: "remunere" },
+        { label: "Est-ce un problème si l'on vous demande de travailler le soir et/ou le week-end?", type: "textarea", name: "travailler_soir" },
+        { label: "Quelle compétence pouvez-vous apporter à cette entreprise?", type: "textarea", name: "competence_aporte" }
       ]
     },
     {
@@ -338,13 +363,13 @@ const Presentation = () => {
       title: "TEST TECHNIQUE-Python",
       icon: "",
       fields: [
-        { label: "Expliquez brièvement le processus d'exécution d'un fichier Python", type: "textarea" },
-        { label: "Nous savons que Python est un langage orienté objet, mais a-t-il des spécificateurs d'accès ?", type: "textarea" },
-        { label: "Quand devez-vous utiliser la copie superficielle au lieu de la copie profonde, et vice versa ?", type: "textarea" },
-        { label: "Expliquez l'utilisation de décorateurs en Python. Donnez un exemple pratique de situation où vous utiliseriez un décorateur.", type: "textarea" },
-        { label: "Comment gérer les exceptions de manière robuste en Python? Donnez des exemples de situations où les exceptions seraient appropriées", type: "textarea" },
-        { label: "Pouvez-vous expliquer comment une exception peut être attrapée dans un programme Python ?", type: "textarea" },
-        { label: "Décrivez les différences entre le threading et le multiprocessing en Python. Quand choisiriez-vous l'un par rapport à l'autre?", type: "textarea" }
+        { label: "Expliquez brièvement le processus d'exécution d'un fichier Python", type: "textarea", name: "processus" },
+        { label: "Nous savons que Python est un langage orienté objet, mais a-t-il des spécificateurs d'accès ?", type: "textarea", name: "oriente_objet" },
+        { label: "Quand devez-vous utiliser la copie superficielle au lieu de la copie profonde, et vice versa ?", type: "textarea", name: "superficielle" },
+        { label: "Expliquez l'utilisation de décorateurs en Python. Donnez un exemple pratique de situation où vous utiliseriez un décorateur.", type: "textarea", name: "décorateurs" },
+        { label: "Comment gérer les exceptions de manière robuste en Python? Donnez des exemples de situations où les exceptions seraient appropriées", type: "textarea", name: "python_experience" },
+        { label: "Pouvez-vous expliquer comment une exception peut être attrapée dans un programme Python ?", type: "textarea", name: "python_projets_realises" },
+        { label: "Décrivez les différences entre le threading et le multiprocessing en Python. Quand choisiriez-vous l'un par rapport à l'autre?", type: "textarea", name: "python_niveau_competence" }
       ]
     },
     {
@@ -352,10 +377,10 @@ const Presentation = () => {
       title: "TEST TECHNIQUE-Javascript",
       icon: "",
       fields: [
-        { label: "Comparez les avantages et les inconvénients des états locaux (local state) et des états gérés globalement (global state) dans une application Vue.js ou React.js.", type: "textarea" },
-        { label: "Créez un composant fonctionnel nommé UserList qui reçoit une liste d'utilisateurs en tant que prop et affiche leurs noms dans une liste. Assurez-vous que le composant met à jour correctement le state avec la liste d'utilisateurs. (* sur vscode)", type: "textarea" },
-        { label: "Créez un composant parent nommé App qui contient le state avec une liste initiale d'utilisateurs. Ce composant doit rendre le composant UserList créé précédemment et un nouveau composant UserForm qui permet d'ajouter un nouvel utilisateur à la liste. (* sur vscode)", type: "textarea" },
-        { label: "Implémentez le composant UserForm avec un formulaire simple qui permet à l'utilisateur de saisir un nom. Lorsque le formulaire est soumis, ajoutez un nouvel utilisateur à la liste dans le state du composant parent (App). Assurez-vous que le state est mis à jour correctement. (* sur vscode)", type: "textarea" },
+        { label: "Comparez les avantages et les inconvénients des états locaux (local state) et des états gérés globalement (global state) dans une application Vue.js ou React.js.", type: "textarea", name: "Comparez" },
+        { label: "Créez un composant fonctionnel nommé UserList qui reçoit une liste d'utilisateurs en tant que prop et affiche leurs noms dans une liste. Assurez-vous que le composant met à jour correctement le state avec la liste d'utilisateurs. (* sur vscode)", type: "textarea", name: "javascript_experience" },
+        { label: "Créez un composant parent nommé App qui contient le state avec une liste initiale d'utilisateurs. Ce composant doit rendre le composant UserList créé précédemment et un nouveau composant UserForm qui permet d'ajouter un nouvel utilisateur à la liste. (* sur vscode)", type: "textarea", name: "javascript_projets_realises" },
+        { label: "Implémentez le composant UserForm avec un formulaire simple qui permet à l'utilisateur de saisir un nom. Lorsque le formulaire est soumis, ajoutez un nouvel utilisateur à la liste dans le state du composant parent (App). Assurez-vous que le state est mis à jour correctement. (* sur vscode)", type: "textarea", name: "javascript_niveau_competence" },
       ]
     },
     {
@@ -363,15 +388,21 @@ const Presentation = () => {
       title: "TEST TECHNIQUE-Fullstack",
       icon: "",
       fields: [
-        { label: "Mettez en place une route côté serveur (Django, Flask) qui renvoie une liste d'utilisateurs au format JSON. La liste d'utilisateurs peut être stockée dans un fichier json. (* sur vscode)", type: "textarea" },
-        { label: "Comment optimisez-vous les requêtes vers une base de données pour améliorer les performances d'une application? Parlez de l'indexation, du caching, ou d'autres stratégies que vous avez déjà mise en œuvre dans vos expériences.", type: "textarea" },
-        { label: "Décrivez le processus de déploiement d'une application fullstack, en mettant l'accent sur les bonnes pratiques. Parlez de l'utilisation d'outils tels que Docker, Kubernetes, ou autres, selon votre expérience.", type: "textarea" },
+        { label: "Mettez en place une route côté serveur (Django, Flask) qui renvoie une liste d'utilisateurs au format JSON. La liste d'utilisateurs peut être stockée dans un fichier json. (* sur vscode)", type: "textarea", name: "fullstack_experience" },
+        { label: "Comment optimisez-vous les requêtes vers une base de données pour améliorer les performances d'une application? Parlez de l'indexation, du caching, ou d'autres stratégies que vous avez déjà mise en œuvre dans vos expériences.", type: "textarea", name: "fullstack_projets_realises" },
+        { label: "Décrivez le processus de déploiement d'une application fullstack, en mettant l'accent sur les bonnes pratiques. Parlez de l'utilisation d'outils tels que Docker, Kubernetes, ou autres, selon votre expérience.", type: "textarea", name: "fullstack_niveau_competence" },
       ]
     }
   ];
 
+  useEffect(() => {
+    if (activeStep === steps.length) {
+      navigate('/success');
+    }
+  }, [activeStep, navigate]);
+
   return (
-    <div id="page" className="site font-sans">
+    <div id="page" className="font-sans site">
       <div className="container">
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
@@ -392,7 +423,7 @@ const Presentation = () => {
             <div className="btn-group">
               <button
                 type="button"
-                className="btn-retour mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
+                className="px-8 py-3 mx-auto font-semibold bg-blue-500 rounded-full btn-retour dark:bg-gray-800 dark:text-gray-100"
                 onClick={btnPrecedent}
                 disabled={activeStep === 0}
               >
@@ -402,7 +433,7 @@ const Presentation = () => {
               {activeStep < steps.length - 1 && (
                 <button
                   type="button"
-                  className="btn-suivant mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
+                  className="px-8 py-3 mx-auto font-semibold bg-blue-500 rounded-full btn-suivant dark:bg-gray-800 dark:text-gray-100"
                   onClick={btnSuivant}
                   disabled={activeStep === steps.length - 1}
                 >
@@ -414,7 +445,7 @@ const Presentation = () => {
                 <>
                   <button
                     type="submit"
-                    className="btn-envoyer mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
+                    className="px-8 py-3 mx-auto font-semibold bg-blue-500 rounded-full btn-envoyer dark:bg-gray-800 dark:text-gray-100"
                     onClick={handleSubmit}
                   >
                     Envoyer
@@ -422,7 +453,7 @@ const Presentation = () => {
 
                   <button
                     type="button"
-                    className="btn-code-editor mx-auto px-8 py-3 font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100 bg-blue-500"
+                    className="px-8 py-3 mx-auto font-semibold bg-blue-500 rounded-full btn-code-editor dark:bg-gray-800 dark:text-gray-100"
                     onClick={() => navigate('/codeEditor')}
                   >
                     Teste technique

@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
+from django.db import transaction
 
 from .serializers import (
     InfoPersoSerializer, SavoirFormationSerializer, PonctualiteSerializer,
@@ -16,11 +17,11 @@ from .models import (
     TestTechniqueFullstack
 )
 
-
+# Vue pour soumettre des réponses
 @api_view(['POST'])
 def submit_responses(request):
     data = request.data
-    
+
     serializers = {
         'information_personnel': InfoPersoSerializer,
         'savoir_formation': SavoirFormationSerializer,
@@ -39,56 +40,51 @@ def submit_responses(request):
     response_data = {}
     errors = {}
 
-    for key, serializer_class in serializers.items():
-        if key in data:
-            try:
-                serializer = serializer_class(data=data[key], many=isinstance(data[key], list))
-                if serializer.is_valid():
-                    serializer.save()
-                    response_data[key] = serializer.data
-                else:
-                    errors[key] = serializer.errors
-            except ValidationError as e:
-                errors[key] = e.detail
-            except Exception as e:
-                errors[key] = str(e)   
-    if errors:
-        return Response({'status': 'error', 'errors': errors}, status=status.HTTP_400_BAD_REQUEST)
-    
+    try:
+        # Transaction atomique pour garantir que tout est sauvegardé ou rien n'est sauvegardé
+        with transaction.atomic():
+            for key, serializer_class in serializers.items():
+                if key in data:
+                    serializer = serializer_class(data=data[key], many=isinstance(data[key], list))
+                    if serializer.is_valid():
+                        serializer.save()
+                        response_data[key] = serializer.data
+                    else:
+                        errors[key] = serializer.errors
+
+            # Si des erreurs de validation sont présentes
+            if errors:
+                raise ValidationError(errors)
+
+    except ValidationError as e:
+        return Response({'status': 'error', 'errors': e.detail}, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
+        return Response({'status': 'error', 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     return Response({'status': 'success', 'data': response_data}, status=status.HTTP_201_CREATED)
 
+# Vue pour récupérer toutes les sections
 @api_view(['GET'])
 def get_all_sections(request):
-    info_personnel = InformationPersonnel.objects.all()
-    savoir_formation = SavoirFormation.objects.all()
-    ponctualite = Ponctualite.objects.all()
-    tenacite = Tenacite.objects.all()
-    integration = Integration.objects.all()
-    sens_du_service = SensDuService.objects.all()
-    autonomie = Autonomie.objects.all()
-    organisation = Organisation.objects.all()
-    satisfaction = Satisfaction.objects.all()
-    test_tech_python = TestTechniquePython.objects.all()
-    test_tech_javascript = TestTechniqueJavaScript.objects.all()
-    test_tech_fullstack = TestTechniqueFullstack.objects.all()
-
-    data = {
-        'information_personnel': InfoPersoSerializer(info_personnel, many=True).data,
-        'savoir_formation': SavoirFormationSerializer(savoir_formation, many=True).data,
-        'ponctualite': PonctualiteSerializer(ponctualite, many=True).data,
-        'tenacite': TenaciteSerializer(tenacite, many=True).data,
-        'integration': IntegrationSerializer(integration, many=True).data,
-        'sens_du_service': SensDuServiceSerializer(sens_du_service, many=True).data,
-        'autonomie': AutonomieSerializer(autonomie, many=True).data,
-        'organisation': OrganisationSerializer(organisation, many=True).data,
-        'satisfaction': SatisfactionSerializer(satisfaction, many=True).data,
-        'test_technique_python': TestTechniquePythonSerializer(test_tech_python, many=True).data,
-        'test_technique_javascript': TestTechniqueJavaScriptSerializer(test_tech_javascript, many=True).data,
-        'test_technique_fullstack': TestTechniqueFullstackSerializer(test_tech_fullstack, many=True).data
+    models_serializers = {
+        'information_personnel': (InformationPersonnel, InfoPersoSerializer),
+        'savoir_formation': (SavoirFormation, SavoirFormationSerializer),
+        'ponctualite': (Ponctualite, PonctualiteSerializer),
+        'tenacite': (Tenacite, TenaciteSerializer),
+        'integration': (Integration, IntegrationSerializer),
+        'sens_du_service': (SensDuService, SensDuServiceSerializer),
+        'autonomie': (Autonomie, AutonomieSerializer),
+        'organisation': (Organisation, OrganisationSerializer),
+        'satisfaction': (Satisfaction, SatisfactionSerializer),
+        'test_technique_python': (TestTechniquePython, TestTechniquePythonSerializer),
+        'test_technique_javascript': (TestTechniqueJavaScript, TestTechniqueJavaScriptSerializer),
+        'test_technique_fullstack': (TestTechniqueFullstack, TestTechniqueFullstackSerializer)
     }
 
-    return Response(data, status=status.HTTP_200_OK)
+    data = {}
+    for key, (model, serializer_class) in models_serializers.items():
+        instances = model.objects.all()
+        serializer = serializer_class(instances, many=True)
+        data[key] = serializer.data
 
-@api_view(['PUT', 'DELETE'])
-def test_detail(request, pk): 
-    pass
+    return Response(data, status=status.HTTP_200_OK)
