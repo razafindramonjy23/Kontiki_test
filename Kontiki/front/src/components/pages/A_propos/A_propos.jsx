@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-import phone from '../../../assets/Images/pages/a_propos/phone.png'
+import phone1 from '../../../assets/Images/pages/a_propos/phone.png'
 import user1 from '../../../assets/Images/pages/a_propos/user1.jpg'
 import user2 from '../../../assets/Images/pages/a_propos/user2.jpg'
 import user3 from '../../../assets/Images/pages/a_propos/user3.jpg'
@@ -99,7 +99,7 @@ function A_propos() {
 
               className="mt-12 lg:mt-0 lg:w-1/2">
               <img
-                src={phone}
+                src={phone1}
                 alt="KONTIKI Digital app"
                 className="w-full"
               />

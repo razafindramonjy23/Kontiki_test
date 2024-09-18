@@ -233,10 +233,10 @@ const Presentation = () => {
         body: JSON.stringify(structuredData),
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
-      } 
+      //  if (!response.ok) {
+      //    const errorText = await response.json(); // ou response.json() si le backend renvoie une réponse JSON
+      //    throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
+      //  } 
 
       const data = await response.json();
       console.log('Réponses soumises avec succès:', data);
