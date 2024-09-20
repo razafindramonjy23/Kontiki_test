@@ -28,9 +28,9 @@ const FormSection = ({ id, title, icon, fields, isActive, onChange }) => {
       <h2>{title}</h2>
       {fields.map((field, index) => (
         field.type === "textarea" ? (
-          <TextareaField key={index} label={field.label} required name={`question_${field.id}`} onChange={onChange} />
+          <TextareaField key={index} label={field.label} required name={field.name} onChange={onChange} />
         ) : (
-          <InputField key={index} label={field.label} type={field.type} required name={`question_${field.id}`} onChange={onChange} />
+          <InputField key={index} label={field.label} type={field.type} required name={field.name} onChange={onChange} />
         )
       ))}
     </div>
@@ -134,6 +134,7 @@ const Presentation = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -223,7 +224,7 @@ const Presentation = () => {
       },
     };
 
-
+    console.log(JSON.stringify(structuredData))
     try {
       const response = await fetch('http://127.0.0.1:8000/api/submit_responses/', {
         method: 'POST',
