@@ -105,8 +105,6 @@ function CallActivite() {
         </div>
       </div>
 
-      
-
     </>
   )
 }

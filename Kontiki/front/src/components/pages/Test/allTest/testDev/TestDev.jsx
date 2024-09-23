@@ -28,9 +28,9 @@ const FormSection = ({ id, title, icon, fields, isActive, onChange }) => {
       <h2>{title}</h2>
       {fields.map((field, index) => (
         field.type === "textarea" ? (
-          <TextareaField key={index} label={field.label} required name={field.name} onChange={onChange} />
+          <TextareaField key={index} label={field.label}  name={field.name} onChange={onChange} /> //add required
         ) : (
-          <InputField key={index} label={field.label} type={field.type} required name={field.name} onChange={onChange} />
+          <InputField key={index} label={field.label} type={field.type}  name={field.name} onChange={onChange} /> //add required
         )
       ))}
     </div>
@@ -145,11 +145,7 @@ const Presentation = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // const isFormValid = Object.values(formData).every(value => value.trim() !== '');
-    // if (!isFormValid) {
-    //   alert('Tous les champs doivent être remplis.');
-    //   return;
-    // }
+
     
     const structuredData = {
       information_personnel: {
