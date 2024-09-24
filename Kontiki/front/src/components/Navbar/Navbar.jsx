@@ -1,41 +1,45 @@
 import React, { useState } from 'react';
 import Logo from "../../assets/d.jpg";
 import { Link } from 'react-router-dom';
+import { NavbarMenu } from '../utility/navbar';
+import ResponsiveMenu from './ResponsiveMenu';
 
 
 
 function Navbar() {
+
+  const [open, setOpen] = React.useState(false);
+
   return (
     <>
-    <header className="flex items-center justify-between px-8 py-2 text-gray-700 bg-white md:px-20 drop-shadow-md">
-      <a href='#'>
-        <img src={Logo} alt="Kontiki logo" className="transition-all w-44 hover:scale-105"/>
-      </a>
+      <nav>
+        <div className='flex items-center justify-between px-8 py-2 text-gray-700 bg-white md:px-20 drop-shadow-md font-sans'>
+          <Link to="/accueil">
+            <img src={Logo} alt="Kontiki logo" className="transition-all w-44 hover:scale-105" />
+          </Link >
 
-      <div className="items-center hidden gap-12 font-sans text-lg xl:flex text-slate-700">
-          <Link to="/accueil" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Accueil</Link>
-          <Link to="/services" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Services</Link>
-          <Link to="/apropos" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>A propos</Link>
-          <Link to="/test" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Test</Link>
-          <Link to="/contact" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
+
+          <div className="hidden md:block">
+            <ul className="flex items-center gap-6 text-gray-600">
+              {NavbarMenu.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <a href={item.link} className=' font-medium text-lg inline-block py-1 px-3 hover:bg-amber-200 hover:text-slate-900 transition-all duration-700 rounded-lg'>{item.title}</a>
+                  </li>
+                )
+              })}
+            </ul>
+
+          </div>
+
+          <img className='block text-5xl cursor-pointer xl:hidden' width="50" height="50" src="https://img.icons8.com/ios-filled/50/menu--v6.png" alt="menu--v6" onClick={() => 
+            setOpen(!open)
+          }/>
         </div>
+      </nav>
 
-        
+      <ResponsiveMenu open={open}/>
 
-        <img className='block text-5xl cursor-pointer xl:hidden' width="50" height="50" src="https://img.icons8.com/ios-filled/50/menu--v6.png" alt="menu--v6"/>
-
-        {/* <div className={`absolute xl:hidden top-24 left-0 w-full bg-white flex flex-col items-center gap-6 text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
-        
-        style={{transition: "transform 0.3s ease, opacity 0.3s ease"}}
-        >
-          <Link to="/accueil" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Accueil</Link>
-          <Link to="/services" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Services</Link>
-          <Link to="/apropos" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>A propos</Link>
-          <Link to="/test" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Test</Link>
-          <Link to="/contact" className='px-3 py-2 font-medium transition-all duration-700 rounded-lg text-slate-700 hover:bg-amber-200 hover:text-slate-900'>Contactez-nous</Link>
-        </div> */}
-        
-    </header>
     </>
   )
 }

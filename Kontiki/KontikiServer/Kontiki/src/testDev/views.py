@@ -15,35 +15,12 @@ from .serializers import (
     TestTechniqueFullstackSerializer
 )
 
-@api_view(['GET'])
-def get_all_sections(request):
-    models_serializers = {
-        'information_personnel': (InformationPersonnel, InfoPersoSerializer),
-        'savoir_formation': (SavoirFormation, SavoirFormationSerializer),
-        'ponctualite': (Ponctualite, PonctualiteSerializer),
-        'tenacite': (Tenacite, TenaciteSerializer),
-        'integration': (Integration, IntegrationSerializer),
-        'sens_du_service': (SensDuService, SensDuServiceSerializer),
-        'autonomie': (Autonomie, AutonomieSerializer),
-        'organisation': (Organisation, OrganisationSerializer),
-        'satisfaction': (Satisfaction, SatisfactionSerializer),
-        'test_technique_python': (TestTechniquePython, TestTechniquePythonSerializer),
-        'test_technique_javascript': (TestTechniqueJavaScript, TestTechniqueJavaScriptSerializer),
-        'test_technique_fullstack': (TestTechniqueFullstack, TestTechniqueFullstackSerializer)
-    }
 
-    data = {}
-    for key, (model, serializer_class) in models_serializers.items():
-        instances = model.objects.all()
-        serializer = serializer_class(instances, many=True)
-        data[key] = serializer.data
-
-    return Response(data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-def submit_responses(request):
+def submit_test(request):
     data = request.data
-    print("Received data : ", data)
+    # print("Received data : ", data)
     serializers = {
         'information_personnel': InfoPersoSerializer,
         'savoir_formation': SavoirFormationSerializer,
@@ -72,7 +49,32 @@ def submit_responses(request):
                 errors[key] = serializer.errors
 
     if errors:
-        print("Validation errors:", errors)
+        # print("Validation errors:", errors)
         return Response({'status': 'error', 'errors': errors}, status=status.HTTP_400_BAD_REQUEST)
 
     return Response({'status': 'success', 'data': response_data}, status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def get_test(request):
+    models_serializers = {
+        'information_personnel': (InformationPersonnel, InfoPersoSerializer),
+        'savoir_formation': (SavoirFormation, SavoirFormationSerializer),
+        'ponctualite': (Ponctualite, PonctualiteSerializer),
+        'tenacite': (Tenacite, TenaciteSerializer),
+        'integration': (Integration, IntegrationSerializer),
+        'sens_du_service': (SensDuService, SensDuServiceSerializer),
+        'autonomie': (Autonomie, AutonomieSerializer),
+        'organisation': (Organisation, OrganisationSerializer),
+        'satisfaction': (Satisfaction, SatisfactionSerializer),
+        'test_technique_python': (TestTechniquePython, TestTechniquePythonSerializer),
+        'test_technique_javascript': (TestTechniqueJavaScript, TestTechniqueJavaScriptSerializer),
+        'test_technique_fullstack': (TestTechniqueFullstack, TestTechniqueFullstackSerializer)
+    }
+
+    data = {}
+    for key, (model, serializer_class) in models_serializers.items():
+        instances = model.objects.all()
+        serializer = serializer_class(instances, many=True)
+        data[key] = serializer.data
+
+    return Response(data, status=status.HTTP_200_OK)
