@@ -149,80 +149,80 @@ const Presentation = () => {
       alert("Veuillez remplir les champs Nom et Prénom");
     }
     
-    const structuredData = {
-      information_personnel: {
-        nom: formData.nom,
-        prenom: formData.prenom,
-        age: formData.age,
-        situation_matrimoniale: formData.situation_matrimoniale,
-        adresse_actuelle: formData.adresse_actuelle,
-        numero_telephone: formData.numero_telephone,
-        adresse_email: formData.adresse_email,
-      },
-      savoir_formation: {
-        poste_envisage: formData.poste_envisage,
-        formations_suivies: formData.formations_suivies,
-        dernier_travail: formData.dernier_travail,
-        satisfaction_carriere: formData.satisfaction_carriere,
-        exemples_realisations: formData.exemples_realisations,
-      },
-      ponctualite: {
-        respect_horaires: formData.respect_horaires,
-        retard_justifie: formData.retard_justifie,
-        ponctualite_globale: formData.ponctualite_globale,
-      },
-      tenacite: {
-        perseverance: formData.perseverance,
-        resistance_aux_obstacles: formData.resistance_aux_obstacles,
-        gestion_stress: formData.gestion_stress,
-      },
-      integration: {
-        esprit_equipe: formData.esprit_equipe,
-        collaboration: formData.collaboration,
-        relations_avec_collegues: formData.relations_avec_collegues,
-      },
-      sens_du_service: {
-        ecoute_client: formData.ecoute_client,
-        satisfaction_client: formData.satisfaction_client,
-        service_apres_vente: formData.service_apres_vente,
-      },
-      autonomie: {
-        prise_initiative: formData.prise_initiative,
-        travail_independant: formData.travail_independant,
-        gestion_taches: formData.gestion_taches,
-      },
-      organisation: {
-        planification: formData.planification,
-        respect_des_deadlines: formData.respect_des_deadlines,
-        organisation_globale: formData.organisation_globale,
-      },
-      satisfaction: {
-        satisfaction_generale: formData.satisfaction_generale,
-        poste_Ideal: formData.poste_Ideal,
-        salaire: formData.salaire,
-        traite: formData.traite,
-        remunere: formData.remunere,
-        travailler_soir: formData.travailler_soir,
-        competence_aporte: formData.competence_aporte,
-      },
-      test_technique_python: {
-        python_experience: formData.python_experience,
-        python_projets_realises: formData.python_projets_realises,
-        python_niveau_competence: formData.python_niveau_competence,
-      },
-      test_technique_javascript: {
-        javascript_experience: formData.javascript_experience,
-        javascript_projets_realises: formData.javascript_projets_realises,
-        javascript_niveau_competence: formData.javascript_niveau_competence,
-      },
-      test_technique_fullstack: {
-        fullstack_experience: formData.fullstack_experience,
-        fullstack_projets_realises: formData.fullstack_projets_realises,
-        fullstack_niveau_competence: formData.fullstack_niveau_competence,
-      },
-    };
+    // const structuredData = {
+    //   information_personnel: {
+    //     nom: formData.nom,
+    //     prenom: formData.prenom,
+    //     age: formData.age,
+    //     situation_matrimoniale: formData.situation_matrimoniale,
+    //     adresse_actuelle: formData.adresse_actuelle,
+    //     numero_telephone: formData.numero_telephone,
+    //     adresse_email: formData.adresse_email,
+    //   },
+    //   savoir_formation: {
+    //     poste_envisage: formData.poste_envisage,
+    //     formations_suivies: formData.formations_suivies,
+    //     dernier_travail: formData.dernier_travail,
+    //     satisfaction_carriere: formData.satisfaction_carriere,
+    //     exemples_realisations: formData.exemples_realisations,
+    //   },
+    //   ponctualite: {
+    //     respect_horaires: formData.respect_horaires,
+    //     retard_justifie: formData.retard_justifie,
+    //     ponctualite_globale: formData.ponctualite_globale,
+    //   },
+    //   tenacite: {
+    //     perseverance: formData.perseverance,
+    //     resistance_aux_obstacles: formData.resistance_aux_obstacles,
+    //     gestion_stress: formData.gestion_stress,
+    //   },
+    //   integration: {
+    //     esprit_equipe: formData.esprit_equipe,
+    //     collaboration: formData.collaboration,
+    //     relations_avec_collegues: formData.relations_avec_collegues,
+    //   },
+    //   sens_du_service: {
+    //     ecoute_client: formData.ecoute_client,
+    //     satisfaction_client: formData.satisfaction_client,
+    //     service_apres_vente: formData.service_apres_vente,
+    //   },
+    //   autonomie: {
+    //     prise_initiative: formData.prise_initiative,
+    //     travail_independant: formData.travail_independant,
+    //     gestion_taches: formData.gestion_taches,
+    //   },
+    //   organisation: {
+    //     planification: formData.planification,
+    //     respect_des_deadlines: formData.respect_des_deadlines,
+    //     organisation_globale: formData.organisation_globale,
+    //   },
+    //   satisfaction: {
+    //     satisfaction_generale: formData.satisfaction_generale,
+    //     poste_Ideal: formData.poste_Ideal,
+    //     salaire: formData.salaire,
+    //     traite: formData.traite,
+    //     remunere: formData.remunere,
+    //     travailler_soir: formData.travailler_soir,
+    //     competence_aporte: formData.competence_aporte,
+    //   },
+    //   test_technique_python: {
+    //     python_experience: formData.python_experience,
+    //     python_projets_realises: formData.python_projets_realises,
+    //     python_niveau_competence: formData.python_niveau_competence,
+    //   },
+    //   test_technique_javascript: {
+    //     javascript_experience: formData.javascript_experience,
+    //     javascript_projets_realises: formData.javascript_projets_realises,
+    //     javascript_niveau_competence: formData.javascript_niveau_competence,
+    //   },
+    //   test_technique_fullstack: {
+    //     fullstack_experience: formData.fullstack_experience,
+    //     fullstack_projets_realises: formData.fullstack_projets_realises,
+    //     fullstack_niveau_competence: formData.fullstack_niveau_competence,
+    //   },
+    // };
 
-    // console.log(JSON.stringify(structuredData));
+    console.log(JSON.stringify(formData));
 
     try {
       const response = await fetch ('http://localhost:8000/api/submit_test/', {
@@ -237,6 +237,7 @@ const Presentation = () => {
       }
       const data = await response.json();
       console.log('Succes: ', data);
+
     } catch (error) {
       console.log ('Erreur : ', error);
     }
@@ -402,7 +403,7 @@ const Presentation = () => {
         <div className="form-box">
           <ProgressSteps steps={steps} activeStep={activeStep} />
 
-          <form onSubmit={handleSubmit} className="formulaire">
+          <form onSubmit={handleSubmit} className="formulaire" method="POST">
             {steps.map((step, index) => (
               <FormSection
                 key={step.id}

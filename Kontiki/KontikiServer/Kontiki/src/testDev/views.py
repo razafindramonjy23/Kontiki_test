@@ -17,7 +17,7 @@ from .serializers import (
 
 
 
-@api_view(['POST'])
+@api_view(['GET','POST'])
 def submit_test(request):
     data = request.data
     # print("Received data : ", data)
