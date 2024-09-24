@@ -145,7 +145,9 @@ const Presentation = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-
+    if (!formData.nom || !formData.prenom){
+      alert("Veuillez remplir les champs Nom et Prénom");
+    }
     
     const structuredData = {
       information_personnel: {
@@ -220,47 +222,25 @@ const Presentation = () => {
       },
     };
 
-    console.log(JSON.stringify(structuredData))
-  //   try {
-  //     const response = await fetch('http://127.0.0.1:8000/api/submit_test/', {
-  //       method: 'POST',
-  //       // mode: "cors",
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(structuredData),
-  //     });
+    // console.log(JSON.stringify(structuredData));
 
-  //     //  if (!response.ok) {
-  //     //    const errorText = await response.json(); // ou response.json() si le backend renvoie une réponse JSON
-  //     //    throw new Error(`Erreur lors de la soumission des réponses : ${errorText}`);
-  //     //  } 
-
-  //     const data = await response.json();
-  //     console.log('Réponses soumises avec succès:', data);
-  //     // alert('Réponses soumises avec succès !');
-  //   } catch (error) {
-  //     console.error('Erreur lors de la soumission :', error);
-  //     alert('Erreur lors de la soumission.');
-  //   }
-  // };
-
-  try {
-    const response = await fetch('http://127.0.0.1:8000/api/submit_test/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(structuredData),
-    });
-
-    const data = await response.json();
-    console.log('Success: ', data);
-
-  } catch (error) {
-    console.log("Error: ", error);
+    try {
+      const response = await fetch ('http://localhost:8000/api/submit_test/', {
+        method : 'POST', 
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(formData)
+      });
+      if (!response.ok) {
+        throw new Error ("Erreur");
+      }
+      const data = await response.json();
+      console.log('Succes: ', data);
+    } catch (error) {
+      console.log ('Erreur : ', error);
+    }
   }
-};
 
 
   const btnSuivant = () => {
