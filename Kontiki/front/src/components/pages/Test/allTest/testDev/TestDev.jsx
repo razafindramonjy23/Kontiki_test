@@ -222,7 +222,7 @@ const Presentation = () => {
       },
     };
 
-    // console.log(JSON.stringify(structuredData));
+    console.log(JSON.stringify(structuredData));
 
     try {
       const response = await fetch ('http://localhost:8000/api/submit_test/', {
