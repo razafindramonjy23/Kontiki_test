@@ -53,7 +53,7 @@ def test_dev(request):
         data = {}
         for key, model in models.items(): 
             instances = model.objects.all()
-            serializer_class = serializers[key]  # Correction : serializer → serializers
+            serializer_class = serializers[key]  
             serializer = serializer_class(instances, many=True)
             data[key] = serializer.data
         return Response(data, status=status.HTTP_200_OK)
@@ -66,7 +66,7 @@ def test_dev(request):
         
         for key, serializer_class in serializers.items(): 
             if key in data: 
-                serializer = serializer_class(data=data[key])  # Correction : data[ke] → data[key]
+                serializer = serializer_class(data=data[key])  
                 if serializer.is_valid(): 
                     serializer.save()
                     response_data[key] = serializer.data 
