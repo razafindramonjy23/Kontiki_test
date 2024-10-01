@@ -31,14 +31,14 @@ function DevActivites() {
             </div>
             
 
-            <section className="py-12 bg-gray-100">
+            <section className="h-screen py-12 bg-gray-100">
                 <div className="container mx-auto text-center">
-                    <h2 className="my-8 text-3xl font-semibold text-gray-800">
+                    <h2 className="my-20 text-3xl font-semibold text-gray-800">
                         Votre partenaire de service informatique
                     </h2>
 
 
-                    <div className="grid grid-cols-1 gap-8 my-10 mb-20 md:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-8 my-20 mb-20 md:grid-cols-3">
 
 
                         <motion.div 
@@ -115,7 +115,7 @@ function DevActivites() {
             </section>
 
 
-            <section className="dark:bg-white dark:text-gray-800">
+            <section className="h-screen dark:bg-white dark:text-gray-800">
                 <div className="container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8">
                     <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-5xl hover:text-6xl">
                         TECHNOLOGIES

@@ -71,21 +71,21 @@ function Test() {
         </motion.section>
 
         <motion.section
-
           variants={FadeLeft(1.2)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-
-          className='pt-60'>
+          className="pt-60"
+        >
           <Link
             to="/testTM"
-            className="block max-w-xs p-6 mx-auto space-y-3  rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
+            className="block max-w-xs p-10 mx-auto space-y-1 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-300 hover:ring-sky-500"
           >
-            <div className="bg-white shadow-md rounded-lg px-6 py-4">
-              <div className="text-gray-900 font-bold text-xl mb-2">Affiliète Manager</div>
-              <p className="text-gray-700">asdasdf alskdjf as;dlk fajsdkf </p>
-              <a href="#" className="text-blue-500 hover:underline">Aller à la page →</a>
+            <div className="">
+              <div className="text-3xl font-semibold text-slate-900 group-hover:text-white">Affiliète Manager</div>
+              {/* <svg class="h-6 w-6 stroke-sky-500 group-hover:stroke-white" fill="none" viewBox="0 0 24 24"></svg> */}
+              <p className="text-lg text-slate-500 group-hover:text-white">asdasdf alskdjf as;dlk fajsdkf </p>
+              <a href="#" className="text-blue-950 hover:underline">Aller à la page →</a>
             </div>
           </Link>
         </motion.section>
@@ -119,8 +119,8 @@ function Test() {
         <p class="text-gray-700 text-center">hello how are you?</p>
       </div> */}
 
-      {/* <div className="bg-white shadow-md rounded-lg px-6 py-4">
-        <div className="text-gray-900 font-bold text-xl mb-2">asdfasdfasdfasdfadsf</div>
+      {/* <div className="px-6 py-4 bg-white rounded-lg shadow-md">
+        <div className="mb-2 text-xl font-bold text-gray-900">asdfasdfasdfasdfadsf</div>
         <p className="text-gray-700">asdasdf alskdjf as;dlk fajsdkf </p>
         <a href="#" className="text-blue-500 hover:underline">Aller à la page →</a>
       </div> */}

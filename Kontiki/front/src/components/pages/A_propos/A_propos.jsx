@@ -35,8 +35,7 @@ function A_propos() {
     <>
 
 
-      <div className='font-sans'>
-
+      <div className='h-screen font-sans'>
         <div className="my-8 text-center">
           <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-4xl hover:text-5xl">
             Qui sommes nous vraiment ?
@@ -109,8 +108,8 @@ function A_propos() {
       </div>
 
 
-      <section className="py-16 bg-white">
-        <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
+      <section className="h-screen py-32 bg-white">
+        <div className="flex flex-col items-center gap-32 px-20 mx-auto lg:flex-row">
           <motion.div
 
             variants={FadeRight(0.8)}
@@ -144,17 +143,18 @@ function A_propos() {
         </div>
       </section>
 
-      <div className="py-20 my-8 mb-20 font-sans text-center">
-        <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-3xl hover:text-4xl">
-          Notre partenaire de services ?
-        </h2>
-        <div className="flex justify-center mt-2">
-          <div className="w-24 h-1 bg-amber-500"></div>
-        </div>
-      </div>
 
-      <section className="py-16 bg-white">
-        <div className="container flex flex-col items-center px-4 mx-auto lg:flex-row gap-7">
+
+      <section className="h-screen py-32 font-sans bg-white">
+        <div className="mb-20 text-center ">
+          <h2 className="box-border h-20 text-xl font-semibold transition-all duration-700 ease-in-out text-blue-950 md:text-3xl hover:text-4xl">
+            Notre partenaire de services ?
+          </h2>
+          <div className="flex justify-center mt-2">
+            <div className="w-24 h-1 mb-20 bg-amber-500"></div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center px-32 mx-auto lg:flex-row gap-7">
 
           <motion.div
 
