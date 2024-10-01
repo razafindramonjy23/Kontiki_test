@@ -256,7 +256,14 @@ function Services() {
         </div>
       </section>
 
-      <section className="max-w-md mx-auto mb-20 overflow-hidden font-sans bg-white shadow-md rounded-xl md:max-w-2xl">
+      <motion.section
+      
+        variants={FadeUp(0.5)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+
+        className="max-w-md mx-auto mb-20 overflow-hidden font-sans bg-white shadow-md rounded-xl md:max-w-2xl">
         <div className="md:flex">
           <div className="md:shrink-0">
             <img src={tour} alt="Tour sahavola" className='object-cover w-full h-48 md:h-full md:w-48' />
@@ -264,14 +271,14 @@ function Services() {
           <div className="p-8">
             <div className="text-2xl font-semibold tracking-wide text-blue-900 uppercase">Nos coordonnées</div>
             <a href="#" className="block mt-1 text-lg font-medium leading-tight text-black hover:underline">KONTIKI SERVICE</a>
-            <p className="mt-2 text-slate-500">Porte 403, Tour Sahavola Lot IBF 16 Ter A Antsahavola – Antananarivo 101
-              Tel: +261 33 28 895 30 / +261 34 62 259 76
+            <p className="mt-2 text-slate-500">Porte 403, Tour Sahavola Lot IBF 16 Ter A <br /> Antsahavola – Antananarivo 101 <br />
+              Tel: +261 33 28 895 30 / +261 34 62 259 76 <br />
               Email: contact@kontikiservice.com
               <br />
-              Ouvert du Lundi au Vendredi de 9h30 à 19h</p>
+              <span className="">Ouvert du Lundi au Vendredi de 9h30 à 19h</span></p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
     </>
   );
