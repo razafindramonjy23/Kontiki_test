@@ -5,6 +5,7 @@ import lesFilles from './img/01.jpg';
 import andre from './img/andre.jpg';
 import Rova from './img/Rova.jpg';
 import '../../scss/pages/_services.scss';
+import tour from "../../../assets/Images/pages/a_propos/tour.jpg"
 
 import { FadeLeft } from '../../utility/animation';
 import { FadeRight } from '../../utility/animation';
@@ -222,14 +223,14 @@ function Services() {
               Ambiance conviviale et professionnelle
             </motion.p>
 
-            <motion.div 
-            
-            variants={FadeUp(1.3)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            
-            className="flex justify-center space-x-4 lg:justify-start">
+            <motion.div
+
+              variants={FadeUp(1.3)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+
+              className="flex justify-center space-x-4 lg:justify-start">
               <p className="flex items-center px-5 py-2 rounded-lg text-blue-950 bg-amber-400">
                 {/* <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12c0 4.3 2.7 8.1 6.5 9.5.5.1.7-.2.7-.5v-1.7c-2.7.5-3.2-1.3-3.2-1.3-.4-1-.9-1.2-.9-1.2-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.3 2.1 1 2.6.8.1-.5.3-.8.5-1-2.2-.3-4.5-1.1-4.5-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.4.1-2.9 0 0 .8-.3 2.6 1 .8-.2 1.7-.3 2.6-.3.9 0 1.8.1 2.6.3 1.8-1.3 2.6-1 2.6-1 .5 1.5.2 2.6.1 2.9.7.7 1 1.6 1 2.6 0 3.7-2.3 4.4-4.5 4.7.3.3.6.7.6 1.3v2c0 .3.2.6.7.5C19.3 20.1 22 16.3 22 12c0-5.5-4.5-10-10-10z" />
@@ -238,14 +239,14 @@ function Services() {
               </p>
             </motion.div>
           </div>
-          <motion.div 
-          
-          variants={FadeLeft(1.3)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          
-          className="mt-12 lg:mt-0 lg:w-1/2">
+          <motion.div
+
+            variants={FadeLeft(1.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+
+            className="mt-12 lg:mt-0 lg:w-1/2">
             <img
               src=""
               alt="Jeunes"
@@ -254,6 +255,24 @@ function Services() {
           </motion.div>
         </div>
       </section>
+
+      <section className="max-w-md mx-auto mb-20 overflow-hidden font-sans bg-white shadow-md rounded-xl md:max-w-2xl">
+        <div className="md:flex">
+          <div className="md:shrink-0">
+            <img src={tour} alt="Tour sahavola" className='object-cover w-full h-48 md:h-full md:w-48' />
+          </div>
+          <div className="p-8">
+            <div className="text-2xl font-semibold tracking-wide text-blue-900 uppercase">Nos coordonnées</div>
+            <a href="#" className="block mt-1 text-lg font-medium leading-tight text-black hover:underline">KONTIKI SERVICE</a>
+            <p className="mt-2 text-slate-500">Porte 403, Tour Sahavola Lot IBF 16 Ter A Antsahavola – Antananarivo 101
+              Tel: +261 33 28 895 30 / +261 34 62 259 76
+              Email: contact@kontikiservice.com
+              <br />
+              Ouvert du Lundi au Vendredi de 9h30 à 19h</p>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }
