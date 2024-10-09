@@ -28,9 +28,9 @@ const FormSection = ({ id, title, icon, fields, isActive, onChange }) => {
       <h2>{title}</h2>
       {fields.map((field, index) => (
         field.type === "textarea" ? (
-          <TextareaField key={index} label={field.label}  name={field.name} onChange={onChange} /> //add required
+          <TextareaField key={index} label={field.label} name={field.name} onChange={onChange} /> //add required
         ) : (
-          <InputField key={index} label={field.label} type={field.type}  name={field.name} onChange={onChange} /> //add required
+          <InputField key={index} label={field.label} type={field.type} name={field.name} onChange={onChange} /> //add required
         )
       ))}
     </div>
@@ -134,21 +134,29 @@ const Presentation = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.nom) errors.nom = "Le nom est requis";
+    if (!formData.prenom) errors.prenom = "Le prénom est requis";
+    if (!/\S+@\S+\.\S+/.test(formData.adresse_email)) errors.adresse_email = "Email invalide";
+  
+    return errors;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!formData.nom || !formData.prenom){
+    if (!formData.nom || !formData.prenom) {
       alert("Veuillez remplir les champs Nom et Prénom");
     }
-    
+
     const structuredData = {
       information_personnel: {
         nom: formData.nom,
@@ -224,24 +232,27 @@ const Presentation = () => {
 
 
     try {
-      const response = await fetch ('http://localhost:8000/api/test_dev/', {
-        method : 'POST', 
-        headers: {
-          'Content-Type' : 'application/json'
-        },
-        body : JSON.stringify(formData)
+      console.log('Données envoyées :', structuredData); // Ajoutez cette ligne pour débugger
+      const response = await fetch('http://localhost:8000/api/dev/formulaires/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(structuredData)
       });
+
       if (!response.ok) {
-        throw new Error ("Erreur");
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Erreur");
       }
+
       const data = await response.json();
-      console.log('Succes: ', data);
-
-    } catch (error) {
-      console.log ('Erreur : ', error);
-    }
+      console.log('Succès: ', data);
+  } catch (error) {
+      console.log('Erreur : ', error.message);
   }
-
+    
+  }
 
   const btnSuivant = () => {
     if (activeStep < steps.length - 1) {
