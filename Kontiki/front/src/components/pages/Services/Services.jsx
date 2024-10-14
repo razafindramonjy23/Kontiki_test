@@ -3,7 +3,8 @@ import progress from './img/progression.jpg';
 import ensemble from './img/ensemble.png';
 import lesFilles from './img/01.jpg';
 import andre from './img/andre.jpg';
-import Rova from './img/Rova.jpg';
+import Rova from './img/Rova.png';
+// import Lead from './img/Lead.png';
 import '../../scss/pages/_services.scss';
 import tour from "../../../assets/Images/pages/a_propos/tour.jpg"
 
@@ -96,17 +97,17 @@ function Services() {
         </div>
       </div>
 
-      <div className="carousel " ref={carouselRef}>
+      <div className="h-screen carousel" ref={carouselRef}>
         <div className="list" ref={listRef}>
           <div className="item" style={{ backgroundImage: `url(${progress})` }}>
           </div>
 
           <div className="item" style={{ backgroundImage: `url(${Rova})` }}>
             <div className="content">
-              <div className="titre">GENERATION DES LEADS</div>
-              <div className="description">
-                Collecter des prospects qualifiés et générez de nouveaux clients.
-              </div>
+              {/* <div className="titre">GENERATION DES LEADS</div> */}
+              {/* <div className="description"> */}
+                {/* Collecter des prospects qualifiés et générez de nouveaux clients. */}
+              {/* </div> */}
               {/* <div className="btns">
               <button>Voir plus</button>
               </div> */}

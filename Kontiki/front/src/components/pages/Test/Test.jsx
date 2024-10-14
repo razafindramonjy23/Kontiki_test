@@ -38,13 +38,13 @@ function Test() {
             to="/testDev"
             className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
           >
-            <div className="flex items-center space-x-3">
-              <img src="https://img.icons8.com/ios/50/ios-development.png" alt="ios-development" />
-              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Test pour Developpeurs</h3>
+            <div className="">
+            {/* <img width="50" height="50" src="https://img.icons8.com/ios/50/programming-flag.png" alt="programming-flag"/> */}
+              <div className="text-3xl font-semibold text-slate-900 group-hover:text-white">Test pour les Devéloppeurs</div>
+              {/* <svg class="h-6 w-6 stroke-sky-500 group-hover:stroke-white" fill="none" viewBox="0 0 24 24"></svg> */}
+              <p className="text-lg text-slate-500 group-hover:text-white">N'hésitez pas à faire notre test pour rejoindre la communauté</p>
+              <a href="#" className="text-blue-950 hover:underline">Aller à la page →</a>
             </div>
-            <p className="text-sm text-slate-500 group-hover:text-white">
-              Test pour les dev front veuillez vous inscrire
-            </p>
           </Link>
         </motion.section>
 
@@ -58,15 +58,14 @@ function Test() {
           className='pt-60'>
           <Link
             to="/testTM"
-            className="block max-w-xs p-6 mx-auto space-y-3 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
+            className="block max-w-xs p-10 mx-auto space-y-1 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-300 hover:ring-sky-500"
           >
-            <div className="flex items-center space-x-3">
-              <img width="64" height="64" src="https://img.icons8.com/external-bearicons-glyph-bearicons/64/external-Affiliate-business-and-marketing-bearicons-glyph-bearicons.png" alt="external-Affiliate-business-and-marketing-bearicons-glyph-bearicons" />
-              <h3 className="text-4xl font-semibold transition-transform duration-300 ease-in-out text-blue-950 md:text-3xl hover:scale-125">Affiliète Manager</h3>
+            <div className="">
+              <div className="text-3xl font-semibold text-slate-900 group-hover:text-white">Affiliète Manager</div>
+              {/* <svg class="h-6 w-6 stroke-sky-500 group-hover:stroke-white" fill="none" viewBox="0 0 24 24"></svg> */}
+              <p className="text-lg text-slate-500 group-hover:text-white">asdasdf alskdjf as;dlk fajsdkf </p>
+              <a href="#" className="text-blue-950 hover:underline">Aller à la page →</a>
             </div>
-            <p className="text-sm text-slate-500 group-hover:text-white">
-              Create a new project
-            </p>
           </Link>
         </motion.section>
 
@@ -101,7 +100,7 @@ function Test() {
           <div class="w-24 h-1 bg-amber-500"></div>
         </div>
         <div class="flex justify-center space-x-20 mt-32">
-          <img width="96" height="96" src="https://img.icons8.com/cute-clipart/128/skype.png" alt="skype" className='transition-all hover:scale-75' />
+          <img width="96" height="96" src="https://img.icons8.com/cute-clipart/128/skype.png" alt="skype " className='text-red-600 transition-all hover:scale-75' />
           <img width="96" height="96" src="https://img.icons8.com/color/144/google-meet--v1.png" alt="google-meet--v1" className='transition-all hover:scale-75' />
           <img width="96" height="96" src="https://img.icons8.com/color/144/microsoft-teams.png" alt="microsoft-teams" className='transition-all hover:scale-75' />
         </div>
