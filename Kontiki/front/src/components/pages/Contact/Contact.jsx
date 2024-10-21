@@ -43,7 +43,7 @@ function Contact() {
               <div className="form-wrapper">
                 <div className="contact-heading">
                   <h1>Travaillons ensembles.</h1>
-                  <p className="texte"><span>Ou Contactez-nous via : </span><a href="malto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
+                  <p className="texte"><span>Ou Contactez-nous via : </span><a href="mailto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
                 </div>
 
                 <form className="contact-form" onSubmit={handleSubmit} >

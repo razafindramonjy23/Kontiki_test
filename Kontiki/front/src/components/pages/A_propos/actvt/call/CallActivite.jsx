@@ -6,53 +6,7 @@ import avatar from "../../../../../assets/Images/pages/a_propos/avatar/avatar.jp
 
 
 function CallActivite() {
-  const teamMembers = [
-    {
-      name: 'Ryan Samuel',
-      role: 'EXAMINATEUR FINANCIER',
-      img: avatar,
-      github: '#',
-      linkedin: '#',
-    },
-    {
-      name: 'Jordan Michael',
-      role: 'DÉVELOPPEUR WEB',
-      img: 'https://via.placeholder.com/150',
-      github: '#',
-      linkedin: '#',
-    },
-    {
-      name: 'Nora Hazel',
-      role: 'CONCEPTEUR UI/UX',
-      img: 'https://via.placeholder.com/150',
-      github: '#',
-      linkedin: '#',
-    },
-    {
-      name: 'Alice Johnson',
-      role: 'Chef de projet',
-      img: 'https://via.placeholder.com/150',
-      linkedin: '#',
-      website: '#',
-    },
-    {
-      name: 'Michael Smith',
-      role: 'Analyste de données',
-      img: 'https://via.placeholder.com/150',
-      twitter: '#',
-      linkedin: '#',
-      website: '#',
-    },
-    {
-      name: 'Sophia Brown',
-      role: 'Développeuse Full Stack',
-      img: 'https://via.placeholder.com/150',
-      twitter: '#',
-      linkedin: '#',
-      website: '#',
-    },
-  ];
-
+ 
   return (
     <>
 
@@ -67,6 +21,28 @@ function CallActivite() {
           <img src={explorer} alt="Illustration de création de contenu" className="w-auto h-64" />
         </div>
       </section>
+
+      {/* <div className="container py-12 mx-auto">
+        <h2 className="mb-4 text-3xl font-bold">Assurance Construction</h2>
+        <p className="mb-8 text-lg">
+          Bâtissez vos projets en toute sérénité. Mettez à l'écart tous les risques afin que votre projet puisse démarrer et réussir même après 10 ans avec notre Assurance construction.
+        </p>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div>
+            <h3 className="mb-2 text-xl font-bold">Bénéficiez des garanties suivantes</h3>
+            <ul className="list-disc list-inside">
+              <li>Tous risques chantiers : ...</li>
+              <li>Responsabilité civile décennale : ...</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/votre-image.jpg" alt="Chantier de construction" className="rounded-lg" />
+          </div>
+        </div>
+        <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+          Demandez gratuitement votre devis
+        </button>
+      </div> */}
 
       <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
         <div className="my-2 mt-20 text-center">
