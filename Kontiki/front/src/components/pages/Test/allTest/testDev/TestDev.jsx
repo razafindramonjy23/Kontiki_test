@@ -232,7 +232,7 @@ const Presentation = () => {
 
 
     try {
-      console.log('Données envoyées :', structuredData); //ligne pour débugger
+      console.log('Données envoyées :', structuredData); 
       const response = await fetch('http://localhost:8000/api/dev/formulaires/', {
           method: 'POST',
           headers: {

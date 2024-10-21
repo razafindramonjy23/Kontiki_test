@@ -61,7 +61,7 @@ function Test() {
             className="block max-w-xs p-10 mx-auto space-y-1 bg-white rounded-lg shadow-lg group ring-1 ring-slate-900/5 hover:bg-sky-300 hover:ring-sky-500"
           >
             <div className="">
-              <div className="text-3xl font-semibold text-slate-900 group-hover:text-white">Affiliète Manager</div>
+              <div className="text-3xl font-semibold text-slate-900 group-hover:text-white">Traffic pour Manager</div>
               {/* <svg class="h-6 w-6 stroke-sky-500 group-hover:stroke-white" fill="none" viewBox="0 0 24 24"></svg> */}
               <p className="text-lg text-slate-500 group-hover:text-white">asdasdf alskdjf as;dlk fajsdkf </p>
               <a href="#" className="text-blue-950 hover:underline">Aller à la page →</a>

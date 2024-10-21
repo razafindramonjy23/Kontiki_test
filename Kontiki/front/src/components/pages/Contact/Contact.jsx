@@ -46,8 +46,7 @@ function Contact() {
                   <p className="texte"><span>Ou Contactez-nous via : </span><a href="malto:recrutement@kontikiservice.com">contact@kontikiservice.com</a></p>
                 </div>
 
-                <form className="contact-form" onSubmit={handleSubmit}  >
-                  {/* mettre une boucle aux 3 forms et une pour textarea */}
+                <form className="contact-form" onSubmit={handleSubmit} >
                   <div className={`input-wrap ${nom !== '' ? 'focus not-empty' : ''}`}>
 
                     <input type="text" className="contact-input" required name='nom' autoComplete='off' value={nom} onChange={(e) => setName(e.target.value)} />
@@ -83,7 +82,6 @@ function Contact() {
                       <span className=''>Envoyer</span>
                     </button>
                   </div>
-
                 </form>
               </div>
 
